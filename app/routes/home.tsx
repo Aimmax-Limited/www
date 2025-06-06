@@ -1,13 +1,21 @@
+import Hero from "~/components/hero";
+import Intro from "~/components/intro";
+import Services from "~/components/services";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Aimmax Limited" },
+    { name: "description", content: "Aimmax Limited Assets Management" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <>
+      <Hero />
+      <Intro />
+      <Services />
+    </>
+  );
 }
