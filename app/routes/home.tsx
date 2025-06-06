@@ -2,6 +2,7 @@ import Hero from "~/components/hero";
 import Intro from "~/components/intro";
 import Services from "~/components/services";
 import type { Route } from "./+types/home";
+import Navbar from "~/components/navbar";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -13,6 +14,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
+    <Navbar/>
       <Hero />
       <Intro />
       <Services />

@@ -23,13 +23,13 @@ const links = [{
   },]
 export default function Navbar() {
   return (
-    <div className='flex justify-between items-center bg-red-200'>
+    <div className='flex justify-between items-center rounded-2xl'>
       <Logo/>
       <div className='hidden md:flex pe-0 md:pe-2 lg:pe-10 xl:pe-20 2xl:pe-32 3xl:pe-40 gap-0.5 md:gap-2 lg:gap-10 xl:gap-10 2xl:gap-12'>
         {links.map((link) => (
           <NAvLink key={link.name} name={link.name} path={link.path}/>
         ))}
-        <StarBorder><Link to={'/contact us'}><ShinyText text='Contact us' className='group-hover:text-teal-600 hover:bg-slate-900'/></Link></StarBorder>
+        <Button variant={'outline'}className="group bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base"><Link to={'/contact us'}><ShinyText text='Contact us' className='group-hover:text-teal-600 hover:bg-slate-900'/></Link></Button>
           
         
       </div>
@@ -72,13 +72,14 @@ function SheetBar() {
       <SheetTrigger asChild>
         <img src="./align-right.svg" alt="Menu Icon" width={60} />
       </SheetTrigger>
-      <SheetContent className=''>
+      <SheetContent className='flex flex-col items-center'>
         {links.map((link) => (
           <NAvLink key={link.name}
           name={link.name}
           path={link.path}
           onClick={() => setIsOpen(false)}/>
         ))}
+        <Button variant={'outline'}className="group bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base"><Link to={'/contact us'}><ShinyText text='Contact us' className='group-hover:text-teal-600 hover:bg-slate-900'/></Link></Button>
       </SheetContent>
     </Sheet>
   )
