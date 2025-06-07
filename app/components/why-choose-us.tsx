@@ -101,13 +101,13 @@ export default function WhyChooseUs() {
               <Button
                 variant={"outline"}
                 size={"lg"}
-                className="group h-14 mt-6 bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base rounded-[20px]"
+                className="group h-14 mt-6 bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 ring-blue-800 hover:ring-2 hover:ring-offset-1 outline-0 text-center text-base rounded-[20px]"
                 asChild
               >
                 <Link to="/" className="rounded-[20px]">
                   <ShinyText
                     text="Asset Reporting Guidlines"
-                    className="group-hover:text-white hover:bg-slate-900"
+                    className="text-white/80 group-hover:text-white group-hover:bg-slate-900"
                   />
                   <ArrowSquareOut size={"24"} />
                 </Link>

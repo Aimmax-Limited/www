@@ -1,12 +1,19 @@
+import { cn } from "~/lib/utils";
+import Navbar from "./navbar";
 import CountUp from "./reactbits/count-up";
 import GradientText from "./reactbits/gradient-text";
 import RotatingText from "./reactbits/rotating-text";
 
-export default function Hero() {
+export default function Hero({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <>
-      <main className="h-dvh px-10 bg-[#0A192F]">
-        <div className="grid grid-cols-2 gap-x-4 xl:h-[800px]">
+      <main className={cn("h-dvh px-10 bg-[#0A192F]", className)} {...props}>
+        <Navbar />
+
+        <div className="grid grid-cols-2 gap-x-4 xl:h-[700px]">
           <div className="flex items-center">
             <GradientText
               colors={["#B0CFE0", "#4682A9", "#2C3E50", "#0A192F", "#B0CFE0"]}

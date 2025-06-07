@@ -75,7 +75,7 @@ export default function Services() {
             {services.map((service, index) => (
               <SpotlightCard
                 className=""
-                spotlightColor="rgba(0, 128, 128, 1)"
+                spotlightColor="rgba(0, 128, 128, .4)"
                 key={index}
               >
                 <div className="">
@@ -89,7 +89,7 @@ export default function Services() {
             ))}
             <SpotlightCard
               className="bg-neutral-100/25 border-0 backdrop-blur-lg"
-              spotlightColor="rgba(0, 128, 128, .4)"
+              spotlightColor="rgba(0, 128, 128, .2)"
             >
               <p className="font-semibold text-slate-900 text-md lg:text-2xl my-4">
                 <span className="text-blue-900">Learn more </span> about the
@@ -99,13 +99,13 @@ export default function Services() {
               <Button
                 variant={"outline"}
                 size={"lg"}
-                className="group h-14 mt-6 bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base rounded-[20px]"
+                className="group h-14 mt-6 bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 ring-blue-800 hover:ring-2 hover:ring-offset-1 outline-0 text-center text-base rounded-[20px]"
                 asChild
               >
                 <Link to="/" className="rounded-[20px]">
                   <ShinyText
                     text="More on Services"
-                    className="group-hover:text-white hover:bg-slate-900"
+                    className="text-white/80 group-hover:text-white group-hover:bg-slate-900"
                   />
                   <ArrowSquareOut size={"24"} />
                 </Link>
