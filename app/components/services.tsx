@@ -59,6 +59,18 @@ export default function Services() {
             OUR SERVICES
           </h2>
 
+          <p className="font-satoshi text-justify text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-xl mb-10">
+            Our range of services is crafted to help you{" "}
+            <span className="font-bold text-md">optimize</span>,{" "}
+            <span className="font-bold text-md">track</span>, and{" "}
+            <span className="font-bold text-md">protect</span> your valuable
+            assets with precision and care. From thorough asset valuation to
+            cutting-edge tracking solutions, we provide tailored strategies that
+            align with your goals. <br /> <br />
+            Explore our full range of expert services listed below and discover
+            how we can support your organization’s growth and performance.
+          </p>
+
           <div className="text-white font-satoshi font-medium text-lg grid grid-cols-3 gap-4">
             {services.map((service, index) => (
               <SpotlightCard

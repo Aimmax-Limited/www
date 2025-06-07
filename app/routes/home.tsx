@@ -1,8 +1,10 @@
+import Footer from "~/components/footer";
 import Hero from "~/components/hero";
 import Intro from "~/components/intro";
-import Services from "~/components/services";
-import type { Route } from "./+types/home";
 import Navbar from "~/components/navbar";
+import Services from "~/components/services";
+import WhyChooseUs from "~/components/why-choose-us";
+import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,10 +16,12 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Hero />
       <Intro />
       <Services />
+      <WhyChooseUs />
+      <Footer />
     </>
   );
 }

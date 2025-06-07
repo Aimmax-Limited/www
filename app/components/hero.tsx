@@ -1,4 +1,3 @@
-import Navbar from "./navbar";
 import CountUp from "./reactbits/count-up";
 import GradientText from "./reactbits/gradient-text";
 import RotatingText from "./reactbits/rotating-text";
@@ -7,8 +6,6 @@ export default function Hero() {
   return (
     <>
       <main className="h-dvh px-10 bg-[#0A192F]">
-        
-        
         <div className="grid grid-cols-2 gap-x-4 xl:h-[800px]">
           <div className="flex items-center">
             <GradientText
