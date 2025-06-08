@@ -59,7 +59,7 @@ export default function Services() {
             OUR SERVICES
           </h2>
 
-          <p className="font-satoshi text-justify text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-xl mb-10">
+          <p className="font-satoshi text-justify text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-xl mb-10 ms-2">
             Our range of services is crafted to help you{" "}
             <span className="font-bold text-md">optimize</span>,{" "}
             <span className="font-bold text-md">track</span>, and{" "}

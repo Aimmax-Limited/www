@@ -15,26 +15,23 @@ export default function Hero({
 
         <div className="grid grid-cols-2 gap-x-4 xl:h-[700px]">
           <div className="flex items-center">
-            <GradientText
-              colors={["#B0CFE0", "#4682A9", "#2C3E50", "#0A192F", "#B0CFE0"]}
-            >
-              <RotatingText
-                mainClassName="px-2 sm:px-2 md:px-3 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                texts={[
-                  "EFFICIENT ASSET REGISTER PREPARATION",
-                  "PHYSICAL ASSET TAGGING AND BARCODING",
-                ]}
-                rotationInterval={5000}
-                splitBy="lines"
-                splitLevelClassName="overflow-hidden text-8xl font-clashdisplay font-semibold"
-                initial={{ y: "100%", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: "-100%", opacity: 0 }}
-                transition={{ type: "spring", damping: 50, stiffness: 400 }}
-                // transition={{ type: "keyframes", ease: "easeInOut" }}
-                animatePresenceMode="wait"
-              />
-            </GradientText>
+            <RotatingText
+              mainClassName=" px-2 sm:px-2 md:px-3 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+              texts={[
+                "EFFICIENT ASSET REGISTER PREPARATION",
+                "PHYSICAL ASSET TAGGING AND BARCODING",
+              ]}
+              rotationInterval={5000}
+              splitBy="lines"
+              splitLevelClassName="overflow-hidden text-8xl font-clashdisplay font-semibold"
+              elementLevelClassName="gradient-hero-text"
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              transition={{ type: "spring", damping: 50, stiffness: 400 }}
+              // transition={{ type: "keyframes", ease: "easeInOut" }}
+              animatePresenceMode="wait"
+            />
           </div>
 
           <div></div>

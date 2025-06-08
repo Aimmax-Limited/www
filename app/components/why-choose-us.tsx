@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
             WHY CHOOSE US?
           </h2>
 
-          <p className="font-satoshi text-justify text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-xl mb-5">
+          <p className="font-satoshi text-justify text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-xl mb-5 ms-2">
             In a landscape where precision, compliance and accountability are
             critical, choosing the right asset management partner can make all
             the difference. At{" "}

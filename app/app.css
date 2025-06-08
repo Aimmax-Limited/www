@@ -188,3 +188,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.gradient-hero-text {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(
+    to right,
+    #b0cfe0,
+    #4682a9,
+    #2c3e50,
+    #0a192f,
+    #b0cfe0
+  );
+  background-size: 300% 100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: "text";
+}
