@@ -7,3 +7,9 @@
 
 # Local netlify folder
 .netlify
+
+# Flowbite local folder
+.flowbite-react
+
+# Vscode settings
+.vscode/
