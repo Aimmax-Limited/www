@@ -15,10 +15,6 @@ const links = [
     path: "/",
   },
   {
-    name: "Portfolio",
-    path: "/contact-us",
-  },
-  {
     name: "About us",
     path: "/about",
   },
@@ -38,9 +34,17 @@ export default function Navbar({
         {links.map((link) => (
           <NAvLink key={link.name} name={link.name} path={link.path} />
         ))}
-        <Button variant={'outline'}className="group bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base"><Link to={'/contactUs'}><ShinyText text='Contact us' className='group-hover:text-teal-600 hover:bg-slate-900'/></Link></Button>
-          
-        
+        <Button
+          variant={"outline"}
+          className="group bg-blue-600 hover:bg-blue-600 border-0 ring-0 outline-0 hover:ring hover:ring-offset-2 text-center text-base"
+        >
+          <Link to={"/contact us"}>
+            <ShinyText
+              text="Contact us"
+              className="text-white/80 group-hover:text-white"
+            />
+          </Link>
+        </Button>
       </div>
       <div className="block md:hidden pe-4">
         <SheetBar />
@@ -114,8 +118,17 @@ function SheetBar() {
             onClick={() => setIsOpen(false)}
           />
         ))}
-        <Link to={'/contactUs'}><Button variant={'outline'}className="group bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base"><Link to={'/contactUs'}><ShinyText text='Contact us' className='group-hover:text-teal-600 hover:bg-slate-900'/></Link></Button></Link>
-        
+        <Button
+          variant={"outline"}
+          className="group bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base"
+        >
+          <Link to={"/contact us"}>
+            <ShinyText
+              text="Contact us"
+              className="group-hover:text-teal-600 hover:bg-slate-900"
+            />
+          </Link>
+        </Button>
       </SheetContent>
     </Sheet>
   );
