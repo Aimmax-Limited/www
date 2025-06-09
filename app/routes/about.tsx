@@ -1,13 +1,9 @@
-import AboutHero from "~/components/about-hero";
-import Navbar from "~/components/navbar";
+import AboutHero from "~/components/AboutHero";
+import Navbar from "~/components/navbar"
 
 function About() {
-  return (
-    <>
-      <Navbar />
-      <AboutHero />
-    </>
-  );
+    return (<><Navbar/>
+    <AboutHero/></>)
 }
 
 export default About;
