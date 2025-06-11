@@ -5,8 +5,8 @@ import { Textarea } from './ui/textarea';
 
 export default function ContactUsForm() {
     return(
-        <form className='flex flex-col gap-10 items-start w-full  p-4 md:max-w-2xl bg-[#0A192F] h-fit rounded-2xl mb-10 text-amber-50'>
-            <div className='flex gap-3 rounded-xl  justify-center items-center p-2 border-amber-50'>
+        <form className='flex  min-h-full flex-col gap-10 items-start w-full  p-4 md:max-w-2xl bg-[#0A192F] h-fit rounded-2xl text-amber-50'>
+            <div className='flex rounded-xl gap-2 p-2 border-amber-50 w-full'>
               <Input type='text' placeholder='enter your name' id='name' required/>
               <Input type='phone' placeholder='+254 ....'/>
             </div>
