@@ -31,5 +31,5 @@ export default function ContactUs() {
       </div>
       <Footer />
     </main>
-  );
+  )
 };
