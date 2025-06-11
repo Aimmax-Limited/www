@@ -8,4 +8,7 @@
 # Local netlify folder
 .netlify
 
+
 .vscode
+.flowbite-react
+

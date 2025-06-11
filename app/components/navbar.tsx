@@ -16,11 +16,11 @@ const links = [
   },
   {
     name: "Portfolio",
-    path: "/contactUs",
+    path: "/dev-contactUs",
   },
   {
     name: "About us",
-    path: "/about",
+    path: "/dev-about",
   },
 ];
 
@@ -111,7 +111,7 @@ function SheetBar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <img src="./align-right.svg" alt="Menu Icon" width={60} />
+        <img src="./align-right.svg" alt="Menu Icon" width={60} className="cursor-pointer" />
       </SheetTrigger>
       <SheetContent className="flex flex-col items-center">
         {links.map((link) => (
