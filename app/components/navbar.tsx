@@ -40,7 +40,7 @@ export default function Navbar({
         ))}
         <Button
           variant={"outline"}
-          className="group bg-blue-600 hover:bg-blue-600 border-0 ring-0 outline-0 hover:ring hover:ring-offset-2 text-center text-base"
+          className="group bg-slate-900 hover:bg-blue-600 border-0 ring-0 outline-0 hover:ring hover:ring-offset-2 text-center text-base"
         >
           <Link to={"/contact us"}>
             <ShinyText

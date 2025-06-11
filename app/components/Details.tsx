@@ -26,33 +26,37 @@ const details = [
 ]
 export default function Details() {
     return(
-        <div className='w-full flex  justify-start flex-row gap-5 p-4'>
-            <div className='w-full flex flex-col'>
-                <div color='red' className=" font-semibold text-white w-full">
-                    <h1>Reach us at</h1>
-                <div className='font-satoshi font-medium text-lg gap-10 flex  flex-col items-start p-5 lg:flex-row justify-start bg-red-200'>
-            {
-               details.map((detail,index) => (
-                <div key={index} className='self-start w-full h-[250px] flex flex-col items-center justify-center border-0 backdrop-blur-lg'>
-                    <div className='flex w-full p-2 bg-gray-400'>
-                        <detail.icon/>
-                        </div>
-                    <div className='w-full  flex flex-col justify-center items-center'>
-                        {detail.numbers.map((number) => (
-                        <p className='w-full p-1'>{number}</p>
-                    ))}
-                    </div>
-                    
-                </div>
-               )) 
-            }
-            
+        <div className='w-full flex  justify-start flex-row gap-5 p-2 bg-[#0A192F]'>
+            <div className="font-semibold text-white w-full flex flex-col items-center">
+  <h1 className="text-2xl font-satoshi p-2">Reach out to us via</h1>
+
+  <div className="relative w-4/5 flex flex-col lg:flex-row gap-10 sm:gap-5 items-start justify-between p-5 border-white custom-border">
+
+    {/* Decorative Dots */}
+    <span className="custom-border-dot dot-1"></span>
+    <span className="custom-border-dot dot-2"></span>
+    <span className="custom-border-dot dot-3"></span>
+
+    {details.map((detail) => (
+      <div
+        key={detail.title}
+        className="h-[175px] flex flex-col items-start justify-start w-full lg:w-auto"
+      >
+        <div className="flex w-full p-2">
+          <detail.icon />
         </div>
-        
+        <div className="w-full flex flex-col justify-start items-start">
+          {detail.numbers.map((number) => (
+            <p key={number} className="w-full p-1">
+              {number}
+            </p>
+          ))}
         </div>
-        </div>
-            
-        </div>
+      </div>
+    ))}
+  </div>
+</div>
+</div>
         
     )
 }

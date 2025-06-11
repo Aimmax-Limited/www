@@ -203,3 +203,67 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: "text";
 }
+
+.custom-border {
+  border-left: 2px solid white;
+  padding-left: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .custom-border {
+    border-left: none;
+    border-top: 2px solid white;
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+}
+
+/* Dot base style */
+.custom-border-dot {
+  position: absolute;
+  background-color: white;
+  border-radius: 9999px;
+  width: 10px;
+  height: 10px;
+}
+
+.custom-border-dot-3 {
+  bottom: 0;
+  left: -6px;
+}
+
+/* Default: vertical dots for small screens */
+.dot-1 {
+  top: 0;
+  left: -6px;
+}
+
+.dot-2 {
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+}
+
+.dot-3 {
+  bottom: 0;
+  left: -6px;
+}
+
+/* On large screens, change to top border dots */
+@media (min-width: 1024px) {
+  .dot-1 {
+    top: -6px;
+    left: 0%;
+  }
+
+  .dot-2 {
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dot-3 {
+    top: -6px;
+    right: 0%;
+  }
+}
