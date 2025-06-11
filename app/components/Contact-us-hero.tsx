@@ -4,6 +4,7 @@ import Navbar from "./navbar"
 
 export default function ContactUsHero() {
     return (
+
         <section className="h-[400px] bg-gradient-to-b from-[#076585] to-[#B0C4DE] flex flex-col">
             <Navbar/>
             <div className="font-satoshi-italic flex  flex-col items-center justify-center flex-grow sm:self-center">
@@ -12,6 +13,7 @@ export default function ContactUsHero() {
             </p>
             </div>
         
+
         </section>
     )
 }
