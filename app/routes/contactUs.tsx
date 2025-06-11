@@ -7,7 +7,9 @@ import { SocialMediaBar } from "~/components/socialMediaBar";
 import SpotlightCard from "~/components/reactbits/spotlight-card";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
+
 export default function ContactUs() {
+
   return (
     <main className="flex flex-col bg-[#B0C4DE]">
       <ContactUsHero />
@@ -30,4 +32,4 @@ export default function ContactUs() {
       <Footer />
     </main>
   );
-}
+};
