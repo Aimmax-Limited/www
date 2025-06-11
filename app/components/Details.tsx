@@ -1,4 +1,3 @@
-
 import { Mail, MapPin, Phone } from 'lucide-react'
 
 export default function Details() {
@@ -43,6 +42,7 @@ export default function Details() {
         </div>
     </div>
     </div>
+
         
     )
 }
