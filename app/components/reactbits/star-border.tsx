@@ -15,7 +15,7 @@ const StarBorder = <T extends React.ElementType = "button">({
   as,
   className = "",
   color = "white",
-  speed = "6s",
+  speed = "9s",
   children,
   childrenClassName = "",
   ...rest
@@ -45,8 +45,8 @@ const StarBorder = <T extends React.ElementType = "button">({
         }}
       ></div>
       <div
-        className={cn(
-          "relative z-1 bg-gradient-to-b from-[#F7F9FB] to-gray-100 border border-gray-200 text-center text-[16px] py-[16px] px-[26px] rounded-[20px]",
+        className={cn(`${as === 'div' ? 'relative z-1 bg-gradient-to-b from-[#132949] to-[#0b2b5c] border border-gray-200 text-center text-[16px] py-[16px] px-[26px] rounded-[20px]' :"relative z-1 bg-gradient-to-b from-[#F7F9FB] to-gray-100 border border-gray-200 text-center text-[16px] py-[16px] px-[26px] rounded-[20px]" }`
+          ,
           childrenClassName
         )}
       >
