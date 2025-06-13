@@ -38,6 +38,8 @@ export default function Details() {
 
           </div>
         <div>
-      </div>     
+      </div>  
+      </div>
+      </div>  
     )
-}
+  };
