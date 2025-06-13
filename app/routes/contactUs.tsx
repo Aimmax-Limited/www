@@ -10,6 +10,7 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
 import { motion } from "framer-motion";
 
+
 export default function ContactUs() {
 
   return (
@@ -70,18 +71,20 @@ export default function ContactUs() {
             <p className="text-gray-600">Use the contact form above or call us directly to book an appointment.</p>
           </motion.div>
         </div>
-        </div>
-        <div className="w-full flex justify-center items-center h-[300px]">
-          <SpotlightCard className="custom-spotlight-card flex items-center justify-center flex-col w-[90%] max-w-lg p-4 bg-neutral-100/25 border-0 backdrop-blur-lg text-black">
+       </div>
+      </div>
+      <div className="w-full bg-[#B0C4DE] p-4 flex justify-center">
+        <SpotlightCard className="custom-spotlight-card flex items-center justify-center flex-col w-[90%] max-w-lg p-4 bg-neutral-100/25 border-0 backdrop-blur-lg text-black">
           <p className="text-2xl py-5 text-center">Want to get regular updates about our services and promotions?</p>
           <div className="flex w-full max-w-sm items-center gap-1">
             <Input type="email" placeholder="Email" className="border-black" />
             <Button variant="default">Subscribe</Button>
           </div>
-        </SpotlightCard></div>
+        </SpotlightCard>
+         </div>
         
       </div>
 
       <Footer />
     </main>)
-}
+};

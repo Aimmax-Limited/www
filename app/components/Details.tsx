@@ -35,13 +35,9 @@ export default function Details() {
                 <p className='p-3'>aimmaxcom@gmail.com</p>
               </div>
             </SpotlightCard>
+
           </div>
         <div>
-        
-        </div>
-    </div>
-    </div>
-
-        
+      </div>     
     )
 }
