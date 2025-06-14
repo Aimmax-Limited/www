@@ -4,6 +4,7 @@ import Hero from "~/components/hero";
 import Intro from "~/components/intro";
 import Navbar from "~/components/navbar";
 import Services from "~/components/services";
+import Testimonials from "~/components/testimonials";
 import WhyChooseUs from "~/components/why-choose-us";
 import type { Route } from "./+types/home";
 
@@ -45,6 +46,7 @@ export default function Home() {
       <Intro />
       <Services />
       <WhyChooseUs />
+      <Testimonials />
       <Footer />
     </>
   );
