@@ -12,7 +12,31 @@
   --font-satoshi: "Satoshi-Variable", ui-sans-serif, system-ui;
   --font-satoshi-italic: "Satoshi-VariableItalic", ui-sans-serif, system-ui;
 
-  --animate-gradient: "gradient linear infinite";
+  --animate-bar-grow: barGrow 0.6s forwards cubic-bezier(0.22, 0.61, 0.36, 1);
+  @keyframes barGrow {
+    0% {
+      height: 0%;
+      opacity: 0.3;
+    }
+    100% {
+      height: 80%;
+      opacity: 1;
+    }
+  }
+
+  --animate-digit-appear: digitAppear 0.4s forwards;
+  @keyframes digitAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --animate-gradient: gradient linear infinite;
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -188,63 +212,6 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
-/******* Begin Hero *******/
-.gradient-hero-text {
-  @apply text-transparent bg-clip-text;
-  background-image: linear-gradient(
-    to right,
-    #b0cfe0,
-    #4682a9,
-    #2c3e50,
-    #0a192f,
-    #b0cfe0
-  );
-  background-size: 300% 100%;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: "text";
-}
-
-.slide {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-.gradient-fade {
-  pointer-events: none;
-  opacity: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: opacity 3s ease-in-out;
-}
-
-.gradient-fade.left {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #0a192f 100%),
-    url(/backgrounds/1.svg);
-  background-size: cover;
-  background-position: center;
-}
-
-.gradient-fade.right {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #0a192f 100%),
-    url(/backgrounds/1.svg);
-  background-size: cover;
-  background-position: center;
-}
-
-.gradient-fade.active {
-  opacity: 1;
-}
-/******* End Hero *******/
 
 .custom-border {
   border-left: 2px solid white;
