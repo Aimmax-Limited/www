@@ -103,10 +103,10 @@ function Text() {
     const handleLoad = () => setIsLoaded(true);
 
     if (document.readyState === "complete") {
-      setTimeout(() => setIsLoaded(true), 300);
+      setTimeout(() => setIsLoaded(true), 200);
     } else {
       window.addEventListener("load", () => {
-        setTimeout(() => setIsLoaded(true), 300);
+        setTimeout(() => setIsLoaded(true), 200);
       });
       return () => window.removeEventListener("load", handleLoad);
     }
