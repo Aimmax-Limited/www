@@ -53,7 +53,7 @@ const services = [
 export default function Services() {
   return (
     <>
-      <div className="py-10 bg-[#B0C4DE]">
+      <div className="p-5 md:p-10 bg-[#B0C4DE]">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-clashdisplay font-medium text-xl md:text-3xl lg:text-4xl mb-3 md:mb-3 lg:mb-5">
             OUR SERVICES
@@ -71,7 +71,7 @@ export default function Services() {
             how we can support your organization’s growth and performance.
           </p>
 
-          <div className="text-white font-satoshi font-medium text-lg grid grid-cols-3 gap-4">
+          <div className="text-white font-satoshi font-medium text-lg grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((service, index) => (
               <SpotlightCard
                 className=""

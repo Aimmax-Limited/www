@@ -16,59 +16,68 @@ export default function Hero({
     <>
       <main
         className={cn(
-          "h-dvh max-h-[1080px] px-10 bg-slate-800 z-10 relative",
+          "h-[800px] md:h-dvh max-h-[1080px] px-1 lg:px-10 bg-slate-800 z-10 relative",
           className
         )}
         {...props}
       >
         <Navbar className="relative z-50" />
 
-        <div className="relative h-[500px] max-w-[1400px] w-full mx-auto">
-          <Text />
+        <div className="relative h-[550px] lg:h-[450px] xl:h-[500px] max-w-[1400px] w-full mx-auto">
+          <Text className="" />
 
-          <div className="absolute right-0 top-0 z-10">
-            <BarcodeAnimation />
+          <div className="hidden xl:block">
+            <div className="absolute right-0 top-0 z-10">
+              <BarcodeAnimation />
+            </div>
+
+            <div className="absolute right-0 top-80">
+              <AssetRegisterAnimation />
+            </div>
+
+            <div className="absolute right-[25%] top-[350px]">
+              <AccountingSummation />
+            </div>
           </div>
 
-          <div className="absolute right-0 top-80">
-            <AssetRegisterAnimation />
-          </div>
-
-          <div className="absolute right-[25%] top-[350px]">
+          <div className="xl:hidden absolute right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 top-44 md:top-48 lg:top-72">
             <AccountingSummation />
           </div>
         </div>
 
-        <div className="max-w-[1400px] w-full mx-auto mt-5 font-clashdisplay tracking-wider group">
+        <div className="flex justify-center lg:justify-start max-w-[1400px] w-full mx-auto mt-5 font-clashdisplay tracking-wider group">
           <Button
             size={"lg"}
             variant={"outline"}
-            className="group h-12 max-w-3xs flex items-center text-lg text-gray-50 bg-white/5 hover:bg-[#64FFDA] backdrop-blur-xl rounded-xl border border-white/30 shadow-[inset_0_1px_2px_rgba(255,255,255,1)] animate-bounce hover:animate-none"
+            className="group h-12 max-w-3xs flex items-center text-lg text-gray-50 bg-white/5 hover:bg-[#64FFDA] backdrop-blur-xl rounded-xl border border-white/30 shadow-[inset_0_1px_2px_rgba(255,255,255,1)] md:animate-bounce hover:animate-none"
             asChild
           >
             <Link to="/">Get in touch with us</Link>
           </Button>
         </div>
 
-        <div className="absolute bottom-16 end-1/2 translate-x-[50%] flex items-center justify-center w-full xl:max-w-screen-lg mx-auto">
-          <div className="text-slate-300 flex justify-around w-full font-satoshi font-bold">
+        <div className="hidden absolute bottom-10 md:bottom-16 end-1/2 translate-x-[50%] md:flex items-center justify-center w-full max-w-[1024px] mx-auto">
+          <div className="text-slate-300 flex flex-row justify-center md:justify-around w-full font-satoshi font-bold">
             {metrics.map((metric, index) => (
-              <div className="flex items-center gap-x-1" key={index}>
+              <div
+                className="flex flex-col justify-center items-center text-center gap-x-1"
+                key={index}
+              >
                 <div>
                   <CountUp
                     to={metric.count}
                     delay={0}
                     duration={1}
                     separator=","
-                    className="text-4xl font-bold text-[#CCD6F6]"
+                    className="text-2xl xl:text-4xl font-bold text-[#CCD6F6]"
                   />
                   {metric.modifier && (
-                    <span className="text-4xl font-bold">
+                    <span className="text-2xl xl:text-4xl font-bold">
                       {metric.modifier}
                     </span>
                   )}
                 </div>
-                <p className="text-xl">{metric.name}</p>
+                <p className="text-lg md:text-xl">{metric.name}</p>
               </div>
             ))}
           </div>
@@ -78,7 +87,7 @@ export default function Hero({
   );
 }
 
-function Text() {
+function Text({ className, ...props }: React.ComponentProps<"div">) {
   const [current, setCurrent] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInitial, setIsInitial] = useState(true);
@@ -114,7 +123,13 @@ function Text() {
 
   return (
     <>
-      <div className="h-full w-full flex justify-start items-center">
+      <div
+        className={cn(
+          "h-full w-full flex justify-start items-start pt-10 md:pt-5 lg:pt-24 xl:pt-0 xl:items-center",
+          className
+        )}
+        {...props}
+      >
         {slides.map((slide, index) => (
           <div
             className={cn(
@@ -132,8 +147,8 @@ function Text() {
             key={index}
           >
             <div className="relative">
-              <div className="font-clashdisplay max-w-5xl">
-                <p className="text-[#F5F7FA] text-start font-semibold mb-3 md:mb-0 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
+              <div className="font-clashdisplay max-w-5xl text-center lg:text-start">
+                <p className="text-[#F5F7FA] font-semibold mb-3 md:mb-0 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
                   {slide.title[0]}
                 </p>
                 <p className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
@@ -142,7 +157,7 @@ function Text() {
               </div>
             </div>
 
-            <p className="font-satoshi text-slate-100 text-sm md:text-base lg:text-lg xl:text-xl mt-7">
+            <p className="font-satoshi text-center lg:text-start text-slate-100 text-sm md:text-base lg:text-lg xl:text-xl mt-4 lg:mt-6">
               {slide.subtitle}
             </p>
           </div>
