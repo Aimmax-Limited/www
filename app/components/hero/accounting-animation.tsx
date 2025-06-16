@@ -27,7 +27,7 @@ const AccountingSummation = () => {
   return (
     <div className="w-[350px] md:w-96 mx-auto px-4 py-12 font-mono text-white">
       <div className="text-center mb-2">
-        <h2 className="text-xl font-clashdisplay font-semibold text-slate-400/90 tracking-wider">
+        <h2 className="text-base md:text-xl font-clashdisplay font-semibold text-slate-400/90 tracking-wider">
           ACCRUAL ACCOUNTING
         </h2>
       </div>

@@ -16,14 +16,14 @@ export default function Hero({
     <>
       <main
         className={cn(
-          "h-[800px] md:h-dvh max-h-[1080px] px-1 lg:px-10 bg-slate-800 z-10 relative",
+          "h-[700px] max-h-dvh md:h-dvh md:max-h-[850px] xl:max-h-[1080px] px-1 lg:px-10 bg-slate-800 z-10 relative",
           className
         )}
         {...props}
       >
         <Navbar className="relative z-50" />
 
-        <div className="relative h-[550px] lg:h-[450px] xl:h-[500px] max-w-[1400px] w-full mx-auto">
+        <div className="relative h-[475px] md:h-[550px] lg:h-[450px] xl:h-[500px] max-w-[1400px] w-full mx-auto">
           <Text className="" />
 
           <div className="hidden xl:block">
@@ -40,7 +40,7 @@ export default function Hero({
             </div>
           </div>
 
-          <div className="xl:hidden absolute right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 top-44 md:top-48 lg:top-72">
+          <div className="xl:hidden absolute right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 top-36 md:top-44 lg:top-72">
             <AccountingSummation />
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function Hero({
           </Button>
         </div>
 
-        <div className="hidden absolute bottom-10 md:bottom-16 end-1/2 translate-x-[50%] md:flex items-center justify-center w-full max-w-[1024px] mx-auto">
+        <div className="hidden absolute md:bottom-10 end-1/2 translate-x-[50%] md:flex items-center justify-center w-full max-w-[1024px] mx-auto">
           <div className="text-slate-300 flex flex-row justify-center md:justify-around w-full font-satoshi font-bold">
             {metrics.map((metric, index) => (
               <div
@@ -125,7 +125,7 @@ function Text({ className, ...props }: React.ComponentProps<"div">) {
     <>
       <div
         className={cn(
-          "h-full w-full flex justify-start items-start pt-10 md:pt-5 lg:pt-24 xl:pt-0 xl:items-center",
+          "h-full w-full flex justify-start items-start pt-7 md:pt-5 lg:pt-24 xl:pt-0 xl:items-center",
           className
         )}
         {...props}
@@ -151,7 +151,7 @@ function Text({ className, ...props }: React.ComponentProps<"div">) {
                 <p className="text-[#F5F7FA] font-semibold mb-3 md:mb-0 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
                   {slide.title[0]}
                 </p>
-                <p className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
+                <p className="hero-text-2 sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
                   {slide.title[1]}
                 </p>
               </div>
