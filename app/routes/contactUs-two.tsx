@@ -33,7 +33,6 @@ const ContactSplitPage = () => {
     <div className="contact-split-container">
       {/* Left side - Scrollable content */}
       <div className="scrollable-content bg-slate-800">
-        <Navbar />
         <ContactHero />
         <section className="mb-12">
           <div className="p-4 flex flex-col justify-center">
