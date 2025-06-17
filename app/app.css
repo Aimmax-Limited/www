@@ -2,7 +2,7 @@
 @import url("./css/satoshi.css");
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@import url("./ContactSplitPage.css");
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -213,86 +213,6 @@ body {
   }
 }
 
-/******* Hero Begin *******/
-
-.hero-text-2 {
-  @media (max-width: 400px) {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-
-  @media (min-width: 400px) and (max-width: 640px) {
-    font-size: var(--text-3xl) /* 3rem = 48px */;
-    line-height: var(--tw-leading, var(--text-3xl--line-height) /* 1 */);
-  }
-}
-
-/******* Hero End *********/
-
-.custom-border {
-  border-left: 2px solid white;
-  padding-left: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .custom-border {
-    border-left: none;
-    border-top: 2px solid white;
-    padding-left: 0;
-    padding-top: 1.5rem;
-  }
-}
-
-/* Dot base style */
-.custom-border-dot {
-  position: absolute;
-  background-color: white;
-  border-radius: 9999px;
-  width: 10px;
-  height: 10px;
-}
-
-.custom-border-dot-3 {
-  bottom: 0;
-  left: -6px;
-}
-
-/* Default: vertical dots for small screens */
-.dot-1 {
-  top: 0;
-  left: -6px;
-}
-
-.dot-2 {
-  top: 50%;
-  left: -6px;
-  transform: translateY(-50%);
-}
-
-.dot-3 {
-  bottom: 0;
-  left: -6px;
-}
-
-/* On large screens, change to top border dots */
-@media (min-width: 1024px) {
-  .dot-1 {
-    top: -6px;
-    left: 0%;
-  }
-
-  .dot-2 {
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .dot-3 {
-    top: -6px;
-    right: 0%;
-  }
-}
-
 /****** Begin Embla Carousel ******/
 .embla {
   max-width: 100%;
@@ -341,3 +261,163 @@ body {
 }
 
 /****** End Embla Carousel ******/
+
+/* Contact Hero Component */
+.contact-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  
+}
+
+.contact-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+}
+
+.highlight-icon {
+  font-size: 1.2rem;
+}
+
+.hero-illustrations {
+  flex: 1;
+  max-width: 35%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  padding: 0rem 2rem;
+  overflow-x: hidden; 
+  scrollbar-width: none; 
+  align-items: end;
+  padding-top: 0%;
+}
+
+
+.hero-illustrations::-webkit-scrollbar {
+  display: none;
+}
+
+
+.contact-method {
+  flex: 0 0 auto; 
+}
+
+.illustration {
+  border-radius: 10px;
+  width: 350px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.illustration:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.illustration svg {
+  stroke-width: 1.5;
+}
+
+.contact-method span {
+  font-weight: 500;
+  color: #2c3e50;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  background: #b4fe00;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-hero {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-text {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-illustrations {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding: 1rem 0;
+  }
+  ::-webkit-scrollbar {
+  width: 5px;
+  background: #1e293b;
+}
+
+@media (max-width: 480px) {
+  .hero-illustrations {
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
+  width: 4px;
+  background: #1e293b;
+}
+}
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form field animation classes */
+.form-group {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Sequential delay for each form field */
+.form-group:nth-child(1) { animation-delay: 0.6s; }  /* Phone */
+.form-group:nth-child(2) { animation-delay: 0.9s; }  /* Email */
+.form-group:nth-child(3) { animation-delay: 0.11s; }  /* Subject */
+.form-group:nth-child(4) { animation-delay: 0.13s; }  /* Message */
+.form-group:nth-child(5) { animation-delay: 0.15s; }  /* Submit button */
