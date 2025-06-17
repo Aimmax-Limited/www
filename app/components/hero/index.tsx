@@ -16,11 +16,13 @@ export default function Hero({
     <>
       <main
         className={cn(
-          "h-[700px] max-h-dvh md:h-dvh md:max-h-[850px] xl:max-h-[1080px] px-1 lg:px-10 bg-slate-800 z-10 relative",
+          "h-[700px] max-h-dvh md:h-dvh md:max-h-[850px] xl:max-h-[1080px] px-1 lg:px-10 bg-[url('/backgrounds/blue-sky.jpg')] bg-cover z-10 relative",
           className
         )}
         {...props}
       >
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+
         <Navbar className="relative z-50" />
 
         <div className="relative h-[475px] md:h-[550px] lg:h-[450px] xl:h-[500px] max-w-[1400px] w-full mx-auto">
