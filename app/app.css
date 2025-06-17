@@ -213,6 +213,22 @@ body {
   }
 }
 
+/******* Hero Begin *******/
+
+.hero-text-2 {
+  @media (max-width: 400px) {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+
+  @media (min-width: 400px) and (max-width: 640px) {
+    font-size: var(--text-3xl) /* 3rem = 48px */;
+    line-height: var(--tw-leading, var(--text-3xl--line-height) /* 1 */);
+  }
+}
+
+/******* Hero End *********/
+
 .custom-border {
   border-left: 2px solid white;
   padding-left: 1rem;
@@ -313,7 +329,7 @@ body {
 }
 
 .embla__dot {
-  @apply rounded-full mx-2 border-2 h-1 w-1 hover:bg-slate-200;
+  @apply rounded-full mx-2 border md:border-2 h-1 w-1 hover:bg-slate-200;
 }
 
 .embla__dot--selected {
@@ -321,7 +337,7 @@ body {
 }
 
 .embla__button {
-  @apply rounded-full h-12 w-12 shadow-inner shadow-slate-400 hover:shadow-sky-400 hover:shadow transition-all duration-500;
+  @apply rounded-full h-10 w-10 md:h-12 md:w-12 shadow-inner shadow-slate-400 hover:shadow-sky-400 hover:shadow transition-all duration-500;
 }
 
 /****** End Embla Carousel ******/

@@ -3,7 +3,7 @@ import StarBorder from "./reactbits/star-border";
 
 export default function Intro() {
   return (
-    <div className="p-10 bg-[#B0C4DE] text-slate-900">
+    <div className="p-5 md:p-10 bg-[#B0C4DE] text-slate-900">
       <div className="max-w-screen-xl mx-auto">
         <h2 className="font-clashdisplay font-medium text-xl md:text-3xl lg:text-4xl mb-3 md:mb-3 lg:mb-5">
           YOUR TRUSTED ASSET MANAGEMENT PARTNER
