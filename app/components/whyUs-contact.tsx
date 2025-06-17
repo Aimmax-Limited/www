@@ -4,7 +4,7 @@ import { Card, CardContent } from './ui/card';
 function WhyUscontact() {
   return (
     <div className="my-8 flex items-center justify-center">
-            <Card className="bg-[#B0C4DE] border-0 h-[320px]">
+            <Card className="bg-[#708090] border-0 h-[320px]">
               <CardContent>
                 <h2 className="text-2xl font-semibold mb-4 ml-4">Why Choose Us?</h2>
                 <ul className="list-disc ml-6 space-y-2 p-2">

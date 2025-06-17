@@ -385,3 +385,8 @@ body {
     display: none;
   }
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: #b4fe00;
+}

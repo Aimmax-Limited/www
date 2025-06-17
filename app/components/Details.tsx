@@ -3,11 +3,11 @@ import SpotlightCard from './reactbits/spotlight-card'
 
 export default function Details() {
     return(
-        <div className='p-2 lg:min-h-fit rounded-lg lg:pb-18 w-full'>
+        <div className='p-2 lg:min-h-fit rounded-lg lg:pb-18 max-w-[500px]'>
         <div className='w-full'>
-          <h2 className="text-2xl font-semibold mb-4 p-2 w-full text-center">Get In Touch</h2>
+          <h2 className="text-3xl  mb-4 p-2 w-full">Get In Touch</h2>
         
-        <div className="flex flex-col gap-3  text-amber-50 justify-between mr-8 w-full items-center">
+        <div className="flex flex-col gap-3  text-amber-50 justify-between mr-8 w-full items-start">
           
             <div className="flex gap-3 p-2 w-[530px] pl-2.5">
               <img src="destination.svg" alt=" Destination" width={40} height={44} />
