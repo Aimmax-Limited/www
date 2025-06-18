@@ -10,6 +10,7 @@ import Navbar from "~/components/navbar";
 const ContactSplitPage = () => {
   const [formData, setFormData] = useState({
     name: "",
+    phone: '',
     email: "",
     subject: "",
     message: "",
@@ -63,7 +64,7 @@ const ContactSplitPage = () => {
       </div>
 
       {/* Right side - Fixed contact form */}
-      <div className="fixed-form bg-[#B0C4DE]/20">
+      <div className="fixed-form bg-[#B0C4DE]">
         <div className="max-w-full">
           <h2 className="text-3xl pb-2">Leave Us a message!</h2>
           <p>
@@ -89,7 +90,7 @@ const ContactSplitPage = () => {
                 type="phone"
                 id="phone"
                 name="phone"
-                value={formData.name}
+                value={formData.phone}
                 onChange={handleChange}
                 placeholder=""
                 required

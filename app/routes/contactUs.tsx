@@ -12,12 +12,13 @@ import FAQscontact from "~/components/FAQs-contact";
 import WhyUscontact from "~/components/whyUs-contact";
 import { MapPinnedIcon } from "lucide-react";
 import Navbar from "~/components/navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ContactUs() {
 
   const [formData, setFormData] = useState({
       name: "",
+      phone: "",
       email: "",
       subject: "",
       message: "",
@@ -35,8 +36,13 @@ export default function ContactUs() {
       e.preventDefault();
       // Handle form submission
       console.log("Form submitted:", formData);
+
+
     };
   
+    useEffect(()=> {
+      console.log('FormData :', formData)
+    },[formData])
   return (
     <>
       <main className="flex flex-col bg-[#B0C4DE]">
@@ -110,10 +116,10 @@ export default function ContactUs() {
             <div className="form-group">
               <label htmlFor="phone">Phone</label>
               <input
-                type="phone"
+                type="tel"
                 id="phone"
                 name="phone"
-                value={formData.name}
+                value={formData.phone}
                 onChange={handleChange}
                 required
               />
@@ -130,14 +136,14 @@ export default function ContactUs() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="subject">Subject</label>
+              <label htmlFor="subject" className="">Subject</label>
               <select
                 id="subject"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full p-3"
+                className="w-full pl-[15px] p-3"
               >
                 
                 <option value="Support">Support</option>
