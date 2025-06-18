@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import type { ReactNode } from "react";
 import React, { useEffect, useRef } from "react";
 
