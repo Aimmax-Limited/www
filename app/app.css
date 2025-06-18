@@ -215,7 +215,7 @@ body {
 
 /******* Hero Begin *******/
 
-.hero-text-2 {
+.hero__title-2 {
   @media (max-width: 400px) {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -224,6 +224,58 @@ body {
   @media (min-width: 400px) and (max-width: 640px) {
     font-size: var(--text-3xl) /* 3rem = 48px */;
     line-height: var(--tw-leading, var(--text-3xl--line-height) /* 1 */);
+  }
+}
+
+.hero__text-height {
+  @media (max-height: 700px) {
+    @apply sm:h-[380px] md:h-[380px];
+  }
+
+  @media (min-height: 700px) {
+    @apply md:h-[550px] lg:h-[450px] xl:h-[500px];
+  }
+}
+
+.hero__text-padding {
+  @media (max-height: 700px) {
+    @apply md:pt-3 lg:pt-10 xl:pt-0;
+  }
+
+  @media (min-height: 700px) and (max-height: 1080px) {
+    @apply md:pt-5 lg:pt-24 xl:pt-0;
+  }
+}
+
+.hero__metrics {
+  @media (min-height: 800px) {
+    @apply md:flex;
+  }
+}
+
+.hero__animations {
+  @media (min-height: 950px) and (min-width: 1450px) {
+    @apply xl:block;
+  }
+}
+
+.hero__sm-animation {
+  @media (max-height: 700px) {
+    @apply md:right-10 md:translate-x-0 lg:top-48;
+  }
+
+  @media (min-height: 700px) {
+    @apply lg:top-72;
+  }
+
+  @media (min-height: 950px) and (min-width: 1450px) {
+    @apply xl:hidden;
+  }
+}
+
+.hero__button {
+  @media (max-height: 700px) {
+    @apply sm:justify-start sm:ps-5;
   }
 }
 

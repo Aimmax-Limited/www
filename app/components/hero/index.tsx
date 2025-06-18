@@ -25,10 +25,10 @@ export default function Hero({
 
         <Navbar className="relative z-50" />
 
-        <div className="relative h-[475px] md:h-[550px] lg:h-[450px] xl:h-[500px] max-w-[1400px] w-full mx-auto">
+        <div className="relative h-[475px] hero__text-height max-w-[1400px] w-full mx-auto">
           <Text className="" />
 
-          <div className="hidden xl:block">
+          <div className="hidden hero__animations">
             <div className="absolute right-0 top-0 z-10">
               <BarcodeAnimation />
             </div>
@@ -42,12 +42,12 @@ export default function Hero({
             </div>
           </div>
 
-          <div className="xl:hidden absolute right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 top-36 md:top-44 lg:top-72">
+          <div className="absolute right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 top-36 md:top-44 hero__sm-animation">
             <AccountingSummation />
           </div>
         </div>
 
-        <div className="flex justify-center lg:justify-start max-w-[1400px] w-full mx-auto mt-5 font-clashdisplay tracking-wider group">
+        <div className="hero__button flex justify-center lg:justify-start max-w-[1400px] w-full mx-auto mt-5 font-clashdisplay tracking-wider group">
           <Button
             size={"lg"}
             variant={"outline"}
@@ -58,7 +58,7 @@ export default function Hero({
           </Button>
         </div>
 
-        <div className="hidden absolute md:bottom-10 end-1/2 translate-x-[50%] md:flex items-center justify-center w-full max-w-[1024px] mx-auto">
+        <div className="hidden absolute md:bottom-10 end-1/2 translate-x-[50%] hero__metrics items-center justify-center w-full max-w-[1024px] mx-auto">
           <div className="text-slate-300 flex flex-row justify-center md:justify-around w-full font-satoshi font-bold">
             {metrics.map((metric, index) => (
               <div
@@ -127,7 +127,7 @@ function Text({ className, ...props }: React.ComponentProps<"div">) {
     <>
       <div
         className={cn(
-          "h-full w-full flex justify-start items-start pt-7 md:pt-5 lg:pt-24 xl:pt-0 xl:items-center",
+          "h-full w-full flex justify-start items-start xl:items-center p-7 hero__text-padding",
           className
         )}
         {...props}
@@ -153,7 +153,7 @@ function Text({ className, ...props }: React.ComponentProps<"div">) {
                 <p className="text-[#F5F7FA] font-semibold mb-3 md:mb-0 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
                   {slide.title[0]}
                 </p>
-                <p className="hero-text-2 sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
+                <p className="hero__title-2 sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
                   {slide.title[1]}
                 </p>
               </div>
