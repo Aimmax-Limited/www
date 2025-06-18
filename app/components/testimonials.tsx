@@ -8,13 +8,13 @@ import { Button } from "./ui/button";
 
 export default function Testimonials() {
   return (
-    <div className="py-24 bg-slate-50">
+    <div className="p-5 md:py-24 bg-slate-300">
       <div className="max-w-screen-xl mx-auto flex flex-col items-center">
         <h2 className="text-slate-500 font-clashdisplay font-medium text-xl md:text-2xl mb-3 md:mb-3 lg:mb-5">
           Our clients share their experiences working with us
         </h2>
 
-        <Quote size="40pt" className="fill-slate-300 mb-5" />
+        <Quote size="40pt" className="fill-slate-500 mb-5" />
 
         <EmblaCarouselAutoPlay slides={testimonials} options={{ loop: true }} />
       </div>
@@ -26,7 +26,7 @@ const testimonials = [
   {
     clientLogo: "/client-logos/uon-seeklogo.png",
     clientName: "University Of Nairobi",
-    text: "Aimmax helped us build a compliant, IFMIS-ready asset register with accurate tagging and valuation. Their expertise made our transition to accrual accounting smooth and improved audit outcomes significantly.Aimmax Company Ltd helped us create a fully compliant, IFMIS-ready asset register, complete with detailed tagging and accurate valuation. Their support made our shift to accrual accounting smooth and significantly improved audit outcomes.",
+    text: "Aimmax helped us build a compliant, IFMIS-ready asset register with accurate tagging and valuation. Their expertise made our transition to accrual accounting smooth and improved audit outcomes significantly. Their support made our shift to accrual accounting smooth and significantly improved audit outcomes.",
   },
   {
     clientLogo: "/client-logos/uon-seeklogo.png",
@@ -113,10 +113,10 @@ const EmblaCarouselAutoPlay = ({
           ))}
         </div>
       </div>
-      <div className="flex justify-between mt-10">
+      <div className="flex justify-between mt-5 md:mt-10">
         <Button
           variant={"outline"}
-          className="embla__button hover:-translate-x-0.5"
+          className="embla__button hover:-translate-x-0.5 bg-slate-300/10 backdrop-blur-2xl"
           onClick={scrollPrev}
         >
           <ChevronCircleLeft className="fill-gray-500 -translate-x-[1px]" />
@@ -126,7 +126,7 @@ const EmblaCarouselAutoPlay = ({
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={"embla__dot".concat(
+              className={"embla__dot bg-slate-300/10 backdrop-blur-2xl".concat(
                 index === selectedIndex ? " embla__dot--selected" : ""
               )}
             />
@@ -134,7 +134,7 @@ const EmblaCarouselAutoPlay = ({
         </div>
         <Button
           variant={"outline"}
-          className="embla__button hover:translate-x-0.5"
+          className="embla__button hover:translate-x-0.5 bg-slate-300/10 backdrop-blur-2xl"
           onClick={scrollNext}
         >
           <ChevronCircleRight className="fill-slate-500 translate-x-[1px]" />

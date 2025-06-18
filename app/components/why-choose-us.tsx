@@ -47,7 +47,7 @@ const items = [
 export default function WhyChooseUs() {
   return (
     <>
-      <div className="py-10 bg-[#B0C4DE]">
+      <div className="p-5 md:p-10 bg-[#B0C4DE]">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-clashdisplay font-medium text-xl md:text-3xl lg:text-4xl mb-3 md:mb-3 lg:mb-5">
             WHY CHOOSE US?
@@ -66,13 +66,13 @@ export default function WhyChooseUs() {
             choose Aimmax:
           </p>
 
-          <div className="text-white font-satoshi font-medium text-lg grid grid-cols-3 gap-4">
+          <div className="text-white font-satoshi font-medium text-lg grid grid-cols-1 md:grid-cols-3 gap-4">
             {items.map((item, index) => (
               <SpotlightCard
                 className={
                   (index + 1) % 4 === 0 || (index + 1) % 4 === 1
-                    ? "col-span-2"
-                    : ""
+                    ? "md:col-span-2"
+                    : "col-span-1"
                 }
                 spotlightColor="rgba(0, 128, 128, .4)"
                 key={index}
