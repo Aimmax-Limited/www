@@ -38,8 +38,8 @@ const ContactHero = () => {
     <div className="relative contact-hero flex bg-[url('/white.jpeg')] bg-cover  min-h-dvh items-center">
       <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-black/20'></div>
       <Navbar/>
-      <div className='flex w-6/7 lg:ml-35'><div className="flex flex-col hero-text gap-15 w-fit">
-        <div><h1 className='text-white font-bold text-8xl'>at <span className='text-[#b4fe00]'>AIMMAX COMPANY LTD.</span> we are all about solving asset related issues!</h1>
+      <div className='flex'><div className="flex flex-col hero-text gap-15">
+        <div><h1 className='text-white font-bold text-8xl'>at <span className='text-[#b4fe00]'>AIMMAX LIMITED.</span> we are all about solving asset related issues!</h1>
         <p className='text-slate-100'>Want us to be part of the solution to your asset management challenges?</p>
         </div>
       
@@ -92,7 +92,7 @@ const ContactHero = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="subject">Subject</label>
+              <label htmlFor="subject" className='hidden'>Subject</label>
               <select
                 id="subject"
                 name="subject"
