@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Footer from "~/components/footer";
 import Hero from "~/components/hero";
-import Intro from "~/components/intro";
 import Navbar from "~/components/navbar";
 import Services from "~/components/services";
 import Testimonials from "~/components/testimonials";
@@ -43,7 +42,6 @@ export default function Home() {
         }`}
       />
 
-      <Intro />
       <Services />
       <WhyChooseUs />
       <Testimonials />
