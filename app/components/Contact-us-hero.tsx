@@ -11,13 +11,7 @@ const ContactHero = () => {
     delay: 300,
   });
 
-  const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  
+
     const handleChange = (e: { target: { name: any; value: any } }) => {
       const { name, value } = e.target;
       setFormData((prev: any) => ({
@@ -26,11 +20,7 @@ const ContactHero = () => {
       }));
     };
   
-    const handleSubmit = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-      // Handle form submission
-      console.log("Form submitted:", formData);
-    };
+    
 
 
   const [formData, setFormData] = useState({
@@ -41,13 +31,6 @@ const ContactHero = () => {
       message: "",
     });
   
-    const handleChange = (e: { target: { name: any; value: any } }) => {
-      const { name, value } = e.target;
-      setFormData((prev: any) => ({
-        ...prev,
-        [name]: value,
-      }));
-    };
   
     const handleSubmit = (e: { preventDefault: () => void }) => {
       e.preventDefault();
