@@ -11,6 +11,27 @@ const ContactHero = () => {
     delay: 300,
   });
 
+  const [formData, setFormData] = useState({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  
+    const handleChange = (e: { target: { name: any; value: any } }) => {
+      const { name, value } = e.target;
+      setFormData((prev: any) => ({
+        ...prev,
+        [name]: value,
+      }));
+    };
+  
+    const handleSubmit = (e: { preventDefault: () => void }) => {
+      e.preventDefault();
+      // Handle form submission
+      console.log("Form submitted:", formData);
+    };
+
 
   const [formData, setFormData] = useState({
       name: "",
@@ -73,7 +94,6 @@ const ContactHero = () => {
               /><label htmlFor="name">Name</label>
             </div>
             <div className="form-group">
-              
               <input
                 type="phone"
                 id="phone"
@@ -85,7 +105,6 @@ const ContactHero = () => {
               /><label htmlFor="phone">Phone</label>
             </div>
             <div className="form-group">
-              
               <input
                 type="email"
                 id="email"
@@ -113,7 +132,6 @@ const ContactHero = () => {
               </select>
             </div>
             <div className="form-group">
-              
               <textarea
                 id="message"
                 name="message"
@@ -121,6 +139,7 @@ const ContactHero = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
+
               ></textarea><label htmlFor="message">Message</label>
             </div>
             <button type="submit" className="w-full submit-btn text-white mt-4 hover:bg-blue-700 submit-btn  bg-blue-500 px-4 py-2 rounded">

@@ -80,16 +80,17 @@ const ContactSplitPage = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+
                 placeholder=""
                 required
               /><label htmlFor="name">Name</label>
             </div>
             <div className="form-group">
-              
               <input
                 type="phone"
                 id="phone"
                 name="phone"
+
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder=""
@@ -97,7 +98,6 @@ const ContactSplitPage = () => {
               /><label htmlFor="phone">Phone</label>
             </div>
             <div className="form-group">
-              
               <input
                 type="email"
                 id="email"
@@ -110,6 +110,7 @@ const ContactSplitPage = () => {
             </div>
             <div className="form-group">
               <label htmlFor="subject" className="hidden">Subject</label>
+
               <select
                 id="subject"
                 name="subject"
@@ -125,7 +126,6 @@ const ContactSplitPage = () => {
               </select>
             </div>
             <div className="form-group">
-              
               <textarea
                 id="message"
                 name="message"
@@ -134,6 +134,7 @@ const ContactSplitPage = () => {
                 onChange={handleChange}
                 required
               ></textarea><label htmlFor="message">Message</label>
+
             </div>
             <button type="submit" className="submit-btn">
               Send Message

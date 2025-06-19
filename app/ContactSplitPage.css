@@ -23,8 +23,6 @@
   flex-direction: column;
 }
 
-
-
 .content-section {
   margin-bottom: 3rem;
 }
@@ -41,6 +39,7 @@
   display: flex;
   gap: 1rem;
 }
+
 
 
 
@@ -104,10 +103,12 @@
   background-color: #0056b3;
 }
 
+
 .form-group input:focus-visible, .form-group textarea:focus-visible {
   border-color: black;
   outline: none;
 }
+
 
 
 /* Responsive adjustments */
@@ -120,6 +121,7 @@
   .fixed-form {
     width: 100%;
     height: auto;
+
     min-width: auto;
   }
   

@@ -422,6 +422,7 @@ body {
 .form-group:nth-child(4) { animation-delay: 0.13s; }  /* Message */
 .form-group:nth-child(5) { animation-delay: 0.15s; }  /* Submit button */
 
+
 @keyframes rollOut {
   0% {
     transform: scaleY(0);
@@ -449,3 +450,4 @@ body {
   align-items: center;
   
 }
+

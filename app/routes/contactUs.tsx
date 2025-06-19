@@ -12,6 +12,7 @@ import FAQscontact from "~/components/FAQs-contact";
 import WhyUscontact from "~/components/whyUs-contact";
 import { MapPinnedIcon } from "lucide-react";
 import Navbar from "~/components/navbar";
+
 import { useEffect, useState } from "react";
 import AnimatedForm from "~/components/contact-us/hero/AnimatedForm";
 
@@ -37,8 +38,6 @@ export default function ContactUs() {
       e.preventDefault();
       // Handle form submission
       console.log("Form submitted:", formData);
-
-
     };
   
     useEffect(()=> {
@@ -93,8 +92,6 @@ export default function ContactUs() {
           
         </section>
       </div>
-
-  
     </div>
           
     
