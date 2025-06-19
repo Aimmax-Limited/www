@@ -10,20 +10,15 @@ import { Button } from "./ui/button";
 export default function Testimonials() {
   return (
     <div className="pb-24 bg-slate-900">
-      <div className="max-w-screen-xl mx-auto">
-        <AnimateVertical className="w-full flex flex-col items-center">
-          <h2 className="text-gray-400 font-fredoka text-xl md:text-3xl mb-3 md:mb-3 lg:mb-5">
-            Our clients share their experiences working with us
-          </h2>
+      <AnimateVertical className="max-w-screen-xl mx-auto px-5 flex flex-col items-center">
+        <h2 className="text-gray-400 font-fredoka text-center text-xl md:text-3xl mb-3 md:mb-3 lg:mb-5">
+          Our clients share their experiences working with us
+        </h2>
 
-          <Quote size="40pt" className="fill-slate-500 mb-5" />
+        <Quote size="40pt" className="fill-slate-500 mb-5" />
 
-          <EmblaCarouselAutoPlay
-            slides={testimonials}
-            options={{ loop: true }}
-          />
-        </AnimateVertical>
-      </div>
+        <EmblaCarouselAutoPlay slides={testimonials} options={{ loop: true }} />
+      </AnimateVertical>
     </div>
   );
 }
