@@ -9,7 +9,7 @@ export default function Services() {
     <>
       <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10 bg-white">
         <div className="max-w-screen-xl mx-auto">
-          <AnimateVertical>
+          <AnimateVertical threshold={0.01}>
             <h2 className="font-fredoka font-normal text-center text-xl md:text-3xl lg:text-[40px] max-w-2xl mx-auto">
               Comprehensive Asset Management Solutions Tailored to Your Needs
             </h2>
@@ -57,13 +57,15 @@ export default function Services() {
 
 function AnimateVertical({
   delay = 0,
+  threshold = 0.1,
   children,
 }: {
   delay?: number;
+  threshold?: number;
   children: ReactNode;
 }) {
   return (
-    <AnimatedContent distance={80} delay={delay}>
+    <AnimatedContent distance={80} delay={delay} threshold={threshold}>
       {children}
     </AnimatedContent>
   );
