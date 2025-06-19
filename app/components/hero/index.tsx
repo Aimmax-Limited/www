@@ -23,7 +23,7 @@ export default function Hero({
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
 
-        <Navbar className="relative z-50" />
+        <Navbar className="relative z-50" home />
 
         <div className="relative h-[475px] hero__text-height max-w-[1400px] w-full mx-auto">
           <Text className="" />
