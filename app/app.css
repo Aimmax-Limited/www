@@ -377,8 +377,10 @@ body {
 .embla__dots {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: flex-end; */
+  justify-content: center;
   align-items: center;
+
+  @apply w-full lg:max-w-fit;
 }
 
 .embla__dot {
@@ -390,7 +392,7 @@ body {
 }
 
 .embla__button {
-  @apply rounded-full h-10 w-10 md:h-12 md:w-12 border-0 backdrop-blur-2xl bg-slate-300/10 hover:bg-slate-500 transition-all duration-500;
+  @apply hidden lg:block rounded-full h-10 w-10 md:h-12 md:w-12 border-0 backdrop-blur-2xl bg-slate-300/10 hover:bg-slate-500 transition-all duration-500;
 }
 
 /****** End Embla Carousel ******/
