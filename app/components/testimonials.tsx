@@ -1,22 +1,28 @@
 import type { EmblaCarouselType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { cn } from "~/lib/utils";
 import { ChevronCircleLeft, ChevronCircleRight, Quote } from "./icons";
+import AnimatedContent from "./reactbits/animated-content";
 import { Button } from "./ui/button";
 
 export default function Testimonials() {
   return (
-    <div className="p-5 md:py-24 bg-slate-300">
-      <div className="max-w-screen-xl mx-auto flex flex-col items-center">
-        <h2 className="text-slate-500 font-clashdisplay font-medium text-xl md:text-2xl mb-3 md:mb-3 lg:mb-5">
-          Our clients share their experiences working with us
-        </h2>
+    <div className="pb-24 bg-slate-900">
+      <div className="max-w-screen-xl mx-auto">
+        <AnimateVertical className="w-full flex flex-col items-center">
+          <h2 className="text-gray-400 font-fredoka text-xl md:text-3xl mb-3 md:mb-3 lg:mb-5">
+            Our clients share their experiences working with us
+          </h2>
 
-        <Quote size="40pt" className="fill-slate-500 mb-5" />
+          <Quote size="40pt" className="fill-slate-500 mb-5" />
 
-        <EmblaCarouselAutoPlay slides={testimonials} options={{ loop: true }} />
+          <EmblaCarouselAutoPlay
+            slides={testimonials}
+            options={{ loop: true }}
+          />
+        </AnimateVertical>
       </div>
     </div>
   );
@@ -94,18 +100,18 @@ const EmblaCarouselAutoPlay = ({
           {slides.map((slide, index) => (
             <div className="embla__slide " key={index}>
               <div className="flex justify-center">
-                <p className="max-w-screen-lg pointer-events-none text-slate-800 text-center font-clashdisplay font-medium tracking-wide leading-relaxed lg:text-xl my-4">
+                <p className="max-w-screen-lg pointer-events-none text-slate-100 text-center font-fredoka tracking-wide leading-relaxed lg:text-xl my-4">
                   "{slide.text}"
                 </p>
               </div>
 
-              <div className="flex flex-col items-center mt-4">
+              <div className="flex flex-col items-center mt-5">
                 <img
                   src={slide.clientLogo}
                   alt={`${slide.clientName} Logo`}
                   className="h-16"
                 />
-                <p className="font-clashdisplay font-medium mt-3">
+                <p className="text-slate-300 text-lg font-fredoka mt-3">
                   {slide.clientName}
                 </p>
               </div>
@@ -116,7 +122,7 @@ const EmblaCarouselAutoPlay = ({
       <div className="flex justify-between mt-5 md:mt-10">
         <Button
           variant={"outline"}
-          className="embla__button hover:-translate-x-0.5 bg-slate-300/10 backdrop-blur-2xl"
+          className="embla__button hover:-translate-x-0.5"
           onClick={scrollPrev}
         >
           <ChevronCircleLeft className="fill-gray-500 -translate-x-[1px]" />
@@ -134,7 +140,7 @@ const EmblaCarouselAutoPlay = ({
         </div>
         <Button
           variant={"outline"}
-          className="embla__button hover:translate-x-0.5 bg-slate-300/10 backdrop-blur-2xl"
+          className="embla__button hover:translate-x-0.5"
           onClick={scrollNext}
         >
           <ChevronCircleRight className="fill-slate-500 translate-x-[1px]" />
@@ -194,9 +200,28 @@ type PropType = React.ComponentPropsWithRef<"button">;
 export const DotButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
-  return (
-    <Button variant={"outline"} {...restProps}>
-      {children}
-    </Button>
-  );
+  return <Button {...restProps}>{children}</Button>;
 };
+
+function AnimateVertical({
+  delay = 0,
+  threshold = 0.1,
+  className = "",
+  children,
+}: {
+  delay?: number;
+  threshold?: number;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <AnimatedContent
+      distance={80}
+      delay={delay}
+      threshold={threshold}
+      className={className}
+    >
+      {children}
+    </AnimatedContent>
+  );
+}
