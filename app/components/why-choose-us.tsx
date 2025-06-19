@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
               >
                 <p className="font-fredoka text-slate-100 text-md lg:text-2xl my-4">
                   Explore our{" "}
-                  <span className="text-blue-400">
+                  <span className="text-[#b4fe00]">
                     asset reporting guidelines
                   </span>{" "}
                   in detail.
