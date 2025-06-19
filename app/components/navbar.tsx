@@ -104,7 +104,7 @@ function NAvLink({
             ? "text-cyan-500"
             : isPending
             ? "text-green-400"
-            : "text-white"
+            : "text-black"
         }
         preventScrollReset
       >

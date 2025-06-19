@@ -1,50 +1,39 @@
-import ContactUsForm from "~/components/ContactForm";
-import Details from "~/components/Details";
-import Footer from "~/components/footer";
-import ContactUsHero from "~/components/Contact-us-hero";
+import React, { useState } from "react";
+import "../ContactSplitPage.css";
 import { SocialMediaBar } from "~/components/socialMediaBar";
-import SpotlightCard from "~/components/reactbits/spotlight-card";
-import { Input } from "~/components/ui/input";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent } from "~/components/ui/card";
-import { motion } from "framer-motion";
+import ContactHero from "~/components/Contact-us-hero";
+import { MapPinnedIcon } from "lucide-react";
 import FAQscontact from "~/components/FAQs-contact";
 import WhyUscontact from "~/components/whyUs-contact";
-import { MapPinnedIcon } from "lucide-react";
 import Navbar from "~/components/navbar";
-import { useState } from "react";
 
-export default function ContactUs() {
-
+const ContactSplitPage = () => {
   const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  
-    const handleChange = (e: { target: { name: any; value: any } }) => {
-      const { name, value } = e.target;
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    };
-  
-    const handleSubmit = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-      // Handle form submission
-      console.log("Form submitted:", formData);
-    };
-  
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: { target: { name: any; value: any } }) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log("Form submitted:", formData);
+  };
+
   return (
-    <>
-      <main className="flex flex-col bg-[#B0C4DE]">
-        <ContactUsHero />
-        <div className="contact-split-container">
+    <div className="contact-split-container">
       {/* Left side - Scrollable content */}
       <div className="scrollable-content bg-slate-800">
-      
+        <ContactHero />
         <section className="mb-12">
           <div className="p-4 flex flex-col justify-center">
             <div className="my-8 flex flex-col items-center">
@@ -66,19 +55,6 @@ export default function ContactUs() {
               <FAQscontact />
             </div>
           </div>
-        </section>
-        <section>
-          <div className="w-full p-4 flex justify-center">
-          <SpotlightCard className="flex items-center justify-center flex-col w-[90%] max-w-lg p-4 bg-neutral-100/25 border-0 backdrop-blur-lg text-black">
-            <p className="text-2xl py-5 text-center">
-              Want to get regular updates about our services and promotions?
-            </p>
-            <div className="flex w-full max-w-sm items-center gap-1">
-              <Input type="email" placeholder="Email" className="border-black" />
-              <Button variant="default">Subscribe</Button>
-            </div>
-          </SpotlightCard>
-        </div>
         </section>
 
         <section className="mb-12">
@@ -163,12 +139,7 @@ export default function ContactUs() {
         </div>
       </div>
     </div>
-          
-    
-        
-        
-      </main>
-      <Footer />
-    </>
   );
-}
+};
+
+export default ContactSplitPage;
