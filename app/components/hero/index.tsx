@@ -14,9 +14,9 @@ export default function Hero({
 }: React.ComponentProps<"div">) {
   return (
     <>
-      <main
+      <div
         className={cn(
-          "h-[700px] max-h-dvh md:h-dvh md:max-h-[850px] xl:max-h-[1080px] px-1 lg:px-10 bg-[url('/backgrounds/blue-sky.jpg')] bg-cover z-10 relative",
+          "h-[700px] max-h-svh md:h-svh md:max-h-[850px] xl:max-h-[1080px] px-1 lg:px-10 bg-[url('/backgrounds/blue-sky.jpg')] bg-cover z-10 relative",
           className
         )}
         {...props}
@@ -84,7 +84,7 @@ export default function Hero({
             ))}
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }
