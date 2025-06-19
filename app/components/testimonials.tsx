@@ -15,7 +15,7 @@ export default function Testimonials() {
           Our clients share their experiences working with us
         </h2>
 
-        <Quote size="40pt" className="fill-slate-500 mb-5" />
+        <Quote size="40pt" className="fill-[#b4fe00]/90 mb-5" />
 
         <EmblaCarouselAutoPlay slides={testimonials} options={{ loop: true }} />
       </AnimateVertical>

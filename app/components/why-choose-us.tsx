@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
               >
                 <AnimateVertical>
                   <div className="">
-                    <item.icon className="fill-white" />
+                    <item.icon className="fill-[#b4fe00]" />
                   </div>
                   <p className="text-white font-fredoka text-md lg:text-xl my-4">
                     {item.name}

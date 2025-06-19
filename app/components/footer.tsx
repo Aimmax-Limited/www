@@ -26,7 +26,7 @@ export default function Footer() {
             <Button
               size={"lg"}
               variant={"outline"}
-              className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-gray-50 rounded-xl backdrop-blur-xl bg-slate-900 hover:bg-[#64FFDA] border-0 transition-all duration-500"
+              className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-black rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-[#b4fe00] hover:bg-[#64FFDA] border-0 transition-all duration-500"
               asChild
             >
               <Link to="/">Get in touch with us</Link>
