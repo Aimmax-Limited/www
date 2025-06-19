@@ -13,6 +13,7 @@ import WhyUscontact from "~/components/whyUs-contact";
 import { MapPinnedIcon } from "lucide-react";
 import Navbar from "~/components/navbar";
 import { useEffect, useState } from "react";
+import AnimatedForm from "~/components/contact-us/hero/AnimatedForm";
 
 export default function ContactUs() {
 
@@ -47,9 +48,9 @@ export default function ContactUs() {
     <>
       <main className="flex flex-col bg-[#B0C4DE]">
         <ContactUsHero />
-        <div className="contact-split-container">
+        <div >
       {/* Left side - Scrollable content */}
-      <div className="scrollable-content bg-slate-800">
+      <div className="scrollable-content bg-slate-900">
       
         <section className="mb-12">
           <div className="p-4 flex flex-col justify-center">
@@ -89,85 +90,11 @@ export default function ContactUs() {
 
         <section className="mb-12">
           <SocialMediaBar />
+          
         </section>
       </div>
 
-      {/* Right side - Fixed contact form */}
-      <div className="fixed-form bg-[#B0C4DE]/20">
-        <div className="max-w-full">
-          <h2 className="text-3xl pb-2">Leave Us a message!</h2>
-          <p>
-            Do you have any questions or require more information? Our team of
-            experts are happy to assist you. We look forward to your inquiry and
-            to working together to find the best solutions for your challenges
-          </p>
-          <form onSubmit={handleSubmit} className="mt-6">
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="subject" className="">Subject</label>
-              <select
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full pl-[15px] p-3"
-              >
-                
-                <option value="Support">Support</option>
-                <option value="Technical">Technical</option>
-                <option value="Sale">Sale</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="submit-btn">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
+  
     </div>
           
     

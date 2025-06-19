@@ -64,7 +64,7 @@ const ContactSplitPage = () => {
       </div>
 
       {/* Right side - Fixed contact form */}
-      <div className="fixed-form bg-[#B0C4DE]">
+      <div className="fixed-form w-3/10 bg-[#B0C4DE]">
         <div className="max-w-full">
           <h2 className="text-3xl pb-2">Leave Us a message!</h2>
           <p>

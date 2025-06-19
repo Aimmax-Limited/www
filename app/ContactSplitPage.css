@@ -12,10 +12,10 @@
 }
 
 .fixed-form {
-  width: 30%;
-  min-width: 400px;
-  height: 100vh;
-  position: sticky;
+  min-width: 350px;
+ 
+  width: 100%;
+  height: fit-content;
   top: 0;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -23,9 +23,7 @@
   flex-direction: column;
 }
 
-.form-container {
-  max-width: 100%;
-}
+
 
 .content-section {
   margin-bottom: 3rem;
@@ -44,12 +42,7 @@
   gap: 1rem;
 }
 
-.social-icon {
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #ffff;
-}
+
 
 .form-group {
   position: relative;
@@ -80,12 +73,14 @@
 .form-group input:focus-visible ~ label, .form-group textarea:focus-visible ~ label {
   top: calc(var(--y) * -1.4);
   z-index: 1100;
-  background-color: rgba(176, 196, 222);
+  background-color: rgba(176, 196, 222, 0.0);
+  backdrop-filter: blur(70px);
   padding: 3px;
   transition: all 0.2s ease;
-  pointer-events: none
+  pointer-events: none;
+  outline: none;
 }
-
+/*rgb(37, 150, 190)*/
 .form-group select {
   border: 1px solid black;
   width: 100%;
@@ -109,6 +104,12 @@
   background-color: #0056b3;
 }
 
+.form-group input:focus-visible, .form-group textarea:focus-visible {
+  border-color: black;
+  outline: none;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-split-container {
@@ -119,7 +120,6 @@
   .fixed-form {
     width: 100%;
     height: auto;
-    position: relative;
     min-width: auto;
   }
   
