@@ -37,7 +37,7 @@ const ContactHero = () => {
     <div className="relative contact-hero flex bg-[url('/blue.jpeg')] bg-cover  min-h-dvh items-center">
       <div className="absolute inset-0 bg-gradient-to-t from-black/0 to-black/20"></div>
       <Navbar />
-      <div className="flex md:flex-col lg:flex-row">
+      <div className="flex flex-col md:flex-col lg:flex-row">
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col hero-text gap-15 text-center items-center">
             <div>

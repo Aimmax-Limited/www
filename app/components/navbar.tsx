@@ -50,11 +50,11 @@ export default function Navbar({
 const links = [
   {
     name: "Our Services",
-    path: "/",
+    path: "/dev-services",
   },
   {
     name: "About Us",
-    path: "/",
+    path: "/dev-about",
   },
 ];
 
@@ -104,7 +104,7 @@ function NAvLink({
             ? "text-cyan-500"
             : isPending
             ? "text-green-400"
-            : "text-black"
+            : "text-white"
         }
         preventScrollReset
       >
