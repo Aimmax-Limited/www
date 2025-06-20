@@ -3,7 +3,7 @@ import Navbar from "~/components/navbar";
 
 export default function About() {
   return (
-    <div className="bg-white">
+    <div className="bg-white" id="top">
       <Navbar
         className={`fixed top-0 left-0 z-50 bg-[#0A192F]/95 backdrop-blur-sm h-16 shadow-[0_4px_14px_rgba(0,0,0,0.4)]`}
       />

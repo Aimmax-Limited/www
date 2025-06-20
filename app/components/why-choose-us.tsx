@@ -50,9 +50,9 @@ export default function WhyChooseUs() {
                 spotlightColor="rgba(0, 128, 128, .0)"
               >
                 <p className="font-fredoka text-slate-100 text-md lg:text-2xl my-4">
-                  Explore our{" "}
+                  Explore the{" "}
                   <span className="text-[#b4fe00]">
-                    asset reporting guidelines
+                    key benefits of comprehensive asset register
                   </span>{" "}
                   in detail.
                 </p>
@@ -62,8 +62,8 @@ export default function WhyChooseUs() {
                   className="mt-12 text-white hover:text-green-500 group"
                   asChild
                 >
-                  <Link to="/">
-                    Asset Reporting Guidlines{" "}
+                  <Link to="/dev-services#asset-register-benefits">
+                    Key Benefits of A Comprehensive Asset Register{" "}
                     <ChevronRight className="group-hover:-translate-x-1 transition-all duration-500" />
                   </Link>
                 </Button>

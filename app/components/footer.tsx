@@ -5,9 +5,15 @@ import { Facebook, LinkedIn, Twitter } from "./icons";
 import AnimatedContent from "./reactbits/animated-content";
 import { Button } from "./ui/button";
 
-export default function Footer() {
+export default function Footer({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
-    <div className="max-w-screen-xl mx-auto bg-white px-5">
+    <div
+      className={cn("max-w-screen-xl mx-auto bg-white px-5", className)}
+      {...props}
+    >
       <div className="h-[300px] md:h-[350px] grid md:grid-cols-2">
         <div className="flex justify-start items-center">
           <AnimateVertical threshold={0.01}>
@@ -29,13 +35,13 @@ export default function Footer() {
               className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-black rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-[#b4fe00] hover:bg-[#64FFDA] border-0 transition-all duration-500"
               asChild
             >
-              <Link to="/">Get in touch with us</Link>
+              <Link to="/dev-contactUs#top">Get in touch with us</Link>
             </Button>
           </AnimateVertical>
         </div>
       </div>
 
-      <div className="pt-0 md:pt-10 pb-10 md:pb-20 text-center">
+      <div className="pt-0 md:pt-10 pb-10 md:pb-12 lg:pb-16 xl:pb-20 text-center">
         <AnimateVertical>
           <div className="md:flex justify-between items-center grid xl:grid grid-cols-1 xl:grid-cols-3 py-5">
             <Logo className="max-w-[100px]" />
@@ -105,19 +111,19 @@ function NAvLink({
 const links = [
   {
     name: "Home",
-    path: "/",
+    path: "/#top",
   },
   {
     name: "Our Services",
-    path: "/",
+    path: "/dev-services#top",
   },
   {
     name: "About Us",
-    path: "/dev-about",
+    path: "/dev-about#top",
   },
   {
     name: "Contact Us",
-    path: "/",
+    path: "/dev-contactUs#top",
   },
 ];
 
