@@ -125,6 +125,7 @@ const ContactHero = () => {
                     <textarea
                       id="message"
                       name="message"
+                      placeholder=""
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}

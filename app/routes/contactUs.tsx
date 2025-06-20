@@ -58,7 +58,7 @@ export default function ContactUs() {
                 allowFullScreen
                 loading="lazy"
                 title="map"
-                className="max-w-screen-xl"
+                className="w-screen-xl"
               ></iframe>
             </div>
             <div className="flex flex-col md:flex-row justify-center gap-7 items-start">
@@ -69,7 +69,7 @@ export default function ContactUs() {
         <section>
 
           <div className="w-full p-4 flex justify-center pb-10">
-          <SpotlightCard className="flex items-center justify-center flex-col w-[90%] max-w-lg pt-4 pb-8 bg-white border-0 backdrop-blur-lg text-black">
+          <SpotlightCard className="flex items-center justify-center flex-col w-[90%] max-w-lg pt-4 pb-8 bg-white border-0 backdrop-blur-lg text-black px-3">
             <p className="text-2xl py-5 text-center ">
               Want to get regular updates about our <span className="text-cyan-500">services and promotions</span>?
 
