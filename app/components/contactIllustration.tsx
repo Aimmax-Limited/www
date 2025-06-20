@@ -6,22 +6,6 @@ export default function ContactIllustration() {
   const [isVisible, setIsVisible] = useState(false);
   const canvasRef = useRef(null);
 
-  useEffect(() => {
-    const observe = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), 800);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (canvasRef.current) {
-      observe.observe(canvasRef.current);
-    }
-
-    return () => observe.disconnect();
-  }, []);
 
   useEffect(() => {
     const timer  = setTimeout(() => setIsVisible(true), 800);

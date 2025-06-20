@@ -310,8 +310,8 @@ body {
 }
 
 .hero-illustrations {
-  flex: 1;
-  max-width: 35%;
+
+  width: 30%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -375,7 +375,7 @@ body {
   }
   
   .hero-illustrations {
-    grid-template-columns: repeat(2, 1fr);
+    
     width: 100%;
     padding: 1rem 0;
   }
@@ -386,7 +386,7 @@ body {
 
 @media (max-width: 480px) {
   .hero-illustrations {
-    display: none;
+    width: 100%;
   }
 
   ::-webkit-scrollbar {
