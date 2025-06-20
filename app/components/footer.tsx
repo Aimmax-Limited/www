@@ -35,7 +35,7 @@ export default function Footer({
               className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-black rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-[#b4fe00] hover:bg-[#64FFDA] border-0 transition-all duration-500"
               asChild
             >
-              <Link to="/dev-contactUs#">Get in touch with us</Link>
+              <Link to="/dev-contactUs#top">Get in touch with us</Link>
             </Button>
           </AnimateVertical>
         </div>
@@ -111,19 +111,19 @@ function NAvLink({
 const links = [
   {
     name: "Home",
-    path: "/",
+    path: "/#top",
   },
   {
     name: "Our Services",
-    path: "/dev-services",
+    path: "/dev-services#top",
   },
   {
     name: "About Us",
-    path: "/dev-about",
+    path: "/dev-about#top",
   },
   {
     name: "Contact Us",
-    path: "/dev-contactUs#",
+    path: "/dev-contactUs#top",
   },
 ];
 

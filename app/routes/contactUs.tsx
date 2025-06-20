@@ -35,7 +35,7 @@ export default function ContactUs() {
   }, [formData]);
   return (
     <>
-      <main className="flex flex-col bg-[#B0C4DE]">
+      <main className="flex flex-col bg-[#B0C4DE]" id="top">
         <ContactUsHero />
         <div>
           {/* Left side - Scrollable content */}
