@@ -40,7 +40,7 @@ export default function Services() {
                     className="mt-8 hover:text-green-500 group"
                     asChild
                   >
-                    <Link to="/">
+                    <Link to={service.link}>
                       Learn More{" "}
                       <ChevronRight className="group-hover:-translate-x-1 transition-all duration-500" />
                     </Link>
@@ -78,6 +78,7 @@ const services = [
       "Ensures compliance to policies and guides asset and liability reporting templates according to Treasury policy guidelines.",
     src: "/services/register-preparation.jpg",
     alt: "register",
+    link: "/dev-services#asset-register-preparation",
   },
   {
     name: "Physical Asset Tagging and Barcoding",
@@ -85,6 +86,7 @@ const services = [
       "State-of-the-art bar coding using serialized aluminum tags and full-color logos that ensure your assets are easily identifiable and trackable.",
     src: "/services/barcode.jpg",
     alt: "barcode",
+    link: "/dev-services#barcode-tagging",
   },
   {
     name: "Expert Accrual-Based Accounting Support",
@@ -92,5 +94,6 @@ const services = [
       "Expert support that ensures accurate recognition of assets, liabilities and expenses in line with IPSAS and Treasury guidelines.",
     src: "/services/accounting.jpeg",
     alt: "accounting",
+    link: "/dev-services#accrual-accounting",
   },
 ];

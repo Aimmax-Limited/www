@@ -6,7 +6,10 @@ import AnimatedContent from "./reactbits/animated-content";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
-export default function Footer() {
+export default function Footer({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div className="max-w-screen-xl mx-auto bg-white px-5 ">
       <div className="flex ">
@@ -50,7 +53,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="pt-0 md:pt-10 pb-10 md:pb-20 text-center">
+      <div className="pt-0 md:pt-10 pb-10 md:pb-12 lg:pb-16 xl:pb-20 text-center">
         <AnimateVertical>
           <div className="md:flex justify-between items-center grid xl:grid grid-cols-1 xl:grid-cols-3 py-5">
             <Logo className="max-w-[100px]" />
@@ -124,11 +127,11 @@ const links = [
   },
   {
     name: "Our Services",
-    path: "/",
+    path: "/dev-services",
   },
   {
     name: "About Us",
-    path: "/",
+    path: "/dev-about",
   },
   {
     name: "Contact Us",
