@@ -119,7 +119,7 @@ const links = [
   },
   {
     name: "About Us",
-    path: "/",
+    path: "/dev-about",
   },
   {
     name: "Contact Us",
