@@ -167,7 +167,10 @@ export default function Services() {
 
             <div>
               <AnimateVertical>
-                <h3 className="font-fredoka text-start text-xl md:text-xl lg:text-[30px] mb-5">
+                <h3
+                  className="font-fredoka text-start text-xl md:text-xl lg:text-[30px] mb-5"
+                  id="asset-register-benefits"
+                >
                   Key Benefits of a Comprehensive Assets Register
                 </h3>
               </AnimateVertical>
