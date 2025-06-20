@@ -82,7 +82,7 @@ function Logo2() {
       <div className="max-w-[80px]">
         <img src="/logo-dark.svg" alt="Aimmax Logo" className="logo" />
       </div>
-      <div className="text-center font-mono">
+      <div className="text-center font-mono hidden md:block">
         <p className="font-normal text-lg md:text-xl ">AIMMAX LIMITED</p>
         <p className="text-xs sm:text-sm">Assets Management</p>
       </div>
