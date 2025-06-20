@@ -54,7 +54,7 @@ const links = [
   },
   {
     name: "About Us",
-    path: "/",
+    path: "/dev-about",
   },
 ];
 
