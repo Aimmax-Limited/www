@@ -14,21 +14,21 @@ export default function Hero({
 }: React.ComponentProps<"div">) {
   return (
     <>
-      <main
+      <div
         className={cn(
-          "h-[700px] max-h-dvh md:h-dvh md:max-h-[850px] xl:max-h-[1080px] px-1 lg:px-10 bg-[url('/backgrounds/blue-sky.jpg')] bg-cover z-10 relative",
+          "h-[700px] max-h-svh md:h-svh md:max-h-[850px] xl:max-h-[1080px] px-1 lg:px-10 bg-[url('/backgrounds/blue-sky.jpg')] bg-cover z-10 relative",
           className
         )}
         {...props}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
 
-        <Navbar className="relative z-50" />
+        <Navbar className="relative z-50" home />
 
-        <div className="relative h-[475px] md:h-[550px] lg:h-[450px] xl:h-[500px] max-w-[1400px] w-full mx-auto">
+        <div className="relative h-[475px] hero__text-height max-w-[1400px] w-full mx-auto">
           <Text className="" />
 
-          <div className="hidden xl:block">
+          <div className="hidden hero__animations">
             <div className="absolute right-0 top-0 z-10">
               <BarcodeAnimation />
             </div>
@@ -42,23 +42,23 @@ export default function Hero({
             </div>
           </div>
 
-          <div className="xl:hidden absolute right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 top-36 md:top-44 lg:top-72">
+          <div className="absolute right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 top-36 md:top-44 hero__sm-animation">
             <AccountingSummation />
           </div>
         </div>
 
-        <div className="flex justify-center lg:justify-start max-w-[1400px] w-full mx-auto mt-5 font-clashdisplay tracking-wider group">
+        <div className="hero__button flex justify-center lg:justify-start max-w-[1400px] w-full mx-auto mt-5 font-clashdisplay tracking-wider group">
           <Button
             size={"lg"}
             variant={"outline"}
-            className="group h-12 max-w-3xs flex items-center text-lg text-gray-50 bg-white/5 hover:bg-[#64FFDA] backdrop-blur-xl rounded-xl border border-white/30 shadow-[inset_0_1px_2px_rgba(255,255,255,1)] md:animate-bounce hover:animate-none"
+            className="group h-12 max-w-3xs flex items-center text-lg text-slate-900 bg-[#b4fe00] hover:bg-[#64FFDA] backdrop-blur-xl rounded-xl border border-white/30 shadow-[0_6px_15px_rgba(255,255,255,0.4)] hover:shadow-none"
             asChild
           >
             <Link to="/">Get in touch with us</Link>
           </Button>
         </div>
 
-        <div className="hidden absolute md:bottom-10 end-1/2 translate-x-[50%] md:flex items-center justify-center w-full max-w-[1024px] mx-auto">
+        <div className="hidden absolute md:bottom-10 end-1/2 translate-x-[50%] hero__metrics items-center justify-center w-full max-w-[1024px] mx-auto">
           <div className="text-slate-300 flex flex-row justify-center md:justify-around w-full font-satoshi font-bold">
             {metrics.map((metric, index) => (
               <div
@@ -84,7 +84,7 @@ export default function Hero({
             ))}
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }
@@ -127,7 +127,7 @@ function Text({ className, ...props }: React.ComponentProps<"div">) {
     <>
       <div
         className={cn(
-          "h-full w-full flex justify-start items-start pt-7 md:pt-5 lg:pt-24 xl:pt-0 xl:items-center",
+          "h-full w-full flex justify-start items-start xl:items-center p-7 hero__text-padding",
           className
         )}
         {...props}
@@ -153,7 +153,7 @@ function Text({ className, ...props }: React.ComponentProps<"div">) {
                 <p className="text-[#F5F7FA] font-semibold mb-3 md:mb-0 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
                   {slide.title[0]}
                 </p>
-                <p className="hero-text-2 sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
+                <p className="hero__title-2 sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
                   {slide.title[1]}
                 </p>
               </div>

@@ -10,6 +10,7 @@ import Navbar from "~/components/navbar";
 const ContactSplitPage = () => {
   const [formData, setFormData] = useState({
     name: "",
+    phone: '',
     email: "",
     subject: "",
     message: "",
@@ -63,7 +64,7 @@ const ContactSplitPage = () => {
       </div>
 
       {/* Right side - Fixed contact form */}
-      <div className="fixed-form bg-[#B0C4DE]/20">
+      <div className="fixed-form w-3/10 bg-[#B0C4DE]">
         <div className="max-w-full">
           <h2 className="text-3xl pb-2">Leave Us a message!</h2>
           <p>
@@ -73,40 +74,43 @@ const ContactSplitPage = () => {
           </p>
           <form onSubmit={handleSubmit} className="mt-6">
             <div className="form-group">
-              <label htmlFor="name">Name</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+
+                placeholder=""
                 required
-              />
+              /><label htmlFor="name">Name</label>
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone</label>
               <input
                 type="phone"
                 id="phone"
                 name="phone"
-                value={formData.name}
+
+                value={formData.phone}
                 onChange={handleChange}
+                placeholder=""
                 required
-              />
+              /><label htmlFor="phone">Phone</label>
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                placeholder=""
                 required
-              />
+              /><label htmlFor="email">Email</label>
             </div>
             <div className="form-group">
-              <label htmlFor="subject">Subject</label>
+              <label htmlFor="subject" className="hidden">Subject</label>
+
               <select
                 id="subject"
                 name="subject"
@@ -122,7 +126,6 @@ const ContactSplitPage = () => {
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="message">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -130,7 +133,8 @@ const ContactSplitPage = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-              ></textarea>
+              ></textarea><label htmlFor="message">Message</label>
+
             </div>
             <button type="submit" className="submit-btn">
               Send Message
