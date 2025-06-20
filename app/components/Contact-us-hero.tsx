@@ -41,17 +41,17 @@ const ContactHero = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col hero-text gap-15 text-center items-center">
             <div>
-              <h1 className="text-white font-bold text-8xl">
+
+              <p className="text-white font-bold text-4xl lg:text-6xl">
                 at <span className="text-[#b4fe00]">AIMMAX LIMITED.</span> we
                 are all about solving asset related issues!
-              </h1>
+              </p>
               <p className="text-slate-100">
                 Do you have any questions or require more information? Our team
                 of experts are happy to assist you.{" "}
               </p>
             </div>
 
-            <div className=" w-full flex justify-center h-[60px]"></div>
             <ContactIllustration />
           </div>
           {/* Right side - Animated contact illustrations */}
@@ -125,6 +125,7 @@ const ContactHero = () => {
                     <textarea
                       id="message"
                       name="message"
+                      placeholder=""
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
@@ -149,3 +150,4 @@ const ContactHero = () => {
 };
 
 export default ContactHero;
+
