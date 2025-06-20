@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
 import Footer from "~/components/footer";
 import Navbar from "~/components/navbar";
+import AnimatedContent from "~/components/reactbits/animated-content";
 import SpotlightCard from "~/components/reactbits/spotlight-card";
 
 export default function About() {
@@ -34,49 +36,60 @@ export default function About() {
         </div>
 
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto border-t border-slate-300">
-          <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
-            Company Profile
-          </h2>
-          <p className="text-lg font-satoshi font-medium text-slate-800 text-justify">
-            Aimmax Company Ltd, a Kenyan firm, consists of experienced
-            professionals with diverse expertise. The company has evolved from a
-            sole proprietorship to a fully incorporated entity, specializing in
-            asset management services and ICT. Aimmax is a trusted service
-            provider for government ministries, corporations, and private
-            companies, offering comprehensive asset register preparation and
-            barcode tagging services.
-            <br />
-            <br />
-            Our solutions are fully aligned with the Treasury asset policy
-            management guidelines for the public sector’s 2022/2023 performance
-            contracting cycle, ensuring compliance and efficiency. With a proven
-            track record, Aimmax has successfully served key government
-            institutions, including the Ministry of Education, Ministry of
-            Foreign Affairs, and the University of Nairobi. Our dedication to
-            excellence has earned us trust, positive feedback, and long-term
-            partnerships in the industry.
-          </p>
+          <AnimateVertical>
+            <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
+              Company Profile
+            </h2>
+          </AnimateVertical>
+
+          <AnimateVertical>
+            <p className="text-lg font-satoshi font-medium text-slate-800 text-justify">
+              Aimmax Company Ltd, a Kenyan firm, consists of experienced
+              professionals with diverse expertise. The company has evolved from
+              a sole proprietorship to a fully incorporated entity, specializing
+              in asset management services and ICT. Aimmax is a trusted service
+              provider for government ministries, corporations, and private
+              companies, offering comprehensive asset register preparation and
+              barcode tagging services.
+              <br />
+              <br />
+              Our solutions are fully aligned with the Treasury asset policy
+              management guidelines for the public sector’s 2022/2023
+              performance contracting cycle, ensuring compliance and efficiency.
+              With a proven track record, Aimmax has successfully served key
+              government institutions, including the Ministry of Education,
+              Ministry of Foreign Affairs, and the University of Nairobi. Our
+              dedication to excellence has earned us trust, positive feedback,
+              and long-term partnerships in the industry.
+            </p>
+          </AnimateVertical>
         </div>
 
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto border-t border-slate-300">
-          <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
-            Our Strategy
-          </h2>
-          <p className="text-lg font-satoshi font-medium">
-            Our strategy is to build along-term Asset management solutions by
-            leveraging the strength of our management team and staff
-            capabilities. We will focus, drive and optimize our business to
-            embrace new technology to add value to our customers.
-            <br /> <br />
-            Our Strategic Priorities are:
-          </p>
-          <ul className="list-decimal ps-5 lg:ps-10 pt-3 font-satoshi font-medium">
-            {StrategicPriorities.map((priority, index) => (
-              <li className="my-3" key={index}>
-                {priority}
-              </li>
-            ))}
-          </ul>
+          <AnimateVertical>
+            <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
+              Our Strategy
+            </h2>
+          </AnimateVertical>
+
+          <AnimateVertical>
+            <p className="text-lg font-satoshi font-medium">
+              Our strategy is to build along-term Asset management solutions by
+              leveraging the strength of our management team and staff
+              capabilities. We will focus, drive and optimize our business to
+              embrace new technology to add value to our customers.
+              <br /> <br />
+              Our Strategic Priorities are:
+            </p>
+
+            <ul className="list-decimal ps-5 lg:ps-10 pt-3 font-satoshi font-medium">
+              {StrategicPriorities.map((priority, index) => (
+                <AnimateHorizontal key={index}>
+                  <li className="my-3">{priority}</li>
+                </AnimateHorizontal>
+              ))}
+            </ul>
+          </AnimateVertical>
         </div>
       </div>
 
@@ -84,6 +97,44 @@ export default function About() {
         <Footer className="mt-[100px] md:mt-[200px] lg:mt-[250px]" />
       </div>
     </div>
+  );
+}
+
+function AnimateVertical({
+  delay = 0,
+  threshold = 0.1,
+  children,
+}: {
+  delay?: number;
+  threshold?: number;
+  children: ReactNode;
+}) {
+  return (
+    <AnimatedContent distance={80} delay={delay} threshold={threshold}>
+      {children}
+    </AnimatedContent>
+  );
+}
+
+function AnimateHorizontal({
+  delay = 0,
+  threshold = 0.1,
+  children,
+}: {
+  delay?: number;
+  threshold?: number;
+  children: ReactNode;
+}) {
+  return (
+    <AnimatedContent
+      direction="horizontal"
+      distance={80}
+      delay={delay}
+      threshold={threshold}
+      reverse
+    >
+      {children}
+    </AnimatedContent>
   );
 }
 
