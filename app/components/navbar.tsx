@@ -37,7 +37,7 @@ export default function Navbar({
           variant={"outline"}
           className="group bg-[#b4fe00] border-0 ring-0 outline-0 text-center text-base"
         >
-          <Link to={"/"}>Contact Us</Link>
+          <Link to={"/dev-contactUs#"}>Contact Us</Link>
         </Button>
       </div>
       <div className="block md:hidden pe-4">

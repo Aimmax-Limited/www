@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { useState } from "react";
+import { animated, useSpring } from "react-spring";
+import "../ContactSplitPage.css";
 import ContactIllustration from "./contactIllustration";
 import Navbar from "./navbar";
-import "../ContactSplitPage.css";
 const ContactHero = () => {
   // Animation for the contact methods
   const contactAnimations = useSpring({
@@ -36,12 +36,13 @@ const ContactHero = () => {
   return (
     <div className="relative contact-hero flex bg-[url('/blue.jpeg')] bg-cover  min-h-dvh items-center">
       <div className="absolute inset-0 bg-gradient-to-t from-black/0 to-black/20"></div>
-      <Navbar />
-      <div className="flex flex-col lg:flex-row">
+      <Navbar
+        className={`fixed top-0 left-0 z-50 bg-[#0A192F]/95 backdrop-blur-sm h-16 shadow-[0_4px_14px_rgba(0,0,0,0.4)]`}
+      />
+      <div className="mt-10 md:mt-20 lg:mt-28 xl:mt-32 flex flex-col lg:flex-row">
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col hero-text gap-15 text-center items-center">
             <div>
-
               <p className="text-white font-bold text-4xl lg:text-6xl">
                 at <span className="text-[#b4fe00]">AIMMAX LIMITED.</span> we
                 are all about solving asset related issues!
@@ -150,4 +151,3 @@ const ContactHero = () => {
 };
 
 export default ContactHero;
-
