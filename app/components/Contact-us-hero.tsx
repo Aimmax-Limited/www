@@ -1,130 +1,149 @@
-import React, {useState} from 'react';
-import { useSpring, animated } from 'react-spring';
-import { Button } from './ui/button';
-import { Link } from 'react-router';
-import ContactIllustration from './contactIllustration';
-import Navbar from './navbar';
-import '../ContactSplitPage.css'
+import React, { useState } from "react";
+import { useSpring, animated } from "react-spring";
+import ContactIllustration from "./contactIllustration";
+import Navbar from "./navbar";
+import "../ContactSplitPage.css";
 const ContactHero = () => {
   // Animation for the contact methods
   const contactAnimations = useSpring({
-    from: { opacity: 0, transform: 'translateX(100px)' },
-    to: { opacity: 1, transform: 'translateX(0)' },
+    from: { opacity: 0, transform: "translateX(100px)" },
+    to: { opacity: 1, transform: "translateX(0)" },
     delay: 300,
   });
 
+  const handleChange = (e: { target: { name: any; value: any } }) => {
+    const { name, value } = e.target;
+    setFormData((prev: any) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  
-    const handleChange = (e: { target: { name: any; value: any } }) => {
-      const { name, value } = e.target;
-      setFormData((prev: any) => ({
-        ...prev,
-        [name]: value,
-      }));
-    };
-  
-    const handleSubmit = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-      // Handle form submission
-      console.log("Form submitted:", formData);
-    };
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log("Form submitted:", formData);
+  };
 
   return (
-    <div className="relative contact-hero flex bg-[url('/white.jpeg')] bg-cover  min-h-dvh items-center">
-      <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-black/20'></div>
-      <Navbar/>
-      <div className='flex w-6/7 lg:ml-35'><div className="flex flex-col hero-text gap-15 w-fit">
-        <div><h1 className='text-white font-bold text-8xl'>at <span className='text-[#b4fe00]'>AIMMAX COMPANY LTD.</span> we are all about solving asset related issues!</h1>
-        <p className='text-slate-100'>Want us to be part of the solution to your asset management challenges?</p>
-        </div>
-      
-        <div className="">
-          <Button size={"lg"}
-            variant={"outline"}
-            className="group h-12 max-w-3xs flex items-center text-lg text-gray-50 bg-white/5 hover:bg-[#64FFDA] backdrop-blur-xl rounded-xl border border-white/30 shadow-[inset_0_1px_2px_rgba(255,255,255,1)] animate-bounce hover:animate-none"
-            asChild>
-              <Link to={'/dev-contactUs'}>Reach out!</Link>
+    <div className="relative contact-hero flex bg-[url('/blue.jpeg')] bg-cover  min-h-dvh items-center">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/0 to-black/20"></div>
+      <Navbar />
+      <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col hero-text gap-15 text-center items-center">
+            <div>
+              <h1 className="text-white font-bold text-8xl">
+                at <span className="text-[#b4fe00]">AIMMAX LIMITED.</span> we
+                are all about solving asset related issues!
+              </h1>
+              <p className="text-slate-100">
+                Do you have any questions or require more information? Our team
+                of experts are happy to assist you.{" "}
+              </p>
+            </div>
 
-          </Button>
+            <div className=" w-full flex justify-center h-[60px]"></div>
+            <ContactIllustration />
+          </div>
+          {/* Right side - Animated contact illustrations */}
+          <animated.div
+            className="hero-illustrations justify-center"
+            style={contactAnimations}
+          >
+            {/*<AnimatedForm/>*/}
+            <div className="fixed-form bg-[#B0C4DE]/30">
+              <div className="max-w-full">
+                <h2 className="text-3xl pb-2">Leave Us a message!</h2>
+                <p>
+                  Want us to be part of the solution to your asset management
+                  challenges?
+                </p>
+                <form onSubmit={handleSubmit} className="mt-6">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder=""
+                      required
+                    />
+                    <label htmlFor="name">Name</label>
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="phone"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder=""
+                      required
+                    />
+                    <label htmlFor="phone">Phone</label>
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder=""
+                      required
+                    />
+                    <label htmlFor="email">Email</label>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="subject" className="hidden">
+                      Subject
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3"
+                    >
+                      <option value="Support">Support</option>
+                      <option value="Technical">Technical</option>
+                      <option value="Sale">Sale</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                    ></textarea>
+                    <label htmlFor="message">Message</label>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full text-white mt-4 hover:bg-[#b4fe00]/70 submit-btn  bg-[#b4fe00] px-4 py-2 rounded"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </animated.div>
         </div>
-        <ContactIllustration/>
       </div>
-
-      {/* Right side - Animated contact illustrations */}
-      <animated.div className="hero-illustrations justify-center hidden" style={contactAnimations}>
-        <form onSubmit={handleSubmit} className=" p-10 bg-white/3 backdrop-blur-sm w-full">
-            <div className="form-group animate-fade-in opacity-0 [animation-fill-mode:forwards] [animation-delay:100ms]" >
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone</label>
-              <input
-                type="phone"
-                id="phone"
-                name="phone"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <select
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full p-3"
-              >
-                
-                <option value="Support">Support</option>
-                <option value="Technical">Technical</option>
-                <option value="Sale">Sale</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-            <button type="submit" className="submit-btn animate-pulse hover:animate-none bg-blue-500 px-4 py-2 rounded">
-              Send Message
-            </button>
-          </form>
-      </animated.div>
-      </div>
-      
     </div>
   );
 };
