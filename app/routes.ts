@@ -5,5 +5,4 @@ export default [
   route("dev-home", "routes/home.tsx"),
   route("dev-about", "routes/about.tsx"),
   route("dev-contactUs", "routes/contactUs.tsx"),
-  route("dev-contactUs-two", "routes/contactUs-two.tsx")
 ] satisfies RouteConfig;
