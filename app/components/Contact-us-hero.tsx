@@ -37,7 +37,7 @@ const ContactHero = () => {
     <div className="relative contact-hero flex bg-[url('/blue.jpeg')] bg-cover  min-h-dvh items-center">
       <div className="absolute inset-0 bg-gradient-to-t from-black/0 to-black/20"></div>
       <Navbar />
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex md:flex-col lg:flex-row">
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col hero-text gap-15 text-center items-center">
             <div>
@@ -56,11 +56,11 @@ const ContactHero = () => {
           </div>
           {/* Right side - Animated contact illustrations */}
           <animated.div
-            className="hero-illustrations justify-center"
+            className="hero-illustrations w-fit justify-center items-center md:mt-12 lg:mt-0  md:w-full lg:max-w-fit"
             style={contactAnimations}
           >
             {/*<AnimatedForm/>*/}
-            <div className="fixed-form bg-[#B0C4DE]/30">
+            <div className="fixed-form bg-[#B0C4DE]/30 self-center">
               <div className="max-w-full">
                 <h2 className="text-3xl pb-2">Leave Us a message!</h2>
                 <p>

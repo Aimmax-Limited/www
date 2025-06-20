@@ -446,8 +446,6 @@ body {
 }
 
 .hero-illustrations {
-
-  width: 30%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -494,10 +492,7 @@ body {
   font-weight: 500;
   color: #2c3e50;
 }
-::-webkit-scrollbar {
-  width: 5px;
-  background: #b4fe00;
-}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-hero {

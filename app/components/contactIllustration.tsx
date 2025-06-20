@@ -10,10 +10,10 @@ export default function ContactIllustration() {
   useEffect(() => {
     const timer  = setTimeout(() => setIsVisible(true), 800);
     return (() => clearTimeout(timer));
-  })
+  }, [canvasRef.current])
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-15 w-fit">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-15 w-fit" ref={canvasRef}>
       <motion.div
         key={1}
         initial={{ opacity: 0 }}
