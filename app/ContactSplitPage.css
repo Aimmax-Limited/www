@@ -2,9 +2,7 @@
 
 
 .fixed-form {
-  min-width: 350px;
- 
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   top: 0;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);

@@ -98,16 +98,6 @@ body {
   background-position: 0%;
   scroll-padding-top: 68px;
 }
-
-/***** Scrollbar ****/
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #b4fe00;
-  border-radius: 6px;
-}
 /***** Scrollbar ****/
 
 @theme inline {
@@ -358,6 +348,7 @@ body {
   }
 }
 
+
 /****** Begin Embla Carousel ******/
 .embla {
   max-width: 100%;
@@ -454,7 +445,6 @@ body {
 }
 
 .hero-illustrations {
-  width: 30%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -516,12 +506,22 @@ body {
     width: 100%;
     padding: 1rem 0;
   }
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: #1e293b;
+  }
 
   @media (max-width: 480px) {
     .hero-illustrations {
       display: none;
     }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+      background: #1e293b;
+    }
   }
+
 }
 
 @keyframes fadeIn {
@@ -559,29 +559,3 @@ body {
   animation-delay: 0.15s;
 } /* Submit button */
 
-@keyframes rollOut {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    transform: scaleY(1);
-    transform-origin: top;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.rollout {
-  animation: rollOut 0.8s ease-in-out forwards;
-  margin-top: 10px;
-  visibility: hidden;
-  overflow: hidden;
-  height: 90%;
-  width: 100%;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-}

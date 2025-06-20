@@ -7,6 +7,7 @@ import SpotlightCard from "~/components/reactbits/spotlight-card";
 export default function About() {
   return (
     <div className="bg-white" id="top">
+
       <Navbar
         className={`fixed top-0 left-0 z-50 bg-[#0A192F]/95 backdrop-blur-sm h-16 shadow-[0_4px_14px_rgba(0,0,0,0.4)]`}
       />
@@ -18,6 +19,7 @@ export default function About() {
       </div>
 
       <div className="relative z-20 bg-white">
+
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
           {statements.map((stmt, index) => (
             <SpotlightCard
@@ -100,6 +102,7 @@ export default function About() {
   );
 }
 
+
 function AnimateVertical({
   delay = 0,
   threshold = 0.1,
@@ -159,3 +162,4 @@ const StrategicPriorities = [
   "Simplify our structure to unlock value",
   "Embrace new technology on Assets management and accounting standards",
 ];
+
