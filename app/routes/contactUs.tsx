@@ -1,20 +1,13 @@
-import ContactUsForm from "~/components/ContactForm";
-import Details from "~/components/Details";
+
 import Footer from "~/components/footer";
 import ContactUsHero from "~/components/Contact-us-hero";
-import { SocialMediaBar } from "~/components/socialMediaBar";
 import SpotlightCard from "~/components/reactbits/spotlight-card";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
-import { Card, CardContent } from "~/components/ui/card";
-import { motion } from "framer-motion";
 import FAQscontact from "~/components/FAQs-contact";
-import WhyUscontact from "~/components/whyUs-contact";
 import { MapPinnedIcon } from "lucide-react";
-import Navbar from "~/components/navbar";
-
 import { useEffect, useState } from "react";
-import AnimatedForm from "~/components/contact-us/hero/AnimatedForm";
+
 
 export default function ContactUs() {
 
@@ -74,10 +67,12 @@ export default function ContactUs() {
           </div>
         </section>
         <section>
+
           <div className="w-full p-4 flex justify-center pb-10">
           <SpotlightCard className="flex items-center justify-center flex-col w-[90%] max-w-lg pt-4 pb-8 bg-white border-0 backdrop-blur-lg text-black">
             <p className="text-2xl py-5 text-center ">
               Want to get regular updates about our <span className="text-cyan-500">services and promotions</span>?
+
             </p>
             <div className="flex w-full max-w-sm items-center gap-1">
               <Input type="email" placeholder="Email" className="border-black" />

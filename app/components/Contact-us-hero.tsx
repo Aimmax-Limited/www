@@ -41,6 +41,7 @@ const ContactHero = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col hero-text gap-15 text-center items-center">
             <div>
+
               <p className="text-white font-bold text-4xl lg:text-6xl">
                 at <span className="text-[#b4fe00]">AIMMAX LIMITED.</span> we
                 are all about solving asset related issues!
@@ -51,7 +52,6 @@ const ContactHero = () => {
               </p>
             </div>
 
-            
             <ContactIllustration />
           </div>
           {/* Right side - Animated contact illustrations */}
@@ -149,3 +149,4 @@ const ContactHero = () => {
 };
 
 export default ContactHero;
+

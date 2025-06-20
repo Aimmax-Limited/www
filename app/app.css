@@ -11,6 +11,7 @@
   --font-clashdisplay: "ClashDisplay-Variable", var(--font-sans);
   --font-satoshi: "Satoshi-Variable", ui-sans-serif, system-ui;
   --font-satoshi-italic: "Satoshi-VariableItalic", ui-sans-serif, system-ui;
+  --font-fredoka: "Fredoka", ui-sans-serif, system-ui;
 
   --animate-bar-grow: barGrow 0.6s forwards cubic-bezier(0.22, 0.61, 0.36, 1);
   @keyframes barGrow {
@@ -213,6 +214,139 @@ body {
   }
 }
 
+/******* Hero Begin *******/
+
+.hero__title-2 {
+  @media (max-width: 400px) {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+
+  @media (min-width: 400px) and (max-width: 640px) {
+    font-size: var(--text-3xl) /* 3rem = 48px */;
+    line-height: var(--tw-leading, var(--text-3xl--line-height) /* 1 */);
+  }
+}
+
+.hero__text-height {
+  @media (max-height: 700px) {
+    @apply sm:h-[380px] md:h-[380px];
+  }
+
+  @media (min-height: 700px) {
+    @apply md:h-[550px] lg:h-[450px] xl:h-[500px];
+  }
+}
+
+.hero__text-padding {
+  @media (max-height: 700px) {
+    @apply md:pt-3 lg:pt-10 xl:pt-0;
+  }
+
+  @media (min-height: 700px) and (max-height: 1080px) {
+    @apply md:pt-5 lg:pt-24 xl:pt-0;
+  }
+}
+
+.hero__metrics {
+  @media (min-height: 800px) {
+    @apply md:flex;
+  }
+}
+
+.hero__animations {
+  @media (min-height: 950px) and (min-width: 1450px) {
+    @apply xl:block;
+  }
+}
+
+.hero__sm-animation {
+  @media (max-height: 700px) {
+    @apply md:right-10 md:translate-x-0 lg:top-48;
+  }
+
+  @media (min-height: 700px) {
+    @apply lg:top-72;
+  }
+
+  @media (min-height: 950px) and (min-width: 1450px) {
+    @apply xl:hidden;
+  }
+}
+
+.hero__button {
+  @media (max-height: 700px) {
+    @apply sm:justify-start sm:ps-5;
+  }
+}
+
+/******* Hero End *********/
+
+.custom-border {
+  border-left: 2px solid white;
+  padding-left: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .custom-border {
+    border-left: none;
+    border-top: 2px solid white;
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+}
+
+/* Dot base style */
+.custom-border-dot {
+  position: absolute;
+  background-color: white;
+  border-radius: 9999px;
+  width: 10px;
+  height: 10px;
+}
+
+.custom-border-dot-3 {
+  bottom: 0;
+  left: -6px;
+}
+
+/* Default: vertical dots for small screens */
+.dot-1 {
+  top: 0;
+  left: -6px;
+}
+
+.dot-2 {
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+}
+
+.dot-3 {
+  bottom: 0;
+  left: -6px;
+}
+
+/* On large screens, change to top border dots */
+@media (min-width: 1024px) {
+  .dot-1 {
+    top: -6px;
+    left: 0%;
+  }
+
+  .dot-2 {
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dot-3 {
+    top: -6px;
+    right: 0%;
+  }
+}
+
+
 /****** Begin Embla Carousel ******/
 .embla {
   max-width: 100%;
@@ -244,20 +378,22 @@ body {
 .embla__dots {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+
+  @apply w-full lg:max-w-fit;
 }
 
 .embla__dot {
-  @apply rounded-full mx-2 border md:border-2 h-1 w-1 hover:bg-slate-200;
+  @apply rounded-full mx-2 border-0 h-1 hover:bg-slate-700;
 }
 
 .embla__dot--selected {
-  @apply bg-slate-400;
+  @apply bg-slate-500;
 }
 
 .embla__button {
-  @apply rounded-full h-10 w-10 md:h-12 md:w-12 shadow-inner shadow-slate-400 hover:shadow-sky-400 hover:shadow transition-all duration-500;
+  @apply hidden lg:block rounded-full h-10 w-10 md:h-12 md:w-12 border-0 backdrop-blur-2xl bg-slate-300/10 hover:bg-slate-500 transition-all duration-500;
 }
 
 /****** End Embla Carousel ******/

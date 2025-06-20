@@ -1,15 +1,94 @@
+import { ChevronRight } from "lucide-react";
+import type { ReactNode } from "react";
 import { Link } from "react-router";
-import {
-  ArrowSquareOut,
-  DesktopTower,
-  ListChecks,
-  SealCheck,
-  Target,
-  TrendUp,
-} from "./icons";
-import ShinyText from "./reactbits/shiny-text";
+import { cn } from "~/lib/utils";
+import { DesktopTower, ListChecks, SealCheck, Target, TrendUp } from "./icons";
+import AnimatedContent from "./reactbits/animated-content";
 import SpotlightCard from "./reactbits/spotlight-card";
 import { Button } from "./ui/button";
+
+export default function WhyChooseUs() {
+  return (
+    <>
+      <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10 bg-slate-900 text-black">
+        <div className="max-w-screen-xl mx-auto">
+          <AnimateVertical>
+            <h2 className="font-fredoka font-normal text-white text-center text-xl md:text-3xl lg:text-[40px] max-w-2xl mx-auto">
+              Why Clients Trust Us: Personalized Asset Management for Long-Term
+              Success
+            </h2>
+          </AnimateVertical>
+
+          <div className="text-lg grid grid-cols-1 md:grid-cols-3 gap-4 pt-10 md:pt-20">
+            {items.map((item, index) => (
+              <SpotlightCard
+                className={cn(
+                  "bg-slate-900/10 rounded-lg hover:bg-slate-800/40 backdrop-blur-xl border-slate-900/30 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-500",
+                  (index + 1) % 4 === 0 || (index + 1) % 4 === 1
+                    ? "md:col-span-2"
+                    : "col-span-1"
+                )}
+                spotlightColor="rgba(0, 128, 128, .0)"
+                key={index}
+              >
+                <AnimateVertical>
+                  <div className="">
+                    <item.icon className="fill-[#b4fe00]" />
+                  </div>
+                  <p className="text-white font-fredoka text-md lg:text-xl my-4">
+                    {item.name}
+                  </p>
+                  <p className="font-satoshi font-medium text-base text-gray-400">
+                    {item.description}
+                  </p>
+                </AnimateVertical>
+              </SpotlightCard>
+            ))}
+            <AnimateVertical>
+              <SpotlightCard
+                className="bg-slate-900/10 rounded-lg hover:bg-slate-800/60 backdrop-blur-xl border-slate-900/30 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-500"
+                spotlightColor="rgba(0, 128, 128, .0)"
+              >
+                <p className="font-fredoka text-slate-100 text-md lg:text-2xl my-4">
+                  Explore our{" "}
+                  <span className="text-[#b4fe00]">
+                    asset reporting guidelines
+                  </span>{" "}
+                  in detail.
+                </p>
+
+                <Button
+                  variant="link"
+                  className="mt-12 text-white hover:text-green-500 group"
+                  asChild
+                >
+                  <Link to="/">
+                    Asset Reporting Guidlines{" "}
+                    <ChevronRight className="group-hover:-translate-x-1 transition-all duration-500" />
+                  </Link>
+                </Button>
+              </SpotlightCard>
+            </AnimateVertical>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function AnimateVertical({
+  delay = 0,
+  children,
+}: {
+  delay?: number;
+  children: ReactNode;
+}) {
+  return (
+    <AnimatedContent distance={80} delay={delay}>
+      {children}
+    </AnimatedContent>
+  );
+}
 
 const items = [
   {
@@ -43,79 +122,3 @@ const items = [
     icon: SealCheck,
   },
 ];
-
-export default function WhyChooseUs() {
-  return (
-    <>
-      <div className="p-5 md:p-10 bg-[#B0C4DE]">
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-clashdisplay font-medium text-xl md:text-3xl lg:text-4xl mb-3 md:mb-3 lg:mb-5">
-            WHY CHOOSE US?
-          </h2>
-
-          <p className="font-satoshi text-justify text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-xl mb-5 ms-2">
-            In a landscape where precision, compliance and accountability are
-            critical, choosing the right asset management partner can make all
-            the difference. At{" "}
-            <span className="font-bold text-md">Aimmax Company Ltd</span>, we
-            combine deep industry expertise, cutting-edge technology and an
-            unwavering commitment to excellence to deliver solutions that enable
-            smarter decisions, greater transparency and long-term value for your
-            organization. <br /> <br />
-            Here’s what sets us apart and why clients across sectors continue to
-            choose Aimmax:
-          </p>
-
-          <div className="text-white font-satoshi font-medium text-lg grid grid-cols-1 md:grid-cols-3 gap-4">
-            {items.map((item, index) => (
-              <SpotlightCard
-                className={
-                  (index + 1) % 4 === 0 || (index + 1) % 4 === 1
-                    ? "md:col-span-2"
-                    : "col-span-1"
-                }
-                spotlightColor="rgba(0, 128, 128, .4)"
-                key={index}
-              >
-                <div className="">
-                  <item.icon />
-                </div>
-                <p className="font-semibold text-md lg:text-xl my-4">
-                  {item.name}
-                </p>
-                <p className="text-base text-gray-400">{item.description}</p>
-              </SpotlightCard>
-            ))}
-            <SpotlightCard
-              className="bg-neutral-100/25 border-0 backdrop-blur-lg"
-              spotlightColor="rgba(0, 128, 128, .2)"
-            >
-              <p className="font-semibold text-slate-900 text-md lg:text-2xl my-4">
-                Click below to explore our{" "}
-                <span className="text-blue-900">
-                  asset reporting guidelines
-                </span>{" "}
-                in detail.
-              </p>
-
-              <Button
-                variant={"outline"}
-                size={"lg"}
-                className="group h-14 mt-6 bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 ring-blue-800 hover:ring-2 hover:ring-offset-1 outline-0 text-center text-base rounded-[20px]"
-                asChild
-              >
-                <Link to="/" className="rounded-[20px]">
-                  <ShinyText
-                    text="Asset Reporting Guidlines"
-                    className="text-white/80 group-hover:text-white group-hover:bg-slate-900"
-                  />
-                  <ArrowSquareOut size={"24"} />
-                </Link>
-              </Button>
-            </SpotlightCard>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}

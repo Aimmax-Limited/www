@@ -1,81 +1,90 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
 import { cn } from "~/lib/utils";
-import ShinyText from "./reactbits/shiny-text";
+import { Menu } from "./icons";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
-const links = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "Services",
-    path: "/",
-  },
-  {
-    name: "Portfolio",
-    path: "/dev-contactUs",
-  },
-  {
-    name: "About us",
-    path: "/dev-about",
-  },
-];
-
 export default function Navbar({
   className,
+  home = false,
   ...props
-}: React.ComponentProps<"div">) {
+}: { home?: boolean } & React.ComponentProps<"div">) {
   return (
     <div
-      className={cn("w-full flex justify-between items-center", className)}
+      className={cn(
+        "w-full flex justify-between items-center",
+        home ? "" : "px-0 md:px-2 lg:px-10 xl:px-20 2xl:px-32 3xl:px-40",
+        className
+      )}
       {...props}
     >
-      <DarkLogo />
-      <div className="hidden md:flex pe-0 md:pe-2 lg:pe-10 xl:pe-20 2xl:pe-32 3xl:pe-40 gap-0.5 md:gap-2 lg:gap-10 xl:gap-10 2xl:gap-12">
+      {home ? (
+        <Link to="/">
+          <Logo />
+        </Link>
+      ) : (
+        <Link to="/">
+          <Logo2 />
+        </Link>
+      )}
+
+      <div className="hidden md:flex gap-0.5 md:gap-2 lg:gap-10 xl:gap-10 2xl:gap-12">
         {links.map((link) => (
           <NAvLink key={link.name} name={link.name} path={link.path} />
         ))}
         <Button
           variant={"outline"}
-          className="group bg-slate-900 hover:bg-blue-600 border-0 ring-0 outline-0 hover:ring hover:ring-offset-2 text-center text-base"
+          className="group bg-[#b4fe00] border-0 ring-0 outline-0 text-center text-base"
         >
-          <Link to={"/contact us"}>
-            <ShinyText
-              text="Contact us"
-              className="text-white/80 group-hover:text-white"
-            />
-          </Link>
+          <Link to={"/"}>Contact Us</Link>
         </Button>
       </div>
       <div className="block md:hidden pe-4">
-        <SheetBar />
+        <SheetNavbar />
       </div>
     </div>
   );
 }
+
+const links = [
+  {
+    name: "Our Services",
+    path: "/",
+  },
+  {
+    name: "About Us",
+    path: "/",
+  },
+];
 
 function Logo() {
   return (
-    <div className="flex items-center">
-      <img src="./logo-light.svg" alt="Logo" width={90} />
-      <div className="text-black font-mono text-center">
-        <p>Aimmax</p>
-        <p>Limited</p>
+    <div className="text-white flex items-center max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[600px] mt-2 pointer-events-none">
+      <div className="max-w-[80px] md:max-w-[90px] lg:max-w-[100px]">
+        <img src="/logo-dark.svg" alt="Aimmax Logo" className="logo" />
+      </div>
+      <div className="text-center font-clashdisplay">
+        <p className="font-medium text-lg md:text-xl lg:text-2xl xl:text-4xl">
+          AIMMAX LIMITED
+        </p>
+        <p className="text-xs sm:text-sm lg:text-lg xl:text-xl">
+          Assets Management
+        </p>
       </div>
     </div>
   );
 }
 
-function DarkLogo() {
+function Logo2() {
   return (
-    <div className="flex items-center">
-      <img src="./logo-dark.svg" alt="Logo" width={90} />
-      <div className="text-white font-mono text-center">
-        <p>Aimmax</p>
-        <p>Limited</p>
+    <div className="text-white flex items-center max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[400px] pointer-events-none">
+      <div className="max-w-[80px]">
+        <img src="/logo-dark.svg" alt="Aimmax Logo" className="logo" />
+      </div>
+      <div className="text-center font-mono">
+        <p className="font-normal text-lg md:text-xl ">AIMMAX LIMITED</p>
+        <p className="text-xs sm:text-sm">Assets Management</p>
       </div>
     </div>
   );
@@ -105,35 +114,50 @@ function NAvLink({
   );
 }
 
-function SheetBar() {
+function SheetNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <img src="./align-right.svg" alt="Menu Icon" width={60} className="cursor-pointer" />
+        <Menu size="38" className="fill-white" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col items-center">
+      <SheetContent
+        side="top"
+        className="py-7 flex flex-col items-start bg-[#0A192F]/95 border-0 opacity-80 backdrop-blur-lg"
+      >
         {links.map((link) => (
-          <NAvLink
+          <CustomNavLink
             key={link.name}
             name={link.name}
             path={link.path}
             onClick={() => setIsOpen(false)}
           />
         ))}
-        <Button
-          variant={"outline"}
-          className="group bg-[#0A192F] hover:bg-slate-900 border-0 ring-0 outline-0 text-center text-base"
-        >
-          <Link to={"/contact us"}>
-            <ShinyText
-              text="Contact us"
-              className="group-hover:text-teal-600 hover:bg-slate-900"
-            />
-          </Link>
-        </Button>
       </SheetContent>
     </Sheet>
+  );
+}
+
+function CustomNavLink({
+  name,
+  path,
+  ...props
+}: {
+  name: string;
+  path: string;
+} & React.ComponentProps<"button">) {
+  return (
+    <Button variant="link" className="font-outfit text-base" {...props}>
+      <NavLink
+        to={path}
+        className={({ isActive, isPending }) =>
+          isActive ? "text-red-600" : isPending ? "text-blue-600" : "text-white"
+        }
+        preventScrollReset
+      >
+        {name}
+      </NavLink>
+    </Button>
   );
 }
