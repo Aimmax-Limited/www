@@ -199,7 +199,7 @@ const metrics = [
   },
   {
     count: 100,
-    modifier: "M+",
-    name: "Assets Tagged",
+    modifier: "+",
+    name: "Accounts Managed",
   },
 ];
