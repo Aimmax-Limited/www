@@ -347,7 +347,6 @@ body {
   }
 }
 
-
 /****** Begin Embla Carousel ******/
 .embla {
   max-width: 100%;
@@ -417,13 +416,11 @@ body {
 }
 
 .hero-text h1 {
-  
   margin-bottom: 1.5rem;
   color: #ffffff;
 }
 
 .hero-text p {
- 
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -446,7 +443,6 @@ body {
 }
 
 .hero-illustrations {
-
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -509,7 +505,6 @@ body {
   }
 
   .hero-illustrations {
-    
     width: 100%;
     padding: 1rem 0;
   }
@@ -564,3 +559,30 @@ body {
 .form-group:nth-child(5) {
   animation-delay: 0.15s;
 } /* Submit button */
+
+@keyframes rollOut {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.rollout {
+  animation: rollOut 0.8s ease-in-out forwards;
+  margin-top: 10px;
+  visibility: hidden;
+  overflow: hidden;
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
