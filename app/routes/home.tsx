@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <main id="top">
       <Hero id="hero" />
 
       {/* Shown only when the user scrolls past the hero section */}
@@ -46,6 +46,6 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <Footer />
-    </>
+    </main>
   );
 }

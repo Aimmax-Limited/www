@@ -1,44 +1,41 @@
-
 import Footer from "~/components/footer";
 import ContactUsHero from "~/components/Contact-us-hero";
 import SpotlightCard from "~/components/reactbits/spotlight-card";
-import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
+
 import FAQscontact from "~/components/FAQs-contact";
 import { MapPinnedIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
-
 export default function ContactUs() {
-
   const [formData, setFormData] = useState({
-      name: "",
-      phone: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  
-    const handleChange = (e: { target: { name: any; value: any } }) => {
-      const { name, value } = e.target;
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    };
-  
-    const handleSubmit = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-      // Handle form submission
-      console.log("Form submitted:", formData);
-    };
-  
-    useEffect(()=> {
-      console.log('FormData :', formData)
-    },[formData])
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: { target: { name: any; value: any } }) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log("Form submitted:", formData);
+  };
+
+  useEffect(() => {
+    console.log("FormData :", formData);
+  }, [formData]);
   return (
     <>
-      <main className="flex flex-col bg-[#B0C4DE]">
+      <main className="flex flex-col bg-[#B0C4DE]" id="top">
         <ContactUsHero />
         <div >
       {/* Left side - Scrollable content */}
@@ -65,10 +62,6 @@ export default function ContactUs() {
         </section>
       </div>
     </div>
-          
-    
-        
-        
       </main>
       <Footer />
     </>

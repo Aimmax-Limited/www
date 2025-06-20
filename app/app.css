@@ -98,6 +98,7 @@ body {
   background-position: 0%;
   scroll-padding-top: 68px;
 }
+/***** Scrollbar ****/
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -417,13 +418,11 @@ body {
 }
 
 .hero-text h1 {
-  
   margin-bottom: 1.5rem;
   color: #ffffff;
 }
 
 .hero-text p {
- 
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -504,7 +503,6 @@ body {
   }
 
   .hero-illustrations {
-    
     width: 100%;
     padding: 1rem 0;
   }
@@ -523,6 +521,7 @@ body {
       background: #1e293b;
     }
   }
+
 }
 
 @keyframes fadeIn {
@@ -559,3 +558,4 @@ body {
 .form-group:nth-child(5) {
   animation-delay: 0.15s;
 } /* Submit button */
+

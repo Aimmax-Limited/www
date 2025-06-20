@@ -20,11 +20,11 @@ export default function Navbar({
       {...props}
     >
       {home ? (
-        <Link to="/">
+        <Link to="/#top">
           <Logo />
         </Link>
       ) : (
-        <Link to="/">
+        <Link to="/#top">
           <Logo2 />
         </Link>
       )}
@@ -37,7 +37,7 @@ export default function Navbar({
           variant={"outline"}
           className="group bg-[#b4fe00] border-0 ring-0 outline-0 text-center text-base"
         >
-          <Link to={"/"}>Contact Us</Link>
+          <Link to={"/dev-contactUs#top"}>Contact Us</Link>
         </Button>
       </div>
       <div className="block md:hidden pe-4">
@@ -50,11 +50,12 @@ export default function Navbar({
 const links = [
   {
     name: "Our Services",
-    path: "/dev-services",
+    path: "/dev-services#top",
   },
   {
     name: "About Us",
-    path: "/dev-about",
+    path: "/dev-about#top",
+
   },
 ];
 
@@ -82,7 +83,7 @@ function Logo2() {
       <div className="max-w-[80px]">
         <img src="/logo-dark.svg" alt="Aimmax Logo" className="logo" />
       </div>
-      <div className="text-center font-mono">
+      <div className="text-center font-mono hidden md:block">
         <p className="font-normal text-lg md:text-xl ">AIMMAX LIMITED</p>
         <p className="text-xs sm:text-sm">Assets Management</p>
       </div>

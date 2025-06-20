@@ -11,6 +11,7 @@ export default function Footer({
   ...props
 }: React.ComponentProps<"div">) {
   return (
+
     <div className="max-w-screen-xl mx-auto bg-white px-5 ">
       <div className="flex ">
         <div className=" md:h-[300px] flex flex-col md:flex-row">
@@ -50,6 +51,7 @@ export default function Footer({
             </AnimateVertical>
           </div>
           
+
         </div>
       </div>
 
@@ -123,19 +125,20 @@ function NAvLink({
 const links = [
   {
     name: "Home",
-    path: "/",
+    path: "/#top",
   },
   {
     name: "Our Services",
-    path: "/dev-services",
+
+    path: "/dev-services#top",
   },
   {
     name: "About Us",
-    path: "/dev-about",
+    path: "/dev-about#top",
   },
   {
     name: "Contact Us",
-    path: "/",
+    path: "/dev-contactUs#top",
   },
 ];
 

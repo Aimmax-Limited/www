@@ -42,7 +42,9 @@ function FAQscontact() {
   
   return (
     <div className="my-2 w-fit text-slate-100" ref={canvasRef}>
+
             <h2 className="text-2xl font-semibold p-4 text-center text-[#b4fe00]">F A Qs</h2>
+
             <div className="space-y-4 justify-around">
 
               {sections.map((section, index) => {
