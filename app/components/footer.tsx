@@ -11,47 +11,54 @@ export default function Footer({
   ...props
 }: React.ComponentProps<"div">) {
   return (
+    <div
+      className={cn(
+        "max-w-screen-xl mx-auto bg-white px-5 text-black",
+        className
+      )}
+      {...props}
+    >
+      <div className="h-[300px] md:h-[350px] grid md:grid-cols-2 xl:grid-cols-5">
+        <div className="flex justify-start items-center md:col-span-1 xl:col-span-3">
+          <AnimateVertical threshold={0.01}>
+            <h2 className="font-fredoka text-3xl md:text-6xl pt-0">
+              Get in Touch Today
+            </h2>
+            <Button
+              size={"default"}
+              variant={"outline"}
+              className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-black rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-[#b4fe00] hover:bg-[#64FFDA] border-0 transition-all duration-500"
+              asChild
+            >
+              <Link to="/dev-contactUs#top">Send a message</Link>
+            </Button>
+          </AnimateVertical>
+        </div>
 
-    <div className="max-w-screen-xl mx-auto bg-white px-5 ">
-      <div className="flex ">
-        <div className=" md:h-[300px] flex flex-col md:flex-row">
-          <div className="flex justify-start items-start pt-10 md:w-1/2 p-3">
-            <AnimateVertical threshold={0.01}>
-              <h2 className="font-fredoka text-xl md:text-3xl pt-0">
-                Get in Touch Today
-              </h2>
-              <p className="text-base md:text-lg font-satoshi font-medium pt-3 md:pt-4 w-5/6">
-                Ready to take the next step in managing your assets? Contact us
-                now for personalized insight and to schedule a consultation
+        <div className="flex flex-col md:justify-center items-start md:col-span-1 xl:col-span-2">
+          <AnimateVertical>
+            <div className="flex flex-col items-center">
+              <p className="text-base md:text-xl md:text-center font-satoshi font-medium pt-10 md:pt-10">
+                Want to get regular updates about our{" "}
+                <span className="text-cyan-500">services and promotions</span>?
               </p>
-              <Button
-                size={"lg"}
-                variant={"outline"}
-                className="h-12 max-w-3xs mt-8 md:mt-8 flex items-center text-lg text-black rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-[#b4fe00] hover:bg-[#64FFDA] border-0 transition-all duration-500"
-                asChild
-              >
-                <Link to="/">Click Me!</Link>
-              </Button>
-            </AnimateVertical>
-          </div>
-
-          <div className="flex flex-col justify-center pt-10 md:justify-start items-start md:w-1/2">
-            <AnimateVertical>
-              <div className="flex  flex-col items-center">
-                <p className=" text-[18px] md:text-[25px] pb-3 ml-3">
-                          Want to get regular updates about our <span className="text-cyan-500">services and promotions</span>?
-            
-                        </p>
-                        <div className="flex w-full items-center gap-1  h-20 justify-center p-3">
-                          <Input type="email" placeholder="Email" className="border-black h-12" />
-                          <Button variant="default" className="bg-[#b4fe00] hover:bg-cyan-500 text-black h-12 text-lg" size={'lg'}>Subscribe</Button>
-                        </div>
+              <div className="flex w-full items-center gap-1 h-20 justify-center md:p-3">
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  className="border-black md:h-10"
+                  autoComplete="on"
+                />
+                <Button
+                  variant="default"
+                  className="bg-[#b4fe00] hover:bg-cyan-500 text-black font-satoshi md:h-10 text-lg ms-2 md:ms-5 shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none transition-all duration-500"
+                  size={"lg"}
+                >
+                  Subscribe
+                </Button>
               </div>
-              
-            </AnimateVertical>
-          </div>
-          
-
+            </div>
+          </AnimateVertical>
         </div>
       </div>
 
