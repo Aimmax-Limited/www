@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Navbar from "~/components/navbar";
-import CountUp from "~/components/reactbits/count-up";
-import { Button } from "~/components/ui/button";
+import Navbar from "~/components/shared/navbar";
+import CountUp from "~/components/shared/reactbits/count-up";
+import { Button } from "~/components/shared/ui/button";
 import { cn } from "~/lib/utils";
 
 import AccountingSummation from "./accounting-animation";

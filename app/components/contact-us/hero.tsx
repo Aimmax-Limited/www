@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { animated, useSpring } from "react-spring";
-import Navbar from "../navbar";
+import Navbar from "~/components/shared/navbar";
 import ContactInfoAnimation from "./contact-animation";
 
 export default function ContactHero() {

@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
-import Footer from "~/components/footer";
 import AccountingSummation from "~/components/home/hero/accounting-animation";
 import AssetRegisterAnimation from "~/components/home/hero/asset-register-animation";
 import BarcodeAnimation from "~/components/home/hero/barcode-animation";
-import { Barcode, Calculator, Register } from "~/components/icons";
-import Navbar from "~/components/navbar";
-import AnimatedContent from "~/components/reactbits/animated-content";
+import Footer from "~/components/shared/footer";
+import { Barcode, Calculator, Register } from "~/components/shared/icons";
+import Navbar from "~/components/shared/navbar";
+import AnimatedContent from "~/components/shared/reactbits/animated-content";
 
 function StyledInlineText({
   text,
