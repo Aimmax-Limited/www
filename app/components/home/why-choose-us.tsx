@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
                   className="mt-12 text-white hover:text-green-500 group"
                   asChild
                 >
-                  <Link to="/dev-services#asset-register-benefits">
+                  <Link to="/services#asset-register-benefits">
                     Key Benefits of A Comprehensive Asset Register{" "}
                     <ChevronRight className="group-hover:-translate-x-1 transition-all duration-500" />
                   </Link>

@@ -20,11 +20,11 @@ export default function Navbar({
       {...props}
     >
       {home ? (
-        <Link to="/#top">
+        <Link to="/">
           <Logo />
         </Link>
       ) : (
-        <Link to="/#top">
+        <Link to="/">
           <Logo2 />
         </Link>
       )}
@@ -37,7 +37,7 @@ export default function Navbar({
           variant={"outline"}
           className="group bg-[#b4fe00] border-0 ring-0 outline-0 text-center text-base"
         >
-          <Link to={"/dev-contact-us#top"}>Contact Us</Link>
+          <Link to={"/contact-us#top"}>Contact Us</Link>
         </Button>
       </div>
       <div className="block md:hidden pe-4">
@@ -50,11 +50,11 @@ export default function Navbar({
 const links = [
   {
     name: "Our Services",
-    path: "/dev-services#top",
+    path: "/services#top",
   },
   {
     name: "About Us",
-    path: "/dev-about#top",
+    path: "/about#top",
   },
 ];
 

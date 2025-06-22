@@ -55,7 +55,7 @@ export default function Hero({
             className="group h-12 max-w-3xs flex items-center text-lg text-slate-900 bg-[#b4fe00] hover:bg-[#64FFDA] backdrop-blur-xl rounded-xl border border-white/30 shadow-[0_6px_15px_rgba(255,255,255,0.4)] hover:shadow-none"
             asChild
           >
-            <Link to="/dev-contact-us#top">Get in touch with us</Link>
+            <Link to="/contact-us#top">Get in touch with us</Link>
           </Button>
         </div>
 
