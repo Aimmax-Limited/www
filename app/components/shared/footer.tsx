@@ -30,7 +30,7 @@ export default function Footer({
               className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-black rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-[#b4fe00] hover:bg-[#64FFDA] border-0 transition-all duration-500"
               asChild
             >
-              <Link to="/dev-contact-us#top">Send a message</Link>
+              <Link to="/contact-us#top">Send a message</Link>
             </Button>
           </AnimateVertical>
         </div>
@@ -136,16 +136,15 @@ const links = [
   },
   {
     name: "Our Services",
-
-    path: "/dev-services#top",
+    path: "/services#top",
   },
   {
     name: "About Us",
-    path: "/dev-about#top",
+    path: "/about#top",
   },
   {
     name: "Contact Us",
-    path: "/dev-contact-us#top",
+    path: "/contact-us#top",
   },
 ];
 

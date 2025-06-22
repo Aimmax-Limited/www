@@ -78,7 +78,7 @@ const services = [
       "Ensures compliance to policies and guides asset and liability reporting templates according to Treasury policy guidelines.",
     src: "/services/register-preparation.jpg",
     alt: "register",
-    link: "/dev-services#asset-register-preparation",
+    link: "/services#asset-register-preparation",
   },
   {
     name: "Physical Asset Tagging and Barcoding",
@@ -86,7 +86,7 @@ const services = [
       "State-of-the-art bar coding using serialized aluminum tags and full-color logos that ensure your assets are easily identifiable and trackable.",
     src: "/services/barcode.jpg",
     alt: "barcode",
-    link: "/dev-services#barcode-tagging",
+    link: "/services#barcode-tagging",
   },
   {
     name: "Expert Accrual-Based Accounting Support",
@@ -94,6 +94,6 @@ const services = [
       "Expert support that ensures accurate recognition of assets, liabilities and expenses in line with IPSAS and Treasury guidelines.",
     src: "/services/accounting.jpeg",
     alt: "accounting",
-    link: "/dev-services#accrual-accounting",
+    link: "/services#accrual-accounting",
   },
 ];
