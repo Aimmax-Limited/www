@@ -37,7 +37,7 @@ export default function Navbar({
           variant={"outline"}
           className="group bg-[#b4fe00] border-0 ring-0 outline-0 text-center text-base"
         >
-          <Link to={"/dev-contactUs#top"}>Contact Us</Link>
+          <Link to={"/dev-contact-us#top"}>Contact Us</Link>
         </Button>
       </div>
       <div className="block md:hidden pe-4">
@@ -55,7 +55,6 @@ const links = [
   {
     name: "About Us",
     path: "/dev-about#top",
-
   },
 ];
 
