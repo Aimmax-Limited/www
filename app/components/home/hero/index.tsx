@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import Navbar from "~/components/navbar";
+import CountUp from "~/components/reactbits/count-up";
+import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
-import Navbar from "../navbar";
-import CountUp from "../reactbits/count-up";
-import { Button } from "../ui/button";
+
 import AccountingSummation from "./accounting-animation";
 import AssetRegisterAnimation from "./asset-register-animation";
 import BarcodeAnimation from "./barcode-animation";

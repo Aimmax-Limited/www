@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Footer from "~/components/footer";
-import Hero from "~/components/hero";
+import Hero from "~/components/home/hero";
+import Services from "~/components/home/services";
+import Testimonials from "~/components/home/testimonials";
+import WhyChooseUs from "~/components/home/why-choose-us";
 import Navbar from "~/components/navbar";
-import Services from "~/components/services";
-import Testimonials from "~/components/testimonials";
-import WhyChooseUs from "~/components/why-choose-us";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {

@@ -3,9 +3,9 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { cn } from "~/lib/utils";
-import { ChevronCircleLeft, ChevronCircleRight, Quote } from "./icons";
-import AnimatedContent from "./reactbits/animated-content";
-import { Button } from "./ui/button";
+import { ChevronCircleLeft, ChevronCircleRight, Quote } from "../icons";
+import AnimatedContent from "../reactbits/animated-content";
+import { Button } from "../ui/button";
 
 export default function Testimonials() {
   return (
