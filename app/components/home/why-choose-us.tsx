@@ -2,10 +2,16 @@ import { ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { cn } from "~/lib/utils";
-import { DesktopTower, ListChecks, SealCheck, Target, TrendUp } from "../icons";
-import AnimatedContent from "../reactbits/animated-content";
-import SpotlightCard from "../reactbits/spotlight-card";
-import { Button } from "../ui/button";
+import {
+  DesktopTower,
+  ListChecks,
+  SealCheck,
+  Target,
+  TrendUp,
+} from "../shared/icons";
+import AnimatedContent from "../shared/reactbits/animated-content";
+import SpotlightCard from "../shared/reactbits/spotlight-card";
+import { Button } from "../shared/ui/button";
 
 export default function WhyChooseUs() {
   return (

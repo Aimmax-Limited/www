@@ -1,7 +1,7 @@
 import { Mail, PhoneCall } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import ShinyText from "~/components/reactbits/shiny-text";
+import ShinyText from "~/components/shared/reactbits/shiny-text";
 import { cn } from "~/lib/utils";
 
 export default function ComingSoon() {
@@ -20,7 +20,6 @@ export default function ComingSoon() {
         <div
           className={cn(height_ >= BP_HEIGHT ? "mt-28" : "mt-14", "md:mt-28")}
         >
-
           <h1
             className="font-semibold text-center text-4xl md:text-6xl lg:text-8xl uppercase"
             style={{ wordSpacing: "30px" }}

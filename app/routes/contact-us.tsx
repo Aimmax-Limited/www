@@ -2,7 +2,7 @@ import { MapPinnedIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import FAQ from "~/components/contact-us/faq";
 import ContactHero from "~/components/contact-us/hero";
-import Footer from "~/components/footer";
+import Footer from "~/components/shared/footer";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
