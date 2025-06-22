@@ -1,8 +1,8 @@
 import { ChevronRight } from "lucide-react";
 import { type ReactNode } from "react";
 import { Link } from "react-router";
-import AnimatedContent from "./reactbits/animated-content";
-import { Button } from "./ui/button";
+import AnimatedContent from "../reactbits/animated-content";
+import { Button } from "../ui/button";
 
 export default function Services() {
   return (
