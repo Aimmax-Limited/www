@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { animated, useSpring } from "react-spring";
-import "../ContactSplitPage.css";
-import ContactIllustration from "./contactIllustration";
-import Navbar from "./navbar";
-const ContactHero = () => {
+import Navbar from "../navbar";
+import ContactInfoAnimation from "./contact-animation";
+
+export default function ContactHero() {
   // Animation for the contact methods
   const contactAnimations = useSpring({
     from: { opacity: 0, transform: "translateX(100px)" },
@@ -55,7 +55,7 @@ const ContactHero = () => {
               </p>
             </div>
 
-            <ContactIllustration />
+            <ContactInfoAnimation />
           </div>
           {/* Right side - Animated contact illustrations */}
           <animated.div
@@ -79,6 +79,7 @@ const ContactHero = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder=""
+                      autoComplete="on"
                       required
                     />
                     <label htmlFor="name">Name</label>
@@ -91,6 +92,7 @@ const ContactHero = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder=""
+                      autoComplete="on"
                       required
                     />
                     <label htmlFor="phone">Phone</label>
@@ -103,6 +105,7 @@ const ContactHero = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder=""
+                      autoComplete="on"
                       required
                     />
                     <label htmlFor="email">Email</label>
@@ -150,6 +153,4 @@ const ContactHero = () => {
       </div>
     </div>
   );
-};
-
-export default ContactHero;
+}

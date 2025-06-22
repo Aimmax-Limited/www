@@ -1,6 +1,6 @@
 @import url("./css/clash-display.css");
 @import url("./css/satoshi.css");
-@import url("./ContactSplitPage.css");
+@import url("./css/contact-us.css");
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));

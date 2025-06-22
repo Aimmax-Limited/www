@@ -1,9 +1,8 @@
-import ContactUsHero from "~/components/Contact-us-hero";
-import Footer from "~/components/footer";
-
 import { MapPinnedIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import FAQscontact from "~/components/FAQs-contact";
+import FAQ from "~/components/contact-us/faq";
+import ContactHero from "~/components/contact-us/hero";
+import Footer from "~/components/footer";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -14,27 +13,14 @@ export default function ContactUs() {
     message: "",
   });
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-  };
-
   useEffect(() => {
     console.log("FormData :", formData);
   }, [formData]);
+
   return (
     <>
       <main className="flex flex-col bg-[#B0C4DE]" id="top">
-        <ContactUsHero />
+        <ContactHero />
         <div>
           {/* Left side - Scrollable content */}
           <div className="scrollable-content bg-slate-900">
@@ -61,7 +47,7 @@ export default function ContactUs() {
                   ></iframe>
                 </div>
                 <div className="flex flex-col md:flex-row justify-center gap-7 items-start">
-                  <FAQscontact />
+                  <FAQ />
                 </div>
               </div>
             </section>
