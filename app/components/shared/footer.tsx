@@ -11,10 +11,7 @@ export default function Footer({
 }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn(
-        "max-w-screen-xl mx-auto bg-white px-5 text-black",
-        className
-      )}
+      className={cn("max-w-screen-xl mx-auto bg-white px-5", className)}
       {...props}
     >
       <div className="h-[300px] md:h-[350px] grid md:grid-cols-2 xl:grid-cols-5">
@@ -26,7 +23,7 @@ export default function Footer({
             <Button
               size={"default"}
               variant={"outline"}
-              className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-black rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-[#b4fe00] hover:bg-[#64FFDA] border-0 transition-all duration-500"
+              className="h-12 max-w-3xs mt-8 md:mt-10 flex items-center text-lg text-accent-foreground rounded-xl shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none backdrop-blur-xl bg-accent hover:bg-primary border-0 transition-all duration-500"
               asChild
             >
               <Link to="/contact-us#top">Send a message</Link>
@@ -39,7 +36,7 @@ export default function Footer({
             <div className="flex flex-col items-center">
               <p className="text-base md:text-xl md:text-center font-satoshi font-medium pt-10 md:pt-10">
                 Want to get regular updates about our{" "}
-                <span className="text-cyan-500">services and promotions</span>?
+                <span className="text-primary">services and promotions</span>?
               </p>
               <div className="flex w-full items-center gap-1 h-20 justify-center md:p-3">
                 <Input
@@ -50,7 +47,7 @@ export default function Footer({
                 />
                 <Button
                   variant="default"
-                  className="bg-[#b4fe00] hover:bg-cyan-500 text-black font-satoshi md:h-10 text-lg ms-2 md:ms-5 shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none transition-all duration-500"
+                  className="bg-accent hover:bg-primary text-accent-foreground font-satoshi md:h-10 text-lg ms-2 md:ms-5 shadow-[0_6px_15px_rgba(0,0,0,0.4)] hover:shadow-none transition-all duration-500"
                   size={"lg"}
                 >
                   Subscribe
@@ -78,7 +75,7 @@ export default function Footer({
           </div>
         </AnimateVertical>
 
-        <hr className="h-[3px] bg-slate-800 border-0" />
+        <hr className="h-[3px] bg-background-1 border-0" />
 
         <div className="pt-5 md:pt-8">
           <AnimateVertical threshold={0.01}>
@@ -115,10 +112,10 @@ function NAvLink({
         to={path}
         className={({ isActive, isPending }) =>
           isActive
-            ? "text-cyan-500"
+            ? "text-primary"
             : isPending
-            ? "text-green-400"
-            : "text-black"
+            ? "text-link-hover"
+            : "text-foreground"
         }
         preventScrollReset
       >

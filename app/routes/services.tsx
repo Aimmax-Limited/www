@@ -17,12 +17,12 @@ export default function Services() {
       />
 
       <div className="mt-16 h-[200px] md:h-[350px] lg:h-[500px] bg-[url('/backgrounds/blue-sky.jpg')] bg-top-left flex items-center justify-start sticky top-0 z-10">
-        <h1 className="font-clashdisplay font-medium text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl max-w-screen-xl mx-auto">
+        <h1 className="font-clashdisplay font-medium text-foreground-1 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl max-w-screen-xl mx-auto">
           Our Services
         </h1>
       </div>
 
-      <div className="relative z-20 bg-white">
+      <div className="relative z-20 bg-background">
         <div className="py-10 px-4 xl:px-0 max-w-screen-xl mx-auto">
           <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
             Current Situation and Problem Statement
@@ -52,7 +52,7 @@ export default function Services() {
         >
           <AnimateVertical>
             <h2 className="font-fredoka font-medium lg:font-normal text-2xl md:text-3xl lg:text-[40px] mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex justify-center items-center">
-              <Barcode className="fill-[#b4fe00] me-5" /> Physical Asset Tagging
+              <Barcode className="fill-accent me-5" /> Physical Asset Tagging
               and Barcoding
             </h2>
           </AnimateVertical>
@@ -90,14 +90,14 @@ export default function Services() {
         </div>
 
         <div
-          className="bg-slate-900 text-white py-10 xl:py-16 px-4 xl:px-0"
+          className="bg-slate-900 text-foreground-1 py-10 xl:py-16 px-4 xl:px-0"
           id="asset-register-preparation"
         >
           <div className="max-w-screen-xl mx-auto">
             <AnimateVertical>
               <h2 className="font-fredoka font-medium lg:font-normal text-2xl md:text-3xl lg:text-[40px] mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex items-center justify-center">
-                <Register className="fill-[#b4fe00] me-5" /> Comprehensive
-                Assets Register Preparation
+                <Register className="fill-accent me-5" /> Comprehensive Assets
+                Register Preparation
               </h2>
             </AnimateVertical>
 
@@ -159,7 +159,7 @@ export default function Services() {
                 {AssetRegisterBenefits.map((benefit, index) => (
                   <AnimateHorizontal key={index}>
                     <li className="my-3">
-                      <span className="font-bold text-[#b4fe00]/80">
+                      <span className="font-bold text-accent/80">
                         {benefit.name}:
                       </span>{" "}
                       {benefit.description}
@@ -177,8 +177,8 @@ export default function Services() {
         >
           <AnimateVertical>
             <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex justify-center items-center">
-              <Calculator className="fill-[#b4fe00] me-5" /> Expert
-              Accrual-Based Accounting Support
+              <Calculator className="fill-accent me-5" /> Expert Accrual-Based
+              Accounting Support
             </h2>
           </AnimateVertical>
 
@@ -203,7 +203,7 @@ export default function Services() {
 
                 <div className="hidden xl:block absolute right-0 -top-10">
                   <AccountingSummation
-                    className="text-slate-800"
+                    className="text-secondary-fg-1"
                     borderColors={["", "border-black/10"]}
                   />
                 </div>
@@ -222,7 +222,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="relative z-20 bg-white">
+      <div className="relative z-20 bg-background">
         <Footer className="mt-[100px] md:mt-[200px] lg:mt-[250px]" />
       </div>
     </div>
