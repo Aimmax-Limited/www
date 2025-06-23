@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
-import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { cn } from "~/lib/utils";
+import { AnimateVertical } from "../shared/animate-content";
 import {
   DesktopTower,
   ListChecks,
@@ -9,7 +9,6 @@ import {
   Target,
   TrendUp,
 } from "../shared/icons";
-import AnimatedContent from "../shared/reactbits/animated-content";
 import SpotlightCard from "../shared/reactbits/spotlight-card";
 import { Button } from "../shared/ui/button";
 
@@ -79,20 +78,6 @@ export default function WhyChooseUs() {
         </div>
       </div>
     </>
-  );
-}
-
-function AnimateVertical({
-  delay = 0,
-  children,
-}: {
-  delay?: number;
-  children: ReactNode;
-}) {
-  return (
-    <AnimatedContent distance={80} delay={delay}>
-      {children}
-    </AnimatedContent>
   );
 }
 

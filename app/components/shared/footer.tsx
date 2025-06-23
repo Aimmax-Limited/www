@@ -1,8 +1,7 @@
-import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router";
 import { cn } from "~/lib/utils";
+import { AnimateVertical } from "./animate-content";
 import { Facebook, LinkedIn, Twitter } from "./icons";
-import AnimatedContent from "./reactbits/animated-content";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
@@ -147,19 +146,3 @@ const links = [
     path: "/contact-us#top",
   },
 ];
-
-function AnimateVertical({
-  delay = 0,
-  threshold = 0.1,
-  children,
-}: {
-  delay?: number;
-  threshold?: number;
-  children: ReactNode;
-}) {
-  return (
-    <AnimatedContent distance={80} delay={delay} threshold={threshold}>
-      {children}
-    </AnimatedContent>
-  );
-}

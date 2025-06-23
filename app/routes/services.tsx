@@ -1,33 +1,13 @@
-import type { ReactNode } from "react";
 import AccountingSummation from "~/components/home/hero/accounting-animation";
 import AssetRegisterAnimation from "~/components/home/hero/asset-register-animation";
 import BarcodeAnimation from "~/components/home/hero/barcode-animation";
+import {
+  AnimateHorizontal,
+  AnimateVertical,
+} from "~/components/shared/animate-content";
 import Footer from "~/components/shared/footer";
 import { Barcode, Calculator, Register } from "~/components/shared/icons";
 import Navbar from "~/components/shared/navbar";
-import AnimatedContent from "~/components/shared/reactbits/animated-content";
-
-function StyledInlineText({
-  text,
-  className,
-  ...props
-}: { text: string } & React.ComponentProps<"span">) {
-  return (
-    <span className={className} {...props}>
-      {text}
-    </span>
-  );
-}
-
-const ProblemStatements = [
-  "Lack of automated electronic data capture.",
-  "Office assets not barcoded or tagged.",
-  "Tedious asset verification and validation processes.",
-  "Difficulties in merging physical assets with existing inventory registers.",
-  "Missing or unavailable store card entry details.",
-  "Inaccurate yearly depreciation values for accounting and insurance purposes.",
-  "Incomplete asset history from cost to disposal.",
-];
 
 export default function Services() {
   return (
@@ -249,43 +229,27 @@ export default function Services() {
   );
 }
 
-function AnimateVertical({
-  delay = 0,
-  threshold = 0.1,
-  children,
-}: {
-  delay?: number;
-  threshold?: number;
-  children: ReactNode;
-}) {
+function StyledInlineText({
+  text,
+  className,
+  ...props
+}: { text: string } & React.ComponentProps<"span">) {
   return (
-    <AnimatedContent distance={80} delay={delay} threshold={threshold}>
-      {children}
-    </AnimatedContent>
+    <span className={className} {...props}>
+      {text}
+    </span>
   );
 }
 
-function AnimateHorizontal({
-  delay = 0,
-  threshold = 0.1,
-  children,
-}: {
-  delay?: number;
-  threshold?: number;
-  children: ReactNode;
-}) {
-  return (
-    <AnimatedContent
-      direction="horizontal"
-      distance={80}
-      delay={delay}
-      threshold={threshold}
-      reverse
-    >
-      {children}
-    </AnimatedContent>
-  );
-}
+const ProblemStatements = [
+  "Lack of automated electronic data capture.",
+  "Office assets not barcoded or tagged.",
+  "Tedious asset verification and validation processes.",
+  "Difficulties in merging physical assets with existing inventory registers.",
+  "Missing or unavailable store card entry details.",
+  "Inaccurate yearly depreciation values for accounting and insurance purposes.",
+  "Incomplete asset history from cost to disposal.",
+];
 
 const WhyAccrual = [
   {
