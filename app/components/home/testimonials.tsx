@@ -1,10 +1,10 @@
 import type { EmblaCarouselType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { cn } from "~/lib/utils";
+import { AnimateVertical } from "../shared/animate-content";
 import { ChevronCircleLeft, ChevronCircleRight, Quote } from "../shared/icons";
-import AnimatedContent from "../shared/reactbits/animated-content";
 import { Button } from "../shared/ui/button";
 
 export default function Testimonials() {
@@ -22,29 +22,6 @@ export default function Testimonials() {
     </div>
   );
 }
-
-const testimonials = [
-  {
-    clientLogo: "/client-logos/uon-seeklogo.png",
-    clientName: "University Of Nairobi",
-    text: "Aimmax helped us build a compliant, IFMIS-ready asset register with accurate tagging and valuation. Their expertise made our transition to accrual accounting smooth and improved audit outcomes significantly. Their support made our shift to accrual accounting smooth and significantly improved audit outcomes.",
-  },
-  {
-    clientLogo: "/client-logos/uon-seeklogo.png",
-    clientName: "University Of Nairobi",
-    text: "Working with Aimmax streamlined our entire asset management process. Their barcoding system made verification simple and the register they delivered aligned perfectly with IPSAS and Treasury guidelines. Their team was efficient, knowledgeable and committed to delivering results.",
-  },
-  {
-    clientLogo: "/client-logos/uon-seeklogo.png",
-    clientName: "University Of Nairobi",
-    text: "Aimmax delivered a complete and compliant asset register that has greatly improved how we track and manage our assets. Their attention to detail, from tagging to valuation, ensured every asset was accounted for. We now have better transparency, faster audits and a reliable system in place.",
-  },
-  {
-    clientLogo: "/client-logos/uon-seeklogo.png",
-    clientName: "University Of Nairobi",
-    text: "Aimmax Company Ltd provided us with a reliable and accurate asset register that has transformed our asset tracking and reporting. Their barcoding and valuation services were precise and fully aligned with government policies. We now operate with greater efficiency, accountability and confidence in our asset data.",
-  },
-];
 
 const EmblaCarouselAutoPlay = ({
   slides,
@@ -151,7 +128,7 @@ type UseDotButtonType = {
   onDotButtonClick: (index: number) => void;
 };
 
-export const useDotButton = (
+const useDotButton = (
   emblaApi: EmblaCarouselType | undefined,
   onButtonClick?: (emblaApi: EmblaCarouselType) => void
 ): UseDotButtonType => {
@@ -192,31 +169,31 @@ export const useDotButton = (
 
 type PropType = React.ComponentPropsWithRef<"button">;
 
-export const DotButton: React.FC<PropType> = (props) => {
+const DotButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return <Button {...restProps}>{children}</Button>;
 };
 
-function AnimateVertical({
-  delay = 0,
-  threshold = 0.1,
-  className = "",
-  children,
-}: {
-  delay?: number;
-  threshold?: number;
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <AnimatedContent
-      distance={80}
-      delay={delay}
-      threshold={threshold}
-      className={className}
-    >
-      {children}
-    </AnimatedContent>
-  );
-}
+const testimonials = [
+  {
+    clientLogo: "/client-logos/uon-seeklogo.png",
+    clientName: "University Of Nairobi",
+    text: "Aimmax helped us build a compliant, IFMIS-ready asset register with accurate tagging and valuation. Their expertise made our transition to accrual accounting smooth and improved audit outcomes significantly. Their support made our shift to accrual accounting smooth and significantly improved audit outcomes.",
+  },
+  {
+    clientLogo: "/client-logos/uon-seeklogo.png",
+    clientName: "University Of Nairobi",
+    text: "Working with Aimmax streamlined our entire asset management process. Their barcoding system made verification simple and the register they delivered aligned perfectly with IPSAS and Treasury guidelines. Their team was efficient, knowledgeable and committed to delivering results.",
+  },
+  {
+    clientLogo: "/client-logos/uon-seeklogo.png",
+    clientName: "University Of Nairobi",
+    text: "Aimmax delivered a complete and compliant asset register that has greatly improved how we track and manage our assets. Their attention to detail, from tagging to valuation, ensured every asset was accounted for. We now have better transparency, faster audits and a reliable system in place.",
+  },
+  {
+    clientLogo: "/client-logos/uon-seeklogo.png",
+    clientName: "University Of Nairobi",
+    text: "Aimmax Company Ltd provided us with a reliable and accurate asset register that has transformed our asset tracking and reporting. Their barcoding and valuation services were precise and fully aligned with government policies. We now operate with greater efficiency, accountability and confidence in our asset data.",
+  },
+];

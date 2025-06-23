@@ -1,7 +1,9 @@
-import type { ReactNode } from "react";
+import {
+  AnimateHorizontal,
+  AnimateVertical,
+} from "~/components/shared/animate-content";
 import Footer from "~/components/shared/footer";
 import Navbar from "~/components/shared/navbar";
-import AnimatedContent from "~/components/shared/reactbits/animated-content";
 import SpotlightCard from "~/components/shared/reactbits/spotlight-card";
 
 export default function About() {
@@ -97,44 +99,6 @@ export default function About() {
         <Footer className="mt-[100px] md:mt-[200px] lg:mt-[250px]" />
       </div>
     </div>
-  );
-}
-
-function AnimateVertical({
-  delay = 0,
-  threshold = 0.1,
-  children,
-}: {
-  delay?: number;
-  threshold?: number;
-  children: ReactNode;
-}) {
-  return (
-    <AnimatedContent distance={80} delay={delay} threshold={threshold}>
-      {children}
-    </AnimatedContent>
-  );
-}
-
-function AnimateHorizontal({
-  delay = 0,
-  threshold = 0.1,
-  children,
-}: {
-  delay?: number;
-  threshold?: number;
-  children: ReactNode;
-}) {
-  return (
-    <AnimatedContent
-      direction="horizontal"
-      distance={80}
-      delay={delay}
-      threshold={threshold}
-      reverse
-    >
-      {children}
-    </AnimatedContent>
   );
 }
 

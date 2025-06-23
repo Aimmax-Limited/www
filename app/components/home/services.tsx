@@ -1,7 +1,6 @@
 import { ChevronRight } from "lucide-react";
-import { type ReactNode } from "react";
 import { Link } from "react-router";
-import AnimatedContent from "../shared/reactbits/animated-content";
+import { AnimateVertical } from "../shared/animate-content";
 import { Button } from "../shared/ui/button";
 
 export default function Services() {
@@ -52,22 +51,6 @@ export default function Services() {
         </div>
       </div>
     </>
-  );
-}
-
-function AnimateVertical({
-  delay = 0,
-  threshold = 0.1,
-  children,
-}: {
-  delay?: number;
-  threshold?: number;
-  children: ReactNode;
-}) {
-  return (
-    <AnimatedContent distance={80} delay={delay} threshold={threshold}>
-      {children}
-    </AnimatedContent>
   );
 }
 
