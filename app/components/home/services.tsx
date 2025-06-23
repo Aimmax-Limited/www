@@ -6,7 +6,7 @@ import { Button } from "../shared/ui/button";
 export default function Services() {
   return (
     <>
-      <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10 bg-white">
+      <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10">
         <div className="max-w-screen-xl mx-auto">
           <AnimateVertical threshold={0.01}>
             <h2 className="font-fredoka font-normal text-center text-xl md:text-3xl lg:text-[40px] max-w-2xl mx-auto">
@@ -17,10 +17,7 @@ export default function Services() {
           <AnimateVertical delay={0.3}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-10 md:pt-20">
               {services.map((service, index) => (
-                <div
-                  className="text-black text-center flex flex-col"
-                  key={index}
-                >
+                <div className="text-center flex flex-col" key={index}>
                   <img
                     src={service.src}
                     alt={service.alt}
@@ -36,7 +33,7 @@ export default function Services() {
 
                   <Button
                     variant="link"
-                    className="mt-8 hover:text-green-500 group"
+                    className="mt-8 text-foreground hover:text-link-hover group"
                     asChild
                   >
                     <Link to={service.link}>

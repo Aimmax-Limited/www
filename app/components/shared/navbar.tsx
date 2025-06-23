@@ -35,7 +35,7 @@ export default function Navbar({
         ))}
         <Button
           variant={"outline"}
-          className="group bg-[#b4fe00] border-0 ring-0 outline-0 text-center text-base"
+          className="group bg-accent hover:bg-primary border-0 ring-0 outline-0 text-center text-base"
         >
           <Link to={"/contact-us#top"}>Contact Us</Link>
         </Button>
@@ -101,10 +101,10 @@ function NAvLink({
         to={path}
         className={({ isActive, isPending }) =>
           isActive
-            ? "text-cyan-500"
+            ? "text-primary"
             : isPending
-            ? "text-green-400"
-            : "text-white"
+            ? "text-link-hover"
+            : "text-foreground-1"
         }
         preventScrollReset
       >
@@ -120,11 +120,11 @@ function SheetNavbar() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Menu size="38" className="fill-white" />
+        <Menu size="38" className="fill-foreground-1" />
       </SheetTrigger>
       <SheetContent
         side="top"
-        className="py-7 flex flex-col items-start bg-[#0A192F]/95 border-0 opacity-80 backdrop-blur-lg"
+        className="py-7 flex flex-col items-start bg-background-1/95 border-0 opacity-80 backdrop-blur-lg"
       >
         {links.map((link) => (
           <CustomNavLink
@@ -152,7 +152,11 @@ function CustomNavLink({
       <NavLink
         to={path}
         className={({ isActive, isPending }) =>
-          isActive ? "text-red-600" : isPending ? "text-blue-600" : "text-white"
+          isActive
+            ? "text-primary"
+            : isPending
+            ? "text-link-hover"
+            : "text-foreground-1"
         }
         preventScrollReset
       >

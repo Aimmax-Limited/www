@@ -52,7 +52,7 @@ export default function Hero({
           <Button
             size={"lg"}
             variant={"outline"}
-            className="group h-12 max-w-3xs flex items-center text-lg text-slate-900 bg-[#b4fe00] hover:bg-[#64FFDA] backdrop-blur-xl rounded-xl border border-white/30 shadow-[0_6px_15px_rgba(255,255,255,0.4)] hover:shadow-none"
+            className="h-12 max-w-3xs flex items-center text-lg text-foreground bg-accent hover:bg-background backdrop-blur-xl rounded-xl border border-white/30 shadow-[0_6px_15px_rgba(255,255,255,0.4)] hover:shadow-none"
             asChild
           >
             <Link to="/contact-us#top">Get in touch with us</Link>
@@ -60,7 +60,7 @@ export default function Hero({
         </div>
 
         <div className="hidden absolute md:bottom-10 end-1/2 translate-x-[50%] hero__metrics items-center justify-center w-full max-w-[1024px] mx-auto">
-          <div className="text-slate-300 flex flex-row justify-center md:justify-around w-full font-satoshi font-bold">
+          <div className="text-secondary-foreground flex flex-row justify-center md:justify-around w-full font-satoshi font-bold">
             {metrics.map((metric, index) => (
               <div
                 className="flex flex-col justify-center items-center text-center gap-x-1"
@@ -72,7 +72,7 @@ export default function Hero({
                     delay={0}
                     duration={1}
                     separator=","
-                    className="text-2xl xl:text-4xl font-bold text-[#CCD6F6]"
+                    className="text-secondary-foreground text-2xl xl:text-4xl font-bold"
                   />
                   {metric.modifier && (
                     <span className="text-2xl xl:text-4xl font-bold">
@@ -151,16 +151,16 @@ function Text({ className, ...props }: React.ComponentProps<"div">) {
           >
             <div className="relative">
               <div className="font-clashdisplay max-w-5xl text-center lg:text-start">
-                <p className="text-[#F5F7FA] font-semibold mb-3 md:mb-0 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
+                <p className="text-foreground-1 font-semibold mb-3 md:mb-0 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
                   {slide.title[0]}
                 </p>
-                <p className="hero__title-2 sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl text-[#b4fe00]">
+                <p className="hero__title-2 text-accent sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl">
                   {slide.title[1]}
                 </p>
               </div>
             </div>
 
-            <p className="font-satoshi text-center lg:text-start text-slate-100 text-sm md:text-base lg:text-lg xl:text-xl mt-4 lg:mt-6">
+            <p className="font-satoshi text-foreground-1 text-center lg:text-start text-sm md:text-base lg:text-lg xl:text-xl mt-4 lg:mt-6">
               {slide.subtitle}
             </p>
           </div>

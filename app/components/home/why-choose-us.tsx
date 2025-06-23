@@ -15,10 +15,10 @@ import { Button } from "../shared/ui/button";
 export default function WhyChooseUs() {
   return (
     <>
-      <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10 bg-slate-900 text-black">
+      <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10 bg-background-1 text-foreground-1">
         <div className="max-w-screen-xl mx-auto">
           <AnimateVertical>
-            <h2 className="font-fredoka font-normal text-white text-center text-xl md:text-3xl lg:text-[40px] max-w-2xl mx-auto">
+            <h2 className="font-fredoka font-normal text-center text-xl md:text-3xl lg:text-[40px] max-w-2xl mx-auto">
               Why Clients Trust Us: Personalized Asset Management for Long-Term
               Success
             </h2>
@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
             {items.map((item, index) => (
               <SpotlightCard
                 className={cn(
-                  "bg-slate-900/10 rounded-lg hover:bg-slate-800/40 backdrop-blur-xl border-slate-900/30 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-500",
+                  "card__colors rounded-lg backdrop-blur-xl transition-all duration-500",
                   (index + 1) % 4 === 0 || (index + 1) % 4 === 1
                     ? "md:col-span-2"
                     : "col-span-1"
@@ -38,12 +38,12 @@ export default function WhyChooseUs() {
               >
                 <AnimateVertical>
                   <div className="">
-                    <item.icon className="fill-[#b4fe00]" />
+                    <item.icon className="fill-accent" />
                   </div>
-                  <p className="text-white font-fredoka text-md lg:text-xl my-4">
+                  <p className="font-fredoka text-md lg:text-xl my-4">
                     {item.name}
                   </p>
-                  <p className="font-satoshi font-medium text-base text-gray-400">
+                  <p className="font-satoshi font-medium text-base text-secondary-foreground-1">
                     {item.description}
                   </p>
                 </AnimateVertical>
@@ -51,12 +51,12 @@ export default function WhyChooseUs() {
             ))}
             <AnimateVertical>
               <SpotlightCard
-                className="bg-slate-900/10 rounded-lg hover:bg-slate-800/60 backdrop-blur-xl border-slate-900/30 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-500"
+                className="card__colors rounded-lg backdrop-blur-xl transition-all duration-500"
                 spotlightColor="rgba(0, 128, 128, .0)"
               >
-                <p className="font-fredoka text-slate-100 text-md lg:text-2xl my-4">
+                <p className="font-fredoka text-md lg:text-2xl my-4">
                   Explore the{" "}
-                  <span className="text-[#b4fe00]">
+                  <span className="text-accent">
                     key benefits of comprehensive asset register
                   </span>{" "}
                   in detail.
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
 
                 <Button
                   variant="link"
-                  className="mt-12 text-white hover:text-green-500 group"
+                  className="mt-12 text-foreground-1 hover:text-link-hover group"
                   asChild
                 >
                   <Link to="/services#asset-register-benefits">

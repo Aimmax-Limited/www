@@ -9,13 +9,13 @@ import { Button } from "../shared/ui/button";
 
 export default function Testimonials() {
   return (
-    <div className="pb-24 bg-slate-900">
+    <div className="pb-24 bg-background-1 text-foreground-1">
       <AnimateVertical className="max-w-screen-xl mx-auto px-5 flex flex-col items-center">
-        <h2 className="text-gray-400 font-fredoka text-center text-xl md:text-3xl mb-3 md:mb-3 lg:mb-5">
+        <h2 className="text-secondary-foreground font-fredoka text-center text-xl md:text-3xl mb-3 md:mb-3 lg:mb-5">
           Our clients share their experiences working with us
         </h2>
 
-        <Quote size="40pt" className="fill-[#b4fe00]/90 mb-5" />
+        <Quote size="40pt" className="fill-accent/90 mb-5" />
 
         <EmblaCarouselAutoPlay slides={testimonials} options={{ loop: true }} />
       </AnimateVertical>
@@ -72,7 +72,7 @@ const EmblaCarouselAutoPlay = ({
           {slides.map((slide, index) => (
             <div className="embla__slide " key={index}>
               <div className="flex justify-center">
-                <p className="max-w-screen-lg pointer-events-none text-slate-100 text-center font-fredoka tracking-wide leading-relaxed lg:text-xl my-4">
+                <p className="max-w-screen-lg pointer-events-none text-center font-fredoka tracking-wide leading-relaxed lg:text-xl my-4">
                   "{slide.text}"
                 </p>
               </div>
@@ -83,7 +83,7 @@ const EmblaCarouselAutoPlay = ({
                   alt={`${slide.clientName} Logo`}
                   className="h-16"
                 />
-                <p className="text-slate-300 text-lg font-fredoka mt-3">
+                <p className="text-secondary-foreground text-lg font-fredoka mt-3">
                   {slide.clientName}
                 </p>
               </div>
@@ -97,14 +97,14 @@ const EmblaCarouselAutoPlay = ({
           className="embla__button hover:-translate-x-0.5"
           onClick={scrollPrev}
         >
-          <ChevronCircleLeft className="fill-gray-500 -translate-x-[1px]" />
+          <ChevronCircleLeft className="fill-secondary -translate-x-[1px]" />
         </Button>
         <div className="embla__dots">
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={"embla__dot bg-slate-300/10 backdrop-blur-2xl".concat(
+              className={"embla__dot bg-secondary/10 backdrop-blur-2xl".concat(
                 index === selectedIndex ? " embla__dot--selected" : ""
               )}
             />
@@ -115,7 +115,7 @@ const EmblaCarouselAutoPlay = ({
           className="embla__button hover:translate-x-0.5"
           onClick={scrollNext}
         >
-          <ChevronCircleRight className="fill-slate-500 translate-x-[1px]" />
+          <ChevronCircleRight className="fill-secondary translate-x-[1px]" />
         </Button>
       </div>
     </section>

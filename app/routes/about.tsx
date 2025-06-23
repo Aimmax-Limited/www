@@ -8,29 +8,29 @@ import SpotlightCard from "~/components/shared/reactbits/spotlight-card";
 
 export default function About() {
   return (
-    <div className="bg-white" id="top">
+    <div className="" id="top">
       <Navbar
         className={`fixed top-0 left-0 z-50 bg-[#0A192F]/95 backdrop-blur-sm h-16 shadow-[0_4px_14px_rgba(0,0,0,0.4)]`}
       />
 
       <div className="mt-16 h-[200px] md:h-[350px] lg:h-[500px] bg-[url('/backgrounds/blue-sky.jpg')] bg-top-left flex items-center justify-start sticky top-0 z-10">
-        <h1 className="font-clashdisplay font-medium text-white text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl max-w-screen-xl mx-auto">
+        <h1 className="font-clashdisplay font-medium text-foreground-1 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl max-w-screen-xl mx-auto">
           About Us
         </h1>
       </div>
 
-      <div className="relative z-20 bg-white">
+      <div className="relative z-20 bg-background">
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
           {statements.map((stmt, index) => (
             <SpotlightCard
-              className="text-center bg-white/10 rounded-lg hover:bg-white backdrop-blur-xl border-0 shadow-[0_6px_15px_rgba(0,0,0,0.3)]"
+              className="text-center bg-background/10 rounded-lg hover:bg-white backdrop-blur-xl border-0 shadow-[0_6px_15px_rgba(0,0,0,0.3)]"
               spotlightColor="rgba(180, 254, 0, 0)"
               key={index}
             >
               <h3 className="font-fredoka font-medium lg:font-normal text-2xl md:text-3xl lg:text-[40px] pt-5 md:pt-0 mb-8">
                 {stmt.name}
               </h3>
-              <p className="font-satoshi font-medium text-[17px] text-slate-800 px-2 md:px-0">
+              <p className="font-satoshi font-medium text-[17px] text-secondary-fg-1 px-2 md:px-0">
                 {stmt.description}
               </p>
             </SpotlightCard>
@@ -45,7 +45,7 @@ export default function About() {
           </AnimateVertical>
 
           <AnimateVertical>
-            <p className="text-lg font-satoshi font-medium text-slate-800 text-justify">
+            <p className="text-lg font-satoshi font-medium text-secondary-fg-1 text-justify">
               Aimmax Company Ltd, a Kenyan firm, consists of experienced
               professionals with diverse expertise. The company has evolved from
               a sole proprietorship to a fully incorporated entity, specializing
@@ -95,7 +95,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative z-20 bg-white">
+      <div className="relative z-20 bg-background">
         <Footer className="mt-[100px] md:mt-[200px] lg:mt-[250px]" />
       </div>
     </div>

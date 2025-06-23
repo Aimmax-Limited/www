@@ -38,18 +38,18 @@ export default function ContactHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/0 to-black/20"></div>
 
       <Navbar
-        className={`fixed top-0 left-0 z-50 bg-[#0A192F]/95 backdrop-blur-sm h-16 shadow-[0_4px_14px_rgba(0,0,0,0.4)]`}
+        className={`fixed top-0 left-0 z-50 bg-background-1/95 backdrop-blur-sm h-16 shadow-[0_4px_14px_rgba(0,0,0,0.4)]`}
       />
 
       <div className="mt-10 md:mt-20 lg:mt-28 xl:mt-32 flex flex-col lg:flex-row">
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col hero-text gap-15 text-center items-center">
             <div>
-              <p className="text-white font-bold text-4xl lg:text-6xl">
-                at <span className="text-[#b4fe00]">AIMMAX LIMITED.</span> we
-                are all about solving asset related issues!
+              <p className="text-foreground-1 font-bold text-4xl lg:text-6xl">
+                at <span className="text-accent">AIMMAX LIMITED.</span> we are
+                all about solving asset related issues!
               </p>
-              <p className="text-slate-100">
+              <p className="text-muted-foreground">
                 Do you have any questions or require more information? Our team
                 of experts are happy to assist you.{" "}
               </p>
@@ -141,7 +141,7 @@ export default function ContactHero() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full text-white mt-4 hover:bg-[#b4fe00]/70 submit-btn  bg-[#b4fe00] px-4 py-2 rounded"
+                    className="w-full text-white mt-4 bg-accent hover:bg-primary submit-btn px-4 py-2 rounded"
                   >
                     Send Message
                   </button>

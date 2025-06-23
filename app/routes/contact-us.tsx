@@ -19,7 +19,7 @@ export default function ContactUs() {
 
   return (
     <>
-      <main className="flex flex-col bg-[#B0C4DE]" id="top">
+      <main className="flex flex-col" id="top">
         <ContactHero />
         <div>
           {/* Left side - Scrollable content */}
