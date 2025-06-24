@@ -1,25 +1,45 @@
+import { useEffect, useState } from "react";
 import {
   AnimateHorizontal,
   AnimateVertical,
 } from "~/components/shared/animate-content";
+import CommonHero from "~/components/shared/common-hero";
 import Footer from "~/components/shared/footer";
 import Navbar from "~/components/shared/navbar";
 import SpotlightCard from "~/components/shared/reactbits/spotlight-card";
 
 export default function About() {
+  const [showFixedNav, setShowFixedNav] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const content = document.getElementById("content");
+      const contentTop = content?.getBoundingClientRect().top;
+      const contentBottom = content?.getBoundingClientRect().bottom;
+
+      contentTop &&
+        contentBottom &&
+        setShowFixedNav(contentTop <= 0 && contentBottom > 64);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="" id="top">
+      <Navbar className={`absolute top-0 z-50 h-16`} />
       <Navbar
-        className={`fixed top-0 left-0 z-50 bg-[#0A192F]/95 backdrop-blur-sm h-16 shadow-[0_4px_14px_rgba(0,0,0,0.4)]`}
+        className={`fixed top-0 left-0 z-50 bg-background-1/85 backdrop-blur-sm transition-all duration-500 h-16 ${
+          showFixedNav
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-full pointer-events-none"
+        }`}
       />
 
-      <div className="mt-16 h-[200px] md:h-[350px] lg:h-[500px] bg-[url('/backgrounds/blue-sky.jpg')] bg-top-left flex items-center justify-start sticky top-0 z-10">
-        <h1 className="font-clashdisplay font-medium text-foreground-1 text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-8xl max-w-screen-xl mx-auto">
-          About Us
-        </h1>
-      </div>
+      <CommonHero title="About Us" />
 
-      <div className="relative z-20 bg-background">
+      <div className="relative z-20 bg-background" id="content">
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
           {statements.map((stmt, index) => (
             <SpotlightCard
