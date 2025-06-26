@@ -23,10 +23,10 @@ export default function ContactUs() {
         <ContactHero />
         <div>
           {/* Left side - Scrollable content */}
-          <div className="scrollable-content bg-slate-900">
+          <div className="scrollable-content bg-background-1">
             <section className="mb-12">
               <div className="p-4 flex flex-col justify-center">
-                <div className="my-8 flex flex-col items-center">
+                <div className="mb-8 flex flex-col items-center">
                   <h2 className="text-2xl font-semibold mb-4">
                     <MapPinnedIcon
                       width={50}
