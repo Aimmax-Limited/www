@@ -8,7 +8,6 @@ import {
 } from "~/components/shared/animate-content";
 import CommonHero from "~/components/shared/common-hero";
 import Footer from "~/components/shared/footer";
-import { Barcode, Calculator, Register } from "~/components/shared/icons";
 import Navbar from "~/components/shared/navbar";
 
 export default function Services() {
@@ -31,7 +30,6 @@ export default function Services() {
 
   return (
     <div className="bg-background" id="top">
-      <Navbar className={`absolute top-0 z-50 h-16`} />
       <Navbar
         className={`fixed top-0 left-0 z-50 bg-background-1/85 backdrop-blur-sm transition-all duration-500 h-16 ${
           showFixedNav
@@ -43,23 +41,27 @@ export default function Services() {
       <CommonHero title="Our Services" />
 
       <div className="relative z-20 bg-background" id="content">
-        <div className="py-10 px-4 xl:px-0 max-w-screen-xl mx-auto">
-          <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
-            Current Situation and Problem Statement
-          </h2>
-          <p className="text-lg font-satoshi font-medium">
-            Many public institutions manage assets manually, leading to several
-            challenges:
-          </p>
-          <ul className="list-decimal ps-5 lg:ps-10 pt-3 font-satoshi font-medium">
-            {ProblemStatements.map((stmt, index) => (
-              <li className="my-3" key={index}>
-                {stmt}
-              </li>
-            ))}
-          </ul>
+        <div className="py-10 xl:pt-14 px-4 xl:px-0 max-w-screen-xl mx-auto">
+          <div className="flex justify-center items-center mb-8">
+            <h2 className="style-h2 tracking-wide text-[#13517a]">
+              Current Situation and Problem Statement
+            </h2>
+          </div>
+          <div className="style-p">
+            <p>
+              Many public institutions manage assets manually, leading to
+              several challenges:
+            </p>
+            <ul className="list-decimal ps-5 lg:ps-10 pt-3">
+              {ProblemStatements.map((stmt, index) => (
+                <li className="my-3" key={index}>
+                  {stmt}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <p className="text-lg font-satoshi font-medium pt-10">
+          <p className="style-p pt-10">
             In response to these issues, we provide a range of professional
             services designed to modernize and optimize asset management
             operations.
@@ -70,24 +72,27 @@ export default function Services() {
           className="py-10 xl:py-16 px-4 xl:px-0 max-w-screen-xl mx-auto"
           id="barcode-tagging"
         >
-          <AnimateVertical>
-            <h2 className="font-fredoka font-medium lg:font-normal text-2xl md:text-3xl lg:text-[40px] mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex justify-center items-center">
-              <Barcode className="fill-accent me-5" /> Physical Asset Tagging
-              and Barcoding
+          <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
+            {/* <Barcode className="fill-accent me-5" /> */}
+            <h2 className="style-h2 text-[#13517a] tracking-wide">
+              Physical Asset Tagging and Barcoding
             </h2>
           </AnimateVertical>
 
           <AnimateVertical>
             <div className="relative mb-8">
-              <p className="xl:max-w-[800px] text-justify text-lg font-satoshi font-medium">
+              <p className="xl:max-w-[800px] text-justify style-p">
                 Using serialized aluminum barcode tags with full-color GK logos,
                 we physically label each asset with a unique identifier. This
                 allows for accurate and seamless scanning during audits and
                 routine asset verification. Our barcoding system integrates
                 smoothly with digital asset registers and financial management
                 platforms like{" "}
-                <StyledInlineText text="IFMIS" className="font-bold" />,
-                enabling real-time tracking across locations and departments.
+                <StyledInlineText
+                  text="IFMIS"
+                  className="font-bold brush-highlight"
+                />
+                , enabling real-time tracking across locations and departments.
               </p>
               <div className="hidden xl:block absolute right-0 -top-10">
                 <BarcodeAnimation />
@@ -95,12 +100,15 @@ export default function Services() {
             </div>
           </AnimateVertical>
 
-          <AnimateVertical>
-            <p className="text-lg font-satpshi font-medium">Key Features: </p>
+          <AnimateVertical className="style-p">
+            <p>Key Features: </p>
 
             <ol className="list-decimal ps-5 lg:ps-10 pt-3">
               {BarcodeKeyFeatures.map((feature, index) => (
-                <li className="my-3" key={index}>
+                <li
+                  className={`my-3 ${index < 2 && "xl:max-w-[850px]"}`}
+                  key={index}
+                >
                   <span className="font-bold">{feature.name}:</span>{" "}
                   {feature.description}
                 </li>
@@ -114,16 +122,16 @@ export default function Services() {
           id="asset-register-preparation"
         >
           <div className="max-w-screen-xl mx-auto">
-            <AnimateVertical>
-              <h2 className="font-fredoka font-medium lg:font-normal text-2xl md:text-3xl lg:text-[40px] mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex items-center justify-center">
-                <Register className="fill-accent me-5" /> Comprehensive Assets
-                Register Preparation
+            <AnimateVertical className="mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex items-center justify-center">
+              {/* <Register className="fill-accent me-5" /> */}
+              <h2 className="style-h2 underline-dark tracking-wide">
+                Comprehensive Assets Register Preparation
               </h2>
             </AnimateVertical>
 
             <AnimateVertical>
               <div className="relative">
-                <p className="xl:ms-[380px] xl:max-w-[920px] font-satoshi font-medium text-[17px] md:text-lg text-justify">
+                <p className="xl:ms-[380px] xl:max-w-[920px] style-p text-justify">
                   At Aimmax Company Ltd, we specialize in delivering accurate
                   and fully compliant Comprehensive Asset Register Preparation
                   services that support both public and private sector
@@ -134,8 +142,17 @@ export default function Services() {
                   classification and documentation of all fixed and movable
                   assets, ensuring that every item is properly accounted for and
                   tracked throughout its lifecycle. Each register is prepared in
-                  alignment with Treasury’s asset policy guidelines and is fully
-                  compatible with the IFMIS system.
+                  alignment{" "}
+                  <StyledInlineText
+                    text="Treasury’s asset policy guidelines"
+                    className="font-bold brush-highlight brush-dark"
+                  />{" "}
+                  and is{" "}
+                  <StyledInlineText
+                    text="fully compatible with the IFMIS system"
+                    className="font-bold brush-highlight brush-dark"
+                  />{" "}
+                  .
                   <br /> <br />
                   Our asset registers are provided in both soft and hard copy
                   formats, designed for direct upload into financial management
@@ -153,7 +170,7 @@ export default function Services() {
             </AnimateVertical>
 
             <AnimateVertical>
-              <div className="mb-10 mt-4 font-satoshi font-medium text-[17px] md:text-lg">
+              <div className="mb-10 mt-4 style-p">
                 The assets register captures detailed information, including:
                 <ul className="list-disc ps-5 pt-3 lg:ps-10 grid xl:grid-cols-2">
                   {AssetRegisterDetails.map((detail, index) => (
@@ -168,14 +185,14 @@ export default function Services() {
             <div>
               <AnimateVertical>
                 <h3
-                  className="font-fredoka text-start text-xl md:text-xl lg:text-[30px] mb-5"
+                  className="style-h3 tracking-wide mb-5"
                   id="asset-register-benefits"
                 >
                   Key Benefits of a Comprehensive Assets Register
                 </h3>
               </AnimateVertical>
 
-              <ul className="font-satoshi font-medium text-[17px] md:text-lg list-decimal ps-5 lg:ps-10 max-w-6xl xl:text-justify">
+              <ul className="style-p list-decimal ps-5 lg:ps-10 max-w-6xl xl:text-justify">
                 {AssetRegisterBenefits.map((benefit, index) => (
                   <AnimateHorizontal key={index}>
                     <li className="my-3">
@@ -195,15 +212,15 @@ export default function Services() {
           className="py-10 xl:py-16 px-4 xl:px-0 max-w-screen-xl mx-auto"
           id="accrual-accounting"
         >
-          <AnimateVertical>
-            <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex justify-center items-center">
-              <Calculator className="fill-accent me-5" /> Expert Accrual-Based
-              Accounting Support
+          <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
+            {/* <Calculator className="fill-accent me-5" /> */}
+            <h2 className="style-h2">
+              Expert Accrual-Based Accounting Support
             </h2>
           </AnimateVertical>
 
           <AnimateVertical>
-            <div className="font-satoshi font-medium text-[17px] md:text-lg text-justify">
+            <div className="style-p text-justify">
               <div className="relative">
                 <p className="pb-8 xl:max-w-[890px]">
                   Transitioning from cash-based to accrual-based accounting is a
@@ -213,7 +230,7 @@ export default function Services() {
                   and implement accrual accounting in full compliance with{" "}
                   <StyledInlineText
                     text="IPSAS (International Public Sector Accounting Standards)"
-                    className="font-bold"
+                    className="font-bold brush-highlight"
                   />
                   . Our team works efficiently to ensure that all assets,
                   liabilities, revenues, and expenses are recorded when they are
@@ -221,22 +238,24 @@ export default function Services() {
                   and complete picture of your financial position.
                 </p>
 
-                <div className="hidden xl:block absolute right-0 -top-10">
+                <div className="hidden xl:block absolute right-0 -top-14">
                   <AccountingSummation
-                    className="text-secondary-fg-1"
-                    borderColors={["", "border-black/10"]}
+                    className="text-foreground"
+                    borderColors={["", ""]}
                   />
                 </div>
               </div>
-              Why Choose Accrual Over Cash Basis?
-              <ul className="list-disc ps-5 lg:ps-10">
-                {WhyAccrual.map((reason, index) => (
-                  <li className="my-3" key={index}>
-                    <span className="font-bold">{reason.name}:</span>{" "}
-                    {reason.description}
-                  </li>
-                ))}
-              </ul>
+              <div className="md:mt-10">
+                Why Choose Accrual Over Cash Basis?
+                <ul className="list-disc ps-5 lg:ps-10">
+                  {WhyAccrual.map((reason, index) => (
+                    <li className="my-3" key={index}>
+                      <span className="font-bold">{reason.name}:</span>{" "}
+                      {reason.description}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </AnimateVertical>
         </div>
