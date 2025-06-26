@@ -28,8 +28,6 @@ export default function About() {
 
   return (
     <div className="" id="top">
-      <Navbar className={`absolute top-0 z-50 h-16`} />
-
       <Navbar
         className={`fixed top-0 left-0 z-50 bg-background-1/85 backdrop-blur-sm transition-all duration-500 h-16 ${
           showFixedNav
@@ -41,32 +39,13 @@ export default function About() {
       <CommonHero title="About Us" />
 
       <div className="relative z-20 bg-background" id="content">
-        <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
-          {statements.map((stmt, index) => (
-            <SpotlightCard
-              className="text-center bg-background/10 rounded-lg hover:bg-white backdrop-blur-xl border-0 shadow-[0_6px_15px_rgba(0,0,0,0.3)]"
-              spotlightColor="rgba(180, 254, 0, 0)"
-              key={index}
-            >
-              <h3 className="font-fredoka font-medium lg:font-normal text-2xl md:text-3xl lg:text-[40px] pt-5 md:pt-0 mb-8">
-                {stmt.name}
-              </h3>
-              <p className="font-satoshi font-medium text-[17px] text-secondary-fg-1 px-2 md:px-0">
-                {stmt.description}
-              </p>
-            </SpotlightCard>
-          ))}
-        </div>
-
-        <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto border-t border-slate-300">
-          <AnimateVertical>
-            <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
-              Company Profile
-            </h2>
+        <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto">
+          <AnimateVertical className="flex justify-center">
+            <h2 className="style-h2 mb-8">Company Profile</h2>
           </AnimateVertical>
 
           <AnimateVertical>
-            <p className="text-lg font-satoshi font-medium text-secondary-fg-1 text-justify">
+            <p className="style-p text-foreground text-justify">
               Aimmax Company Ltd, a Kenyan firm, consists of experienced
               professionals with diverse expertise. The company has evolved from
               a sole proprietorship to a fully incorporated entity, specializing
@@ -88,15 +67,28 @@ export default function About() {
           </AnimateVertical>
         </div>
 
+        <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
+          {statements.map((stmt, index) => (
+            <SpotlightCard
+              className="text-center bg-background/10 rounded-lg backdrop-blur-xl border-0 shadow-[0_6px_15px_rgba(0,0,0,0.3)]"
+              spotlightColor="rgba(180, 254, 0, 0)"
+              key={index}
+            >
+              <h3 className="style-h3 pt-5 md:pt-0 mb-8">{stmt.name}</h3>
+              <p className="style-p p-small text-foreground px-2 md:px-0">
+                {stmt.description}
+              </p>
+            </SpotlightCard>
+          ))}
+        </div>
+
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto border-t border-slate-300">
-          <AnimateVertical>
-            <h2 className="font-fredoka font-medium lg:font-normal text-center text-2xl md:text-3xl lg:text-[40px] mb-8">
-              Our Strategy
-            </h2>
+          <AnimateVertical className="flex justify-center">
+            <h2 className="style-h2 mb-8">Our Strategy</h2>
           </AnimateVertical>
 
-          <AnimateVertical>
-            <p className="text-lg font-satoshi font-medium">
+          <AnimateVertical className="style-p">
+            <p>
               Our strategy is to build along-term Asset management solutions by
               leveraging the strength of our management team and staff
               capabilities. We will focus, drive and optimize our business to

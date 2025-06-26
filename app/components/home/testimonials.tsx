@@ -11,7 +11,7 @@ export default function Testimonials() {
   return (
     <div className="pb-24 bg-background-1 text-foreground-1">
       <AnimateVertical className="max-w-screen-xl mx-auto px-5 flex flex-col items-center">
-        <h2 className="text-secondary-foreground font-fredoka text-center text-xl md:text-3xl mb-3 md:mb-3 lg:mb-5">
+        <h2 className="text-secondary-foreground style-h3 text-center mb-3 md:mb-3 lg:mb-5">
           Our clients share their experiences working with us
         </h2>
 

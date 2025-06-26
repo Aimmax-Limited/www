@@ -22,7 +22,7 @@ export default function Hero({
         )}
         {...props}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background-1/80 to-background-1/50"></div>
 
         <Navbar className="relative z-50" home />
 
@@ -52,7 +52,7 @@ export default function Hero({
           <Button
             size={"lg"}
             variant={"outline"}
-            className="h-12 max-w-3xs flex items-center text-lg text-foreground bg-accent hover:bg-background backdrop-blur-xl rounded-xl border border-white/30 shadow-[0_6px_15px_rgba(255,255,255,0.4)] hover:shadow-none"
+            className="h-12 max-w-3xs flex items-center text-lg text-accent-foreground bg-accent hover:bg-background backdrop-blur-xl rounded-xl border border-white/30 shadow-[0_6px_15px_rgba(255,255,255,0.4)] hover:shadow-none"
             asChild
           >
             <Link to="/contact-us#top">Get in touch with us</Link>

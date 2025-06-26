@@ -17,20 +17,20 @@ export default function WhyChooseUs() {
     <>
       <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10 bg-background-1 text-foreground-1">
         <div className="max-w-screen-xl mx-auto">
-          <AnimateVertical>
-            <h2 className="font-fredoka font-normal text-center text-xl md:text-3xl lg:text-[40px] max-w-2xl mx-auto">
+          <AnimateVertical className="max-w-3xl mx-auto">
+            <h2 className="style-h2 h2-no-underline text-center tracking-wide">
               Why Clients Trust Us: Personalized Asset Management for Long-Term
               Success
             </h2>
           </AnimateVertical>
 
-          <div className="text-lg grid grid-cols-1 md:grid-cols-3 gap-4 pt-10 md:pt-20">
+          <div className="text-lg grid grid-cols-1 lg:grid-cols-3 gap-4 pt-10 md:pt-20">
             {items.map((item, index) => (
               <SpotlightCard
                 className={cn(
                   "card__colors rounded-lg backdrop-blur-xl transition-all duration-500",
                   (index + 1) % 4 === 0 || (index + 1) % 4 === 1
-                    ? "md:col-span-2"
+                    ? "lg:col-span-2"
                     : "col-span-1"
                 )}
                 spotlightColor="rgba(0, 128, 128, .0)"
@@ -40,10 +40,8 @@ export default function WhyChooseUs() {
                   <div className="">
                     <item.icon className="fill-accent" />
                   </div>
-                  <p className="font-fredoka text-md lg:text-xl my-4">
-                    {item.name}
-                  </p>
-                  <p className="font-satoshi font-medium text-base text-secondary-foreground-1">
+                  <p className="style-p my-4">{item.name}</p>
+                  <p className="style-p p-small text-secondary-foreground-1">
                     {item.description}
                   </p>
                 </AnimateVertical>
