@@ -9,7 +9,7 @@ export default function Services() {
       <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10">
         <div className="max-w-screen-xl mx-auto">
           <AnimateVertical threshold={0.01} className="max-w-3xl mx-auto">
-            <h2 className="style-h2 h2-no-underline tracking-wide text-center">
+            <h2 className="style-h2-special h2-no-underline tracking-wide text-center">
               Comprehensive Asset Management Solutions Tailored to Your Needs
             </h2>
           </AnimateVertical>
