@@ -8,8 +8,8 @@ export default function Services() {
     <>
       <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10">
         <div className="max-w-screen-xl mx-auto">
-          <AnimateVertical threshold={0.01}>
-            <h2 className="font-fredoka font-normal text-center text-xl md:text-3xl lg:text-[40px] max-w-2xl mx-auto">
+          <AnimateVertical threshold={0.01} className="max-w-3xl mx-auto">
+            <h2 className="style-h2 h2-no-underline tracking-wide text-center">
               Comprehensive Asset Management Solutions Tailored to Your Needs
             </h2>
           </AnimateVertical>
@@ -25,8 +25,8 @@ export default function Services() {
                   />
 
                   <div className="max-w-[400px] mx-auto">
-                    <p className="font-fredoka text-2xl mt-8">{service.name}</p>
-                    <p className="font-satoshi text-[17px] mt-4">
+                    <p className="style-h3 h3-fredoka mt-8">{service.name}</p>
+                    <p className="style-p p-small mt-4">
                       {service.description}
                     </p>
                   </div>

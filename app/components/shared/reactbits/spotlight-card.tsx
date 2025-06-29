@@ -55,7 +55,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative rounded-3xl border border-neutral-700 bg-[#0A192F] overflow-hidden pb-11 md:p-11",
+        "relative rounded-3xl border bg-[#0A192F] overflow-hidden p-3 md:p-11",
         className
       )}
     >
