@@ -26,10 +26,30 @@ export default function ContactHero() {
     subject: "",
     message: "",
   });
+  const [status, setStatus] = useState('')
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit =  async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Handle form submission
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwopR1JUOzoY9-Stc8X3gKYPT_9zFVX1RTa81Rd7m8W5zxhF8G_6WBbiq55DNabHO3_fA/exec', {
+        method: 'POST',
+        body: new URLSearchParams(formData),
+      });
+
+      if (response.ok) {
+        setStatus('Message sent!');
+        setFormData({name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",});
+      } else {
+        setStatus('Failed to send. Please try again.');
+      }
+    } catch (error) {
+      setStatus('Error occurred. Please try again.');
+    }
     console.log("Form submitted:", formData);
   };
 
@@ -145,6 +165,8 @@ export default function ContactHero() {
                   >
                     Send Message
                   </button>
+                  {status === 'Message sent' ? <p></p> : <>{status} </> }
+                  
                 </form>
               </div>
             </div>
