@@ -9,6 +9,7 @@ import {
 import CommonHero from "~/components/shared/common-hero";
 import Footer from "~/components/shared/footer";
 import Navbar from "~/components/shared/navbar";
+import ValuationAnimation from "~/components/shared/valuation-animation";
 
 export default function Services() {
   const [showFixedNav, setShowFixedNav] = useState(false);
@@ -73,7 +74,6 @@ export default function Services() {
           id="barcode-tagging"
         >
           <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
-            {/* <Barcode className="fill-accent me-5" /> */}
             <h2 className="style-h2 text-[#13517a] tracking-wide">
               Physical Asset Tagging and Barcoding
             </h2>
@@ -115,6 +115,56 @@ export default function Services() {
               ))}
             </ol>
           </AnimateVertical>
+        </div>
+
+        <div
+          className="py-10 xl:py-16 px-4 xl:px-0  bg-background-1 text-foreground-1"
+          id="valuation"
+        >
+          <div className="max-w-screen-xl mx-auto">
+            <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
+              <h2 className="style-h2 underline-dark tracking-wide">
+                Comprehensive Asset Valuation
+              </h2>
+            </AnimateVertical>
+
+            <AnimateVertical>
+              <div className="relative mb-8">
+                <p className="xl:max-w-[800px] text-justify style-p">
+                  Aimmax Company Ltd offers comprehensive Valuation Services to
+                  help organizations determine the true worth of their assets in
+                  compliance with{" "}
+                  <StyledInlineText
+                    text="International Public Sector Accounting Standards (IPSAS) "
+                    className="font-bold brush-highlight"
+                  />
+                  and Government of Kenya (GOK) Treasury policies. Our team of
+                  certified and experienced valuers conducts precise valuations
+                  for fixed assets, land, buildings, machinery, vehicles and ICT
+                  equipment, ensuring transparency and regulatory compliance.
+                </p>
+                <div className="hidden xl:block absolute right-0 -top-10">
+                  <ValuationAnimation />
+                </div>
+              </div>
+            </AnimateVertical>
+
+            <AnimateVertical className="style-p">
+              <p>Key Features: </p>
+
+              <ol className="list-decimal ps-5 lg:ps-10 pt-3">
+                {ValuationKeyFeatures.map((feature, index) => (
+                  <li
+                    className={`my-3 ${index < 2 && "xl:max-w-[850px]"}`}
+                    key={index}
+                  >
+                    <span className="font-bold">{feature.name}:</span>{" "}
+                    {feature.description}
+                  </li>
+                ))}
+              </ol>
+            </AnimateVertical>
+          </div>
         </div>
 
         <div
@@ -422,4 +472,32 @@ const AssetRegisterDetails = [
   "Motor vehicle registration documents and status",
   "Asset accounting basis in consistency with international standards",
   "Remarks and any other required data",
+];
+
+const ValuationKeyFeatures = [
+  {
+    name: "Fair Market Value Assessment",
+    description:
+      "We determine the current market value of assets, considering factors such as age, condition, depreciation and market trends.",
+  },
+  {
+    name: "Compliance with IPSAS & GOK Guidelines",
+    description:
+      "Our valuations adhere to IPSAS standards, which require assets to be recorded at cost or fair value under accrual accounting.",
+  },
+  {
+    name: "Revaluation & Depreciation Tracking",
+    description:
+      "Periodic revaluations to reflect changes in asset value over time.",
+  },
+  {
+    name: "Support for Financial & Audit Processes",
+    description:
+      "Provides documented evidence for audit trails and financial statements helping organizations avoid over- or under-valuation in accounting records.",
+  },
+  {
+    name: "Insurance & Disposal Advisory",
+    description:
+      "Ensures assets are adequately insured based on correct valuations and guides asset disposal decisions by establishing realistic market prices",
+  },
 ];
