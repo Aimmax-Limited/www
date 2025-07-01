@@ -250,14 +250,15 @@ body {
   font-size: 2.0rem;
   font-weight: 500;
   font-family: var(--font-clashdisplay);
-  color: white;
+  margin-bottom: 0px;
+  padding-bottom: 2px;
 
   @media (min-width: 717px) {
     font-size: min(4vw, 50px);
   }
 
   position: relative;
-  padding: 0;
+  padding: 2px;
   text-align: center;
   display: inline-block;
   z-index: 20;
@@ -269,12 +270,12 @@ body {
       position: absolute;
       left: 50%;
       translate: -50% 0;
-      bottom: 0.24em;
-      height: 1.2em;
+      bottom: 0;
+      height: 0.4rem;
       width: 101%;
       background-image: url('./backgrounds/dark-underline.png');
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: bottom;
       background-size: cover;
       z-index: -1;
     }
@@ -311,7 +312,7 @@ body {
       position: absolute;
       left: 50%;
       translate: -50% 0;
-      bottom: 0.24em;
+      bottom: 0.20em;
       height: 0.9em;
       width: 101%;
       background-image: url('./backgrounds/dark-underline.png');

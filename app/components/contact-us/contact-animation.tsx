@@ -12,7 +12,7 @@ export default function ContactInfoAnimation() {
 
   return (
     <div
-      className="flex flex-col ml-4 md:ml-20 md:flex-row items-center justify-between gap-15 w-fit"
+      className="flex flex-col ml-8 md:ml-20 md:flex-row items-center justify-between gap-15 w-fit"
       ref={canvasRef}
     >
       <motion.div

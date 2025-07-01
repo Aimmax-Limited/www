@@ -92,7 +92,7 @@ export default function ContactUs() {
                 <div className="lg:w-3/5 self-start gap-2 flex flex-col">
                   <p className="text-foreground font-bold text-4xl lg:text-6xl">
                     at{" "}
-                    <span className="style-h2-contact text-foreground-1">
+                    <span className="style-h2-contact text-foreground">
                       AIMMAX LIMITED.
                     </span>{" "}
                     we are all about solving asset related issues!
@@ -108,7 +108,7 @@ export default function ContactUs() {
               </div>
               {/* Right side - Animated contact illustrations */}
               <animated.div
-                className="hero-illustrations w-fit justify-center items-center  lg:absolute top-50 right-7 md:mt-12 lg:mt-0 md:w-full lg:max-w-fit"
+                className="hero-illustrations w-fit justify-center items-center  lg:absolute top-30 right-7 md:mt-12 lg:mt-0 md:w-full lg:max-w-fit"
                 style={contactAnimations}
               >
                 {/*<AnimatedForm/>*/}
@@ -136,9 +136,11 @@ export default function ContactUs() {
                         </div>
                         <div className="form-group">
                           <input
-                            type="phone"
+                            type="tel"
+                            pattern="0[17][0-9]{8}"
                             id="phone"
                             name="phone"
+                            title="Phone can only be numbers"
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder=""
@@ -214,16 +216,8 @@ export default function ContactUs() {
           <div className="scrollable-content bg-background-1 ">
             <section className="mb-12">
               <div className="p-4 flex flex-col justify-center">
-                <div className="mb-8 flex flex-col items-center">
-                  <h2 className="text-2xl font-semibold mb-4">
-                    <MapPinnedIcon
-                      width={50}
-                      height={50}
-                      color={"#b4fe00"}
-                      strokeWidth={1}
-                      className="animate-pulse"
-                    />
-                  </h2>
+                <div className="mb-8 flex flex-col items-center pt-2">
+                  
                   <iframe
                     className="w-full"
                     title="map"
