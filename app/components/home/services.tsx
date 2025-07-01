@@ -19,7 +19,7 @@ export default function Services() {
               {services.map((service, index) => (
                 <div
                   className={`text-center flex flex-col ${
-                    index === 3 && "col-start-2"
+                    index === 3 && "md:col-start-2"
                   }`}
                   key={index}
                 >
