@@ -91,16 +91,14 @@ export default function Footer({
 
               <div className="flex gap-7">
                 <div className="flex justify-center items-center gap-2">
-                  <PhoneCall size="15pt" />
-                  <Link to="tel:+254721376993">
-                    0721 376 993 / 0733 796 154 / 0705 863 394
-                  </Link>
-                </div>
-                <div className="flex justify-center items-center gap-2">
                   <Mail size="15pt" />
                   <Link to="mailto:aimmaxcom@gmail.com">
                     aimmaxcom@gmail.com
                   </Link>
+                </div>
+                <div className="flex justify-center items-center gap-2">
+                  <PhoneCall size="15pt" />
+                  <Link to="tel:+254721376993">0721 376 993</Link>
                 </div>
               </div>
             </div>
