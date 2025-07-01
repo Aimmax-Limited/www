@@ -246,6 +246,50 @@ body {
   }
 }
 
+.style-h2-contact {
+  font-size: 2.0rem;
+  font-weight: 500;
+  font-family: var(--font-clashdisplay);
+  color: white;
+
+  @media (min-width: 717px) {
+    font-size: min(4vw, 50px);
+  }
+
+  position: relative;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  z-index: 20;
+
+  /* underline */
+  @media (min-width: 300px) {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      translate: -50% 0;
+      bottom: 0.24em;
+      height: 1.2em;
+      width: 101%;
+      background-image: url('./backgrounds/dark-underline.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+
+  
+  
+  &.underline-dark::after {
+    background-color: oklch(0.901 0.0046 0.01 / 20%);
+  }
+
+  &.h2-no-underline::after {
+    background-color: transparent;
+  }
+}
 .style-h2 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -271,10 +315,9 @@ body {
       height: 0.9em;
       width: 101%;
       background-image: url('./backgrounds/dark-underline.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-      
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
       z-index: -1;
     }
   }
@@ -585,10 +628,10 @@ body {
 /****** End Embla Carousel ******/
 
 /* Contact Hero Component */
-.contact-hero {
-  display: flex;
+/* .contact-hero {
+  
   flex-wrap: wrap;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   padding: 0rem 2rem;
   width: 100%;
@@ -609,7 +652,7 @@ body {
 .hero-text p {
   line-height: 1.6;
   margin-bottom: 2rem;
-}
+} */
 
 .contact-highlights {
   display: flex;
@@ -651,7 +694,7 @@ body {
 .illustration {
   border-radius: 10px;
   width: 350px;
-  height: 220px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -691,11 +734,7 @@ body {
     padding: 1rem 0;
   }
 
-  @media (max-width: 480px) {
-    .hero-illustrations {
-      display: none;
-    }
-  }
+ 
 }
 
 @keyframes fadeIn {

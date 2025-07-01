@@ -28,7 +28,7 @@ export default function About() {
 
   return (
     <div className="" id="top">
-      <Navbar className={`absolute top-0 z-50 h-16`} />
+      
 
       <Navbar
         className={`fixed top-0 left-0 z-50 bg-background-1/85 backdrop-blur-sm transition-all duration-500 h-16 ${

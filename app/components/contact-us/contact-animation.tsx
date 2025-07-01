@@ -12,7 +12,7 @@ export default function ContactInfoAnimation() {
 
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-between gap-15 w-fit"
+      className="flex flex-col ml-4 md:ml-20 md:flex-row items-center justify-between gap-15 w-fit"
       ref={canvasRef}
     >
       <motion.div
@@ -27,19 +27,19 @@ export default function ContactInfoAnimation() {
               isVisible ? "rollout flex  gap-8" : "flex gap-10"
             }`}
           >
-            <div className="flex justify-start  h-full pl-4 animate-pulse">
+            
+            <div className="flex justify-start h-full animate-pulse mt-2 pl-4">
               <svg
                 width="50"
-                height="50"
+                height="40"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="stroke-accent"
+                className="stroke-background-1"
               >
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <path d="M22 6l-10 7L2 6" />
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
               </svg>
             </div>
-            <div>
+            <div className=" w-full h-full items-start flex flex-col gap-1">
               <p className="">0721 376 993</p>
               <p className="">0733 796 154</p>
               <p className="">0705 863 394</p>
@@ -59,18 +59,19 @@ export default function ContactInfoAnimation() {
               isVisible ? "rollout flex  gap-8" : "flex gap-8"
             }`}
           >
-            <div className="flex justify-start h-full animate-pulse mt-2 pl-4">
+            <div className="flex justify-start  h-full pl-4 animate-pulse">
               <svg
                 width="50"
-                height="40"
+                height="50"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="stroke-accent"
+                className="stroke-background-1"
               >
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <path d="M22 6l-10 7L2 6" />
               </svg>
             </div>
-            <div className=" h-full flex flex-col items-start flex-1 ">
+            <div className=" h-full flex flex-col items-start flex-1 gap-2 ">
               <p className="">omemcompany@gmail.com</p>
               <p className="">aimmaxcom@gmail.com</p>
             </div>

@@ -7,8 +7,8 @@ export default function CommonHero({
   ...props
 }: { title: string } & React.ComponentProps<"div">) {
   return (
-    <div className={cn("bg-background sticky top-0", className)} {...props}>
-      <Navbar className="h-16" dark={false} />
+    <div className={cn(" sticky top-0", className)} {...props}>
+      <Navbar className="h-16 w-full" dark={false} />
       <div className="w-full mt-0 sm:mt-[2rem] md:mt-[4rem]">
         <h1 className="font-clashdisplay font-medium text-[#21679c] text-center style-h1 max-w-screen-xl mx-auto">
           {title}
