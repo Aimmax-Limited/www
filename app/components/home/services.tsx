@@ -17,7 +17,12 @@ export default function Services() {
           <AnimateVertical delay={0.3}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-10 md:pt-20">
               {services.map((service, index) => (
-                <div className="text-center flex flex-col" key={index}>
+                <div
+                  className={`text-center flex flex-col ${
+                    index === 3 && "col-start-2"
+                  }`}
+                  key={index}
+                >
                   <img
                     src={service.src}
                     alt={service.alt}
@@ -67,6 +72,14 @@ const services = [
     src: "/services/barcode.jpg",
     alt: "barcode",
     link: "/services#barcode-tagging",
+  },
+  {
+    name: "Comprehensive Asset Valuation",
+    description:
+      "Our valuations ensure compliance with IPSAS and Treasury guidelines, for accurate financial reporting and asset management decisions.",
+    src: "/services/valuation.jpg",
+    alt: "valuation",
+    link: "/services#valuation",
   },
   {
     name: "Expert Accrual-Based Accounting Support",
