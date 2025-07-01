@@ -363,6 +363,11 @@ const AssetRegisterBenefits = [
     description:
       "Our services aid the transition from cash basis to accrual accounting according to IPSAS standards, providing a standardized accounting format that meets Treasury guidelines.",
   },
+  {
+    name: "Performance Contracting",
+    description:
+      "Our solution is designed to meet the stringent requirements of the Treasury asset policy management guidelines for the public sector's performance contracting cycle of 2024/2025.",
+  },
 ];
 
 const BarcodeKeyFeatures = [
