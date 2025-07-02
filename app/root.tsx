@@ -32,6 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
+        <meta name="description" content="Discover professional accrual-based accounting services in Kenya, barcoding solutions, and expert preparation of comprehensive asset registers for your business."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />

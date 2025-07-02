@@ -41,7 +41,7 @@ export default function About() {
       <div className="relative z-20 bg-background" id="content">
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto">
           <AnimateVertical className="flex justify-center">
-            <h2 className="style-h2 mb-8">Company Profile</h2>
+            <h2 className="style-h2  text-[#e1ddde] mb-8">Company Profile</h2>
           </AnimateVertical>
 
           <AnimateVertical>
@@ -84,7 +84,7 @@ export default function About() {
 
         <div className="py-10 xl:py-14 px-4 md:px-8 xl:px-0 max-w-screen-xl mx-auto border-t border-slate-300">
           <AnimateVertical className="flex justify-center">
-            <h2 className="style-h2 mb-8">Our Strategy</h2>
+            <h2 className="style-h2 text-[#e1ddde] mb-8">Our Strategy</h2>
           </AnimateVertical>
 
           <AnimateVertical className="style-p">

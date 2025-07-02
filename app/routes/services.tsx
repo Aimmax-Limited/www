@@ -44,7 +44,7 @@ export default function Services() {
       <div className="relative z-20 bg-background" id="content">
         <div className="py-10 xl:pt-14 px-4 xl:px-0 max-w-screen-xl mx-auto">
           <div className="flex justify-center items-center mb-8">
-            <h2 className="style-h2 tracking-wide text-[#13517a]">
+            <h2 className="style-h2 tracking-wide text-[#e1ddde]">
               Current Situation and Problem Statement
             </h2>
           </div>
@@ -74,7 +74,8 @@ export default function Services() {
           id="barcode-tagging"
         >
           <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
-            <h2 className="style-h2 text-[#13517a] tracking-wide">
+            {/* <Barcode className="fill-accent me-5" /> */}
+            <h2 className="style-h2 text-[#e1ddde] tracking-wide">
               Physical Asset Tagging and Barcoding
             </h2>
           </AnimateVertical>
@@ -174,7 +175,7 @@ export default function Services() {
           <div className="max-w-screen-xl mx-auto">
             <AnimateVertical className="mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex items-center justify-center">
               {/* <Register className="fill-accent me-5" /> */}
-              <h2 className="style-h2 underline-dark tracking-wide">
+              <h2 className="style-h2-special underline-dark text-[#13517a] tracking-wide">
                 Comprehensive Assets Register Preparation
               </h2>
             </AnimateVertical>
@@ -264,7 +265,7 @@ export default function Services() {
         >
           <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
             {/* <Calculator className="fill-accent me-5" /> */}
-            <h2 className="style-h2">
+            <h2 className="style-h2 text-[#e1ddde]">
               Expert Accrual-Based Accounting Support
             </h2>
           </AnimateVertical>
