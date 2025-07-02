@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
-    "build:local": "NETLIFY=false react-router build",
+    "build": "npm run generate-sitemap && react-router build",
+    "build:local": "npm run generate-sitemap && NETLIFY=false react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/server.js",
     "start:local": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
@@ -31,6 +32,7 @@
     "react-icons": "^5.5.0",
     "react-router": "^7.5.3",
     "react-spring": "^10.0.1",
+    "sitemap": "^8.0.0",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
