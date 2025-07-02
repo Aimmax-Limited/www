@@ -271,7 +271,7 @@ body {
       bottom: 0;
       height: 0.4rem;
       width: 101%;
-      background-image: url("./backgrounds/dark-underline.png");
+      background-image: url("/backgrounds/dark-underline.png");
       background-repeat: no-repeat;
       background-position: bottom;
       background-size: cover;
@@ -311,7 +311,7 @@ body {
       bottom: 0.2em;
       height: 0.9em;
       width: 101%;
-      background-image: url("./backgrounds/dark-underline.png");
+      background-image: url("/backgrounds/dark-underline.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -352,7 +352,7 @@ body {
       bottom: 0.24em;
       height: 0.9em;
       width: 101%;
-      background-image: url("./backgrounds/greyline.png");
+      background-image: url("/backgrounds/greyline.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
