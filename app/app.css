@@ -244,6 +244,44 @@ body {
   }
 }
 
+.style-h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: var(--font-clashdisplay);
+
+  @media (min-width: 717px) {
+    font-size: min(4vw, 40px);
+  }
+
+  position: relative;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+
+  /* underline */
+  @media (min-width: 717px) {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      translate: -50% 0;
+      bottom: 0.24em;
+      height: 0.25em;
+      width: 101%;
+      background-color: oklch(0.4183 0.0911 243.24 / 20%);
+      z-index: -1;
+    }
+  }
+
+  &.underline-dark::after {
+    background-color: oklch(0.901 0.0046 0.01 / 20%);
+  }
+
+  &.h2-no-underline::after {
+    background-color: transparent;
+  }
+}
+
 .style-h2-contact {
   font-size: 2rem;
   font-weight: 500;
@@ -287,87 +325,7 @@ body {
     background-color: transparent;
   }
 }
-.style-h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: var(--font-clashdisplay);
 
-  @media (min-width: 717px) {
-    font-size: min(4vw, 40px);
-  }
-
-  position: relative;
-  padding: 0;
-  text-align: center;
-  display: inline-block;
-
-  /* underline */
-  @media (min-width: 717px) {
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      translate: -50% 0;
-      bottom: 0.2em;
-      height: 0.9em;
-      width: 101%;
-      background-image: url("/backgrounds/dark-underline.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      z-index: -1;
-    }
-  }
-
-  &.underline-dark::after {
-    background-color: oklch(0.901 0.0046 0.01 / 20%);
-  }
-
-  &.h2-no-underline::after {
-    background-color: transparent;
-  }
-}
-
-.style-h2-special {
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: var(--font-clashdisplay);
-
-  @media (min-width: 717px) {
-    font-size: min(4vw, 40px);
-  }
-
-  position: relative;
-  padding: 0;
-  text-align: center;
-  display: inline-block;
-
-  /* underline */
-  @media (min-width: 717px) {
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      translate: -50% 0;
-      bottom: 0.24em;
-      height: 0.9em;
-      width: 101%;
-      background-image: url("/backgrounds/greyline.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      z-index: -1;
-    }
-  }
-
-  &.underline-dark::after {
-    background-color: oklch(0.901 0.0046 0.01 / 20%);
-  }
-
-  &.h2-no-underline::after {
-    background-color: transparent;
-  }
-}
 .style-h3 {
   font-size: 1.5rem;
   font-weight: 500;
