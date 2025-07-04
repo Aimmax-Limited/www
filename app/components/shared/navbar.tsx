@@ -122,18 +122,13 @@ function NAvLink({
   path: string;
   dark: boolean;
 } & React.ComponentProps<"button">) {
+  const linkColor = dark ? "text-background" : "text-foreground";
   return (
     <Button variant="link" {...props}>
       <NavLink
         to={path}
         className={({ isActive, isPending }) =>
-          isActive
-            ? "text-primary"
-            : isPending
-            ? "text-link-hover"
-            : dark
-            ? "text-background"
-            : "text-foreground"
+          isActive ? linkColor : isPending ? "text-link-hover" : linkColor
         }
         preventScrollReset
       >
