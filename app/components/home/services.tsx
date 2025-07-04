@@ -8,7 +8,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimateVertical threshold={0.01} className="max-w-3xl mx-auto">
-          <h2 className="style-h2-special h2-no-underline tracking-wide text-center">
+          <h2 className="style-h2 h2-no-underline tracking-wide text-center">
             Comprehensive Asset Management Solutions Tailored to Your Needs
           </h2>
         </AnimateVertical>

@@ -144,8 +144,8 @@ function Hero() {
         <div className="flex flex-col hero-text gap-15 text-center">
           <div className="2xl:w-3/5 gap-2 flex flex-col">
             <p className="font-clashdisplay font-medium text-4xl lg:text-6xl">
-              at <span className="style-h2-contact">AIMMAX LIMITED.</span> we
-              are all about solving asset related issues!
+              at <span className="style-h2-contact">AIMMAX LIMITED</span> we are
+              all about solving asset related issues!
             </p>
             <p className="font-satoshi font-medium pt-5">
               Do you have any questions or require more information? Our team of
