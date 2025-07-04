@@ -47,7 +47,7 @@ export default function Navbar({
         </Button>
       </div>
       <div className="block md:hidden pe-4">
-        <SheetNavbar />
+        <SheetNavbar dark={dark} />
       </div>
     </div>
   );
@@ -143,54 +143,44 @@ function NAvLink({
   );
 }
 
-function SheetNavbar() {
+function SheetNavbar({ dark = true }: { dark?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Menu size="38" className="fill-foreground-1" />
+        <Menu
+          size="38"
+          className={`${dark ? "fill-foreground-1" : "fill-foreground"}`}
+        />
       </SheetTrigger>
       <SheetContent
         side="top"
-        className="py-7 flex flex-col items-start bg-background-1/95 border-0 opacity-80 backdrop-blur-lg"
+        className="py-7 flex flex-col items-start bg-background-1/70 border-0 backdrop-blur-xs"
       >
         {links.map((link) => (
-          <CustomNavLink
-            key={link.name}
-            name={link.name}
-            path={link.path}
+          <Button
+            variant="link"
+            className="font-outfit text-base"
             onClick={() => setIsOpen(false)}
-          />
+            key={link.name}
+          >
+            <NavLink
+              to={link.path}
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "text-primary"
+                  : isPending
+                  ? "text-link-hover"
+                  : "text-foreground-1"
+              }
+              preventScrollReset
+            >
+              {link.name}
+            </NavLink>
+          </Button>
         ))}
       </SheetContent>
     </Sheet>
-  );
-}
-
-function CustomNavLink({
-  name,
-  path,
-  ...props
-}: {
-  name: string;
-  path: string;
-} & React.ComponentProps<"button">) {
-  return (
-    <Button variant="link" className="font-outfit text-base" {...props}>
-      <NavLink
-        to={path}
-        className={({ isActive, isPending }) =>
-          isActive
-            ? "text-primary"
-            : isPending
-            ? "text-link-hover"
-            : "text-foreground"
-        }
-        preventScrollReset
-      >
-        {name}
-      </NavLink>
-    </Button>
   );
 }
