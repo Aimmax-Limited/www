@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import AccountingSummation from "~/components/home/hero/accounting-animation";
-import AssetRegisterAnimation from "~/components/home/hero/asset-register-animation";
-import BarcodeAnimation from "~/components/home/hero/barcode-animation";
+import { useEffect, useRef, useState } from "react";
 import {
   AnimateHorizontal,
   AnimateVertical,
@@ -9,9 +6,78 @@ import {
 import CommonHero from "~/components/shared/common-hero";
 import Footer from "~/components/shared/footer";
 import Navbar from "~/components/shared/navbar";
-import ValuationAnimation from "~/components/shared/valuation-animation";
 
 export default function Services() {
+  const sectionsRef = useRef<HTMLElement[]>([]);
+  const navLinksRef = useRef<HTMLAnchorElement[]>([]);
+
+  // Register refs for sections and nav links
+  const registerSectionRef = (element: HTMLElement | null) => {
+    if (element) sectionsRef.current.push(element);
+  };
+
+  const registerNavLinkRef = (element: HTMLAnchorElement | null) => {
+    if (element) navLinksRef.current.push(element);
+  };
+
+  // Smooth scrolling and active state management
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentSection = "";
+      sectionsRef.current.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        console.log(window.scrollY);
+        if (window.scrollY >= sectionTop + 400) {
+          currentSection = `#${section.id}`;
+        }
+      });
+
+      navLinksRef.current.forEach((link) => {
+        link.classList.remove("active", "bg-accent/60");
+        if (link.getAttribute("href") === currentSection) {
+          link.classList.add("active", "bg-accent/60");
+        }
+      });
+    };
+
+    const handleClick = (e: MouseEvent, link: HTMLAnchorElement) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId!);
+
+      // Update active class
+      navLinksRef.current.forEach((navLink) => {
+        navLink.classList.remove("active", "bg-accent/60");
+      });
+      link.classList.add("active", "bg-accent/60");
+
+      // Smooth scroll to section
+      targetSection?.scrollIntoView({
+        behavior: "auto",
+      });
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Add click event listeners to nav links
+    navLinksRef.current.forEach((link) => {
+      link.addEventListener("click", (e) => handleClick(e, link));
+    });
+
+    // Initialize first link as active
+    if (navLinksRef.current[0]) {
+      navLinksRef.current[0].classList.add("bg-accent/60");
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      navLinksRef.current.forEach((link) => {
+        link.removeEventListener("click", (e) => handleClick(e, link));
+      });
+    };
+  }, []);
+
   const [showFixedNav, setShowFixedNav] = useState(false);
 
   useEffect(() => {
@@ -29,6 +95,10 @@ export default function Services() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const stickyRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useStickyOnScroll(stickyRef, sectionRef);
+
   return (
     <div className="bg-background" id="top">
       <Navbar
@@ -41,7 +111,7 @@ export default function Services() {
 
       <CommonHero title="Our Services" />
 
-      <div className="relative z-20 bg-background" id="content">
+      <div className="bg-background relative z-20" id="content">
         <div className="py-10 xl:pt-14 px-4 xl:px-0 max-w-screen-xl mx-auto">
           <div className="flex justify-center items-center mb-8">
             <h2 className="style-h2 tracking-wide">
@@ -69,246 +139,44 @@ export default function Services() {
           </p>
         </div>
 
-        <div
-          className="py-10 xl:py-16 px-4 xl:px-0 max-w-screen-xl mx-auto"
-          id="barcode-tagging"
-        >
-          <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
-            {/* <Barcode className="fill-accent me-5" /> */}
-            <h2 className="style-h2 tracking-wide">
-              Physical Asset Tagging and Barcoding
-            </h2>
-          </AnimateVertical>
+        <div className="mx-auto relative" ref={sectionRef}>
+          {/* Glassmorphism Side Nav */}
+          <nav
+            className="absolute z-10 top-12 -translate-x-[100%] right-1/2 h-[500px] w-[400px] p-8 hidden xl:flex flex-col gap-6 bg-background/80 shadow-2xl backdrop-blur-sm rounded-2xl transition-all duration-500"
+            ref={stickyRef}
+          >
+            <h4 className="font-bold font-satoshi text-lg">Our services</h4>
+            {services.map((service) => (
+              <a
+                key={service.name}
+                href={`#${service.id}`}
+                ref={registerNavLinkRef}
+                className="px-4 py-3 rounded-lg font-satoshi font-medium transition-all duration-300 hover:bg-accent/30"
+              >
+                {service.name}
+              </a>
+            ))}
 
-          <AnimateVertical>
-            <div className="relative mb-8">
-              <p className="xl:max-w-[800px] text-justify style-p">
-                Using serialized aluminum barcode tags with full-color GK logos,
-                we physically label each asset with a unique identifier. This
-                allows for accurate and seamless scanning during audits and
-                routine asset verification. Our barcoding system integrates
-                smoothly with digital asset registers and financial management
-                platforms like{" "}
-                <StyledInlineText
-                  text="IFMIS"
-                  className="font-bold brush-highlight"
-                />
-                , enabling real-time tracking across locations and departments.
-              </p>
-              <div className="hidden xl:block absolute right-0 -top-10">
-                <BarcodeAnimation />
-              </div>
-            </div>
-          </AnimateVertical>
+            <AimmaxLimited dark={false} />
+          </nav>
 
-          <AnimateVertical className="style-p">
-            <p>Key Features: </p>
-
-            <ol className="list-decimal ps-5 lg:ps-10 pt-3">
-              {BarcodeKeyFeatures.map((feature, index) => (
-                <li
-                  className={`my-3 ${index < 2 && "xl:max-w-[850px]"}`}
-                  key={index}
-                >
-                  <span className="font-bold">{feature.name}:</span>{" "}
-                  {feature.description}
-                </li>
-              ))}
-            </ol>
-          </AnimateVertical>
-        </div>
-
-        <div
-          className="py-10 xl:py-16 px-4 xl:px-0  bg-background-1 text-foreground-1"
-          id="valuation"
-        >
-          <div className="max-w-screen-xl mx-auto">
-            <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
-              <h2 className="style-h2 underline-dark tracking-wide">
-                Comprehensive Asset Valuation
-              </h2>
-            </AnimateVertical>
-
-            <AnimateVertical>
-              <div className="relative mb-8">
-                <p className="xl:max-w-[800px] text-justify style-p">
-                  Aimmax Company Ltd offers comprehensive Valuation Services to
-                  help organizations determine the true worth of their assets in
-                  compliance with{" "}
-                  <StyledInlineText
-                    text="International Public Sector Accounting Standards (IPSAS) "
-                    className="font-bold brush-highlight"
-                  />
-                  and Government of Kenya (GOK) Treasury policies. Our team of
-                  certified and experienced valuers conducts precise valuations
-                  for fixed assets, land, buildings, machinery, vehicles and ICT
-                  equipment, ensuring transparency and regulatory compliance.
-                </p>
-                <div className="hidden xl:block absolute right-0 -top-10">
-                  <ValuationAnimation />
+          {/* Main Content */}
+          <main className="flex-1">
+            {services.map((service, index) => (
+              <section
+                key={service.name}
+                id={`${service.id}`}
+                ref={registerSectionRef}
+                className={`mb-8 p-8 ${
+                  index % 2 === 0 ? "glass-card-dark" : "glass-card"
+                }`}
+              >
+                <div className="lg:ps-80 max-w-screen-xl mx-auto">
+                  {service.component()}
                 </div>
-              </div>
-            </AnimateVertical>
-
-            <AnimateVertical className="style-p">
-              <p>Key Features: </p>
-
-              <ol className="list-decimal ps-5 lg:ps-10 pt-3">
-                {ValuationKeyFeatures.map((feature, index) => (
-                  <li
-                    className={`my-3 ${index < 2 && "xl:max-w-[850px]"}`}
-                    key={index}
-                  >
-                    <span className="font-bold">{feature.name}:</span>{" "}
-                    {feature.description}
-                  </li>
-                ))}
-              </ol>
-            </AnimateVertical>
-          </div>
-        </div>
-
-        <div
-          className="bg-background-1 text-foreground-1 py-10 xl:py-16 px-4 xl:px-0"
-          id="asset-register-preparation"
-        >
-          <div className="max-w-screen-xl mx-auto">
-            <AnimateVertical className="mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex items-center justify-center">
-              {/* <Register className="fill-accent me-5" /> */}
-              <h2 className="style-h2 underline-dark tracking-wide">
-                Comprehensive Assets Register Preparation
-              </h2>
-            </AnimateVertical>
-
-            <AnimateVertical>
-              <div className="relative">
-                <p className="xl:ms-[380px] xl:max-w-[920px] style-p text-justify">
-                  At Aimmax Company Ltd, we specialize in delivering accurate
-                  and fully compliant Comprehensive Asset Register Preparation
-                  services that support both public and private sector
-                  organizations in achieving effective asset management and
-                  financial accountability.
-                  <br /> <br />
-                  Our process involves the systematic identification,
-                  classification and documentation of all fixed and movable
-                  assets, ensuring that every item is properly accounted for and
-                  tracked throughout its lifecycle. Each register is prepared in
-                  alignment{" "}
-                  <StyledInlineText
-                    text="Treasury’s asset policy guidelines"
-                    className="font-bold brush-highlight brush-dark"
-                  />{" "}
-                  and is{" "}
-                  <StyledInlineText
-                    text="fully compatible with the IFMIS system"
-                    className="font-bold brush-highlight brush-dark"
-                  />{" "}
-                  .
-                  <br /> <br />
-                  Our asset registers are provided in both soft and hard copy
-                  formats, designed for direct upload into financial management
-                  systems. They are customized to suit each client’s structure
-                  and operational needs, and ideal for government ministries,
-                  departments, state agencies, universities and corporations
-                  transitioning from manual or outdated systems.
-                  <br /> <br />
-                </p>
-
-                <div className="hidden xl:block absolute left-0 -top-20">
-                  <AssetRegisterAnimation />
-                </div>
-              </div>
-            </AnimateVertical>
-
-            <AnimateVertical>
-              <div className="mb-10 mt-4 style-p">
-                The assets register captures detailed information, including:
-                <ul className="list-disc ps-5 pt-3 lg:ps-10 grid xl:grid-cols-2">
-                  {AssetRegisterDetails.map((detail, index) => (
-                    <li className="my-2" key={index}>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AnimateVertical>
-
-            <div>
-              <AnimateVertical>
-                <h3
-                  className="style-h3 tracking-wide mb-5"
-                  id="asset-register-benefits"
-                >
-                  Key Benefits of a Comprehensive Assets Register
-                </h3>
-              </AnimateVertical>
-
-              <ul className="style-p list-decimal ps-5 lg:ps-10 max-w-6xl xl:text-justify">
-                {AssetRegisterBenefits.map((benefit, index) => (
-                  <AnimateHorizontal key={index}>
-                    <li className="my-3">
-                      <span className="font-bold text-accent/80">
-                        {benefit.name}:
-                      </span>{" "}
-                      {benefit.description}
-                    </li>
-                  </AnimateHorizontal>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="py-10 xl:py-16 px-4 xl:px-0 max-w-screen-xl mx-auto"
-          id="accrual-accounting"
-        >
-          <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
-            {/* <Calculator className="fill-accent me-5" /> */}
-            <h2 className="style-h2">
-              Expert Accrual-Based Accounting Support
-            </h2>
-          </AnimateVertical>
-
-          <AnimateVertical>
-            <div className="style-p text-justify">
-              <div className="relative">
-                <p className="pb-8 xl:max-w-[890px]">
-                  Transitioning from cash-based to accrual-based accounting is a
-                  crucial step for organizations seeking improved financial
-                  accuracy. At Aimmax Company Ltd, we provide expert support to
-                  help institutions, especially within the public sector, adopt
-                  and implement accrual accounting in full compliance with{" "}
-                  <StyledInlineText
-                    text="IPSAS (International Public Sector Accounting Standards)"
-                    className="font-bold brush-highlight"
-                  />
-                  . Our team works efficiently to ensure that all assets,
-                  liabilities, revenues, and expenses are recorded when they are
-                  incurred not just when cash is exchanged. This provides a true
-                  and complete picture of your financial position.
-                </p>
-
-                <div className="hidden xl:block absolute right-0 -top-14">
-                  <AccountingSummation
-                    className="text-foreground"
-                    borderColors={["", ""]}
-                  />
-                </div>
-              </div>
-              <div className="md:mt-10">
-                Why Choose Accrual Over Cash Basis?
-                <ul className="list-disc ps-5 lg:ps-10">
-                  {WhyAccrual.map((reason, index) => (
-                    <li className="my-3" key={index}>
-                      <span className="font-bold">{reason.name}:</span>{" "}
-                      {reason.description}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </AnimateVertical>
+              </section>
+            ))}
+          </main>
         </div>
       </div>
 
@@ -317,6 +185,274 @@ export default function Services() {
       </div>
     </div>
   );
+}
+
+function TaggingAndBarcoding() {
+  return (
+    <>
+      <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
+        {/* <Barcode className="fill-accent me-5" /> */}
+        <h2 className="style-h2 tracking-wide">
+          Physical Asset Tagging and Barcoding
+        </h2>
+      </AnimateVertical>
+
+      <AnimateVertical>
+        <div className="relative mb-8">
+          <p className="text-justify style-p">
+            Using serialized aluminum barcode tags with full-color GK logos, we
+            physically label each asset with a unique identifier. This allows
+            for accurate and seamless scanning during audits and routine asset
+            verification. Our barcoding system integrates smoothly with digital
+            asset registers and financial management platforms like{" "}
+            <StyledInlineText
+              text="IFMIS"
+              className="font-bold brush-highlight"
+            />
+            , enabling real-time tracking across locations and departments.
+          </p>
+        </div>
+      </AnimateVertical>
+
+      <AnimateVertical className="style-p">
+        <p>Key Features: </p>
+
+        <ol className="list-decimal ps-5 lg:ps-10 pt-3">
+          {BarcodeKeyFeatures.map((feature, index) => (
+            <li
+              className={`my-3 ${index < 2 && "xl:max-w-[850px]"}`}
+              key={index}
+            >
+              <span className="font-bold">{feature.name}:</span>{" "}
+              {feature.description}
+            </li>
+          ))}
+        </ol>
+      </AnimateVertical>
+    </>
+  );
+}
+
+function Valuation() {
+  return (
+    <>
+      <div className="max-w-screen-xl mx-auto">
+        <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
+          <h2 className="style-h2 underline-dark tracking-wide">
+            Comprehensive Asset Valuation
+          </h2>
+        </AnimateVertical>
+
+        <AnimateVertical>
+          <div className="relative mb-8">
+            <p className="text-justify style-p">
+              Aimmax Company Ltd offers comprehensive Valuation Services to help
+              organizations determine the true worth of their assets in
+              compliance with{" "}
+              <StyledInlineText
+                text="International Public Sector Accounting Standards (IPSAS) "
+                className="font-bold brush-highlight"
+              />
+              and Government of Kenya (GOK) Treasury policies. Our team of
+              certified and experienced valuers conducts precise valuations for
+              fixed assets, land, buildings, machinery, vehicles and ICT
+              equipment, ensuring transparency and regulatory compliance.
+            </p>
+          </div>
+        </AnimateVertical>
+
+        <AnimateVertical className="style-p">
+          <p>Key Features: </p>
+
+          <ol className="list-decimal ps-5 lg:ps-10 pt-3">
+            {ValuationKeyFeatures.map((feature, index) => (
+              <li
+                className={`my-3 ${index < 2 && "xl:max-w-[850px]"}`}
+                key={index}
+              >
+                <span className="font-bold">{feature.name}:</span>{" "}
+                {feature.description}
+              </li>
+            ))}
+          </ol>
+        </AnimateVertical>
+      </div>
+    </>
+  );
+}
+
+function AssetRegisterPreparation() {
+  return (
+    <>
+      <div className="max-w-screen-xl mx-auto">
+        <AnimateVertical className="mb-6 md:mb-10 lg:mb-14 xl:mb-16 flex items-center justify-center">
+          {/* <Register className="fill-accent me-5" /> */}
+          <h2 className="style-h2 underline-dark tracking-wide">
+            Comprehensive Assets Register Preparation
+          </h2>
+        </AnimateVertical>
+
+        <AnimateVertical>
+          <div className="relative">
+            <p className=" style-p text-justify">
+              At Aimmax Company Ltd, we specialize in delivering accurate and
+              fully compliant Comprehensive Asset Register Preparation services
+              that support both public and private sector organizations in
+              achieving effective asset management and financial accountability.
+              <br /> <br />
+              Our process involves the systematic identification, classification
+              and documentation of all fixed and movable assets, ensuring that
+              every item is properly accounted for and tracked throughout its
+              lifecycle. Each register is prepared in alignment{" "}
+              <StyledInlineText
+                text="Treasury’s asset policy guidelines"
+                className="font-bold brush-highlight brush-dark"
+              />{" "}
+              and is{" "}
+              <StyledInlineText
+                text="fully compatible with the IFMIS system"
+                className="font-bold brush-highlight brush-dark"
+              />{" "}
+              .
+              <br /> <br />
+              Our asset registers are provided in both soft and hard copy
+              formats, designed for direct upload into financial management
+              systems. They are customized to suit each client’s structure and
+              operational needs, and ideal for government ministries,
+              departments, state agencies, universities and corporations
+              transitioning from manual or outdated systems.
+              <br /> <br />
+            </p>
+          </div>
+        </AnimateVertical>
+
+        <AnimateVertical>
+          <div className="mb-10 mt-4 style-p">
+            The assets register captures detailed information, including:
+            <ul className="list-disc ps-5 pt-3 lg:ps-10 grid xl:grid-cols-2">
+              {AssetRegisterDetails.map((detail, index) => (
+                <li className="my-2" key={index}>
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </AnimateVertical>
+
+        <div>
+          <AnimateVertical>
+            <h3
+              className="style-h3 tracking-wide mb-5"
+              id="asset-register-benefits"
+            >
+              Key Benefits of a Comprehensive Assets Register
+            </h3>
+          </AnimateVertical>
+
+          <ul className="style-p list-decimal ps-5 lg:ps-10 max-w-6xl xl:text-justify">
+            {AssetRegisterBenefits.map((benefit, index) => (
+              <AnimateHorizontal key={index}>
+                <li className="my-3">
+                  <span className="font-bold text-accent/80">
+                    {benefit.name}:
+                  </span>{" "}
+                  {benefit.description}
+                </li>
+              </AnimateHorizontal>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function AccrualAccounting() {
+  return (
+    <>
+      <AnimateVertical className="flex justify-center items-center mb-6 md:mb-10 lg:mb-14 xl:mb-16">
+        <h2 className="style-h2">Expert Accrual-Based Accounting Support</h2>
+      </AnimateVertical>
+
+      <AnimateVertical>
+        <div className="style-p text-justify">
+          <div className="relative">
+            <p className="pb-8">
+              Transitioning from cash-based to accrual-based accounting is a
+              crucial step for organizations seeking improved financial
+              accuracy. At Aimmax Company Ltd, we provide expert support to help
+              institutions, especially within the public sector, adopt and
+              implement accrual accounting in full compliance with{" "}
+              <StyledInlineText
+                text="IPSAS (International Public Sector Accounting Standards)"
+                className="font-bold brush-highlight"
+              />
+              . Our team works efficiently to ensure that all assets,
+              liabilities, revenues, and expenses are recorded when they are
+              incurred not just when cash is exchanged. This provides a true and
+              complete picture of your financial position.
+            </p>
+          </div>
+          <div className="md:mt-10">
+            Why Choose Accrual Over Cash Basis?
+            <ul className="list-disc ps-5 lg:ps-10">
+              {WhyAccrual.map((reason, index) => (
+                <li className="my-3" key={index}>
+                  <span className="font-bold">{reason.name}:</span>{" "}
+                  {reason.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </AnimateVertical>
+    </>
+  );
+}
+
+function AimmaxLimited({ dark = true }: { dark?: boolean }) {
+  return (
+    <div
+      className={`flex justify-center items-center mt-3 max-w-[300px] pointer-events-none`}
+    >
+      <div className="text-center font-mono block">
+        <p className="font-normal text-xl ">AIMMAX LIMITED</p>
+        <p className="text-xs">Assets Management</p>
+      </div>
+    </div>
+  );
+}
+
+function useStickyOnScroll(
+  stickyRef: React.RefObject<HTMLElement | null>,
+  sectionRef: React.RefObject<HTMLDivElement | null>
+) {
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!stickyRef.current || !sectionRef.current) return;
+
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      const sticky = stickyRef.current;
+
+      const sectionTop = sectionRect.top;
+      const sectionBottom = sectionRect.bottom;
+      const stickyHeight = sticky.offsetHeight + 160;
+
+      if (sectionTop <= 15 && sectionBottom >= stickyHeight) {
+        sticky.classList.add("fixed", "top-30");
+        sticky.classList.remove("absolute", "bottom-10", "top-auto");
+      } else if (sectionBottom < stickyHeight) {
+        sticky.classList.remove("fixed", "top-30");
+        sticky.classList.add("absolute", "bottom-10", "top-auto");
+      } else {
+        sticky.classList.remove("fixed", "top-30", "bottom-10");
+        sticky.classList.add("absolute");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [stickyRef, sectionRef]);
 }
 
 function StyledInlineText({
@@ -330,6 +466,29 @@ function StyledInlineText({
     </span>
   );
 }
+
+const services = [
+  {
+    name: "Comprehensive Asset Register Preparation",
+    id: "asset-register-preparation",
+    component: AssetRegisterPreparation,
+  },
+  {
+    name: "Physical Asset Tagging and Barcoding",
+    id: "barcode-tagging",
+    component: TaggingAndBarcoding,
+  },
+  {
+    name: "Comprehensive Asset Valuation",
+    id: "valuation",
+    component: Valuation,
+  },
+  {
+    name: "Expert Accrual-Based Accounting Support",
+    id: "accrual-accounting",
+    component: AccrualAccounting,
+  },
+];
 
 const ProblemStatements = [
   "Lack of automated electronic data capture.",
