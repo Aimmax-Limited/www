@@ -117,7 +117,7 @@ function Logo({
   return (
     <div className={cn("flex items-center pb-4 md:pb-0", className)} {...props}>
       <img
-        src={dark ? "/logo-dark.svg" : "./logo-light.svg"}
+        src={dark ? "/logo-dark.svg" : "/logo-light.svg"}
         alt="Logo"
         width={90}
       />
