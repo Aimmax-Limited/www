@@ -7,6 +7,22 @@ import CommonHero from "~/components/shared/common-hero";
 import Footer from "~/components/shared/footer";
 import Navbar from "~/components/shared/navbar";
 import SpotlightCard from "~/components/shared/reactbits/spotlight-card";
+import type { Route } from "./+types/about";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "About Us | Aimmax Limited Assets Management" },
+    {
+      name: "description",
+      content:
+        "At Aimmax, we’re passionate about asset management. Learn about our values, strategy and what makes us different",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+  ];
+}
 
 export default function About() {
   const [showFixedNav, setShowFixedNav] = useState(false);

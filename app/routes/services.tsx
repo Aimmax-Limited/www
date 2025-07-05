@@ -6,6 +6,22 @@ import {
 import CommonHero from "~/components/shared/common-hero";
 import Footer from "~/components/shared/footer";
 import Navbar from "~/components/shared/navbar";
+import type { Route } from "./+types/services";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Our Services | Aimmax Limited Assets Management" },
+    {
+      name: "description",
+      content:
+        "Discover the range of services we offer at Aimmax, including asset register preparaion, valuation, acounting and more.",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+  ];
+}
 
 export default function Services() {
   const sectionsRef = useRef<HTMLElement[]>([]);

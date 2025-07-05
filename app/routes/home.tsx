@@ -9,8 +9,12 @@ import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Aimmax Limited" },
-    { name: "description", content: "Aimmax Limited Assets Management" },
+    { title: "Aimmax Limited | Assets Management" },
+    {
+      name: "description",
+      content:
+        "Expert comprehensive assets register preparation, barcoding solutions, valuation and accrual-based accounting services in Kenya",
+    },
   ];
 }
 

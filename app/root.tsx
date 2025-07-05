@@ -25,6 +25,11 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap",
   },
+  {
+    rel: "icon",
+    href: "/favicon.ico",
+    type: "image/x-icon",
+  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -32,8 +37,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="description" content="Discover professional accrual-based accounting services in Kenya, barcoding solutions, and expert preparation of comprehensive asset registers for your business."/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta
+          property="og:title"
+          content="Aimmax Limited | Assets Management"
+        />
+        <meta
+          property="og:description"
+          content="Expert comprehensive assets register preparation, barcoding solutions, valuation and accrual-based accounting services in Kenya"
+        />
+        <meta
+          property="og:image"
+          content="https://aimmax.co.ke/backgrounds/blue-sky.jpg"
+        />
+        <meta property="og:url" content="https://aimmax.co.ke" />
+        <meta property="og:type" content="website" />
         <Meta />
         <Links />
       </head>

@@ -5,6 +5,22 @@ import FAQ from "~/components/contact-us/faq";
 import CommonHero from "~/components/shared/common-hero";
 import Footer from "~/components/shared/footer";
 import Navbar from "~/components/shared/navbar";
+import type { Route } from "./+types/contact-us";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Contact Us | Aimmax Limited Assets Management" },
+    {
+      name: "description",
+      content:
+        "Need assistance or have questions? Contact Aimmax at +254 721 376 993 or visit us at Imenti House, Tom Mboya Street, Rm B 12",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+  ];
+}
 
 export default function ContactUs() {
   const [showFixedNav, setShowFixedNav] = useState(false);
