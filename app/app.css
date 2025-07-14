@@ -458,11 +458,11 @@ body {
 
 .card__colors {
   background-color: var(--background-1);
-  border-color: oklch(0.901 0.0046 0.01 / 0.1);
+  /* border-color: oklch(0.901 0.0046 0.01 / 0.1); */
+  box-shadow: 0px 0px 16px oklch(0.2 0.01 250 / 0.3);
 
   &:hover {
-    background-color: oklch(0.3605 0.0911 250.5);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 6px 16px oklch(0.2 0.01 250 / 0.4);
   }
 }
 

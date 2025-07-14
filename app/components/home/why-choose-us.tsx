@@ -15,7 +15,7 @@ import { Button } from "../shared/ui/button";
 export default function WhyChooseUs() {
   return (
     <>
-      <div className="px-5 py-10 md:pt-20 md:pb-20 md:p-10 bg-background-1 text-foreground-1">
+      <div className="px-5 py-10 md:pt-20 md:pb-40 bg-background-1 text-foreground-1">
         <div className="max-w-screen-xl mx-auto">
           <AnimateVertical className="max-w-3xl mx-auto">
             <h2 className="style-h2 h2-no-underline text-center tracking-wide">
@@ -24,11 +24,11 @@ export default function WhyChooseUs() {
             </h2>
           </AnimateVertical>
 
-          <div className="text-lg grid grid-cols-1 lg:grid-cols-3 gap-4 pt-10 md:pt-20">
+          <div className="text-lg grid grid-cols-1 lg:grid-cols-3 gap-6 gap-y-10 lg:gap-y-12 pt-10 md:pt-20">
             {items.map((item, index) => (
               <SpotlightCard
                 className={cn(
-                  "card__colors rounded-lg backdrop-blur-xl transition-all duration-500",
+                  "card__colors border-0 rounded-lg backdrop-blur-xl transition-all duration-300 ",
                   (index + 1) % 4 === 0 || (index + 1) % 4 === 1
                     ? "lg:col-span-2"
                     : "col-span-1"
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
             ))}
             <AnimateVertical>
               <SpotlightCard
-                className="card__colors rounded-lg backdrop-blur-xl transition-all duration-500"
+                className="card__colors border-0 rounded-lg backdrop-blur-xl transition-all duration-500"
                 spotlightColor="rgba(0, 128, 128, .0)"
               >
                 <p className="font-fredoka text-md lg:text-2xl my-4">
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
 
                 <Button
                   variant="link"
-                  className="mt-12 text-foreground-1 hover:text-link-hover group"
+                  className="mt-8 lg:mt-12 w-full text-foreground-1 hover:text-link-hover group"
                   asChild
                 >
                   <Link to="/services#asset-register-benefits">
