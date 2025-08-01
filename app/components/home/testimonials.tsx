@@ -1,10 +1,11 @@
 import type { EmblaCarouselType } from "embla-carousel";
+import AutoScroll from "embla-carousel-auto-scroll";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { cn } from "~/lib/utils";
 import { AnimateVertical } from "../shared/animate-content";
-import { ChevronCircleLeft, ChevronCircleRight, Quote } from "../shared/icons";
+import { Quote } from "../shared/icons";
 import { Button } from "../shared/ui/button";
 
 export default function Testimonials() {
@@ -18,6 +19,7 @@ export default function Testimonials() {
         <Quote size="40pt" className="fill-accent/90 mb-5" />
 
         <EmblaCarouselAutoPlay slides={testimonials} options={{ loop: true }} />
+        <EmblaCarouselAutoScroll logos={testimonials} className="mt-10" />
       </AnimateVertical>
     </div>
   );
@@ -52,14 +54,6 @@ const EmblaCarouselAutoPlay = ({
     resetOrStop();
   }, []);
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
     emblaApi,
     onNavButtonClick
@@ -78,12 +72,12 @@ const EmblaCarouselAutoPlay = ({
               </div>
 
               <div className="flex flex-col items-center mt-5">
-                <img
+                {/* <img
                   src={slide.clientLogo}
                   alt={`${slide.clientName} Logo`}
-                  className="h-16"
-                />
-                <p className="text-secondary-foreground text-lg font-fredoka mt-3">
+                  className="h-20"
+                /> */}
+                <p className="text-secondary-foreground text-lg font-fredoka font-bold italic mt-3">
                   {slide.clientName}
                 </p>
               </div>
@@ -91,14 +85,7 @@ const EmblaCarouselAutoPlay = ({
           ))}
         </div>
       </div>
-      <div className="flex justify-between mt-5 md:mt-10">
-        <Button
-          variant={"outline"}
-          className="embla__button hover:-translate-x-0.5"
-          onClick={scrollPrev}
-        >
-          <ChevronCircleLeft className="fill-secondary -translate-x-[1px]" />
-        </Button>
+      <div className="flex justify-center mt-5 md:mt-10">
         <div className="embla__dots">
           {scrollSnaps.map((_, index) => (
             <DotButton
@@ -110,13 +97,6 @@ const EmblaCarouselAutoPlay = ({
             />
           ))}
         </div>
-        <Button
-          variant={"outline"}
-          className="embla__button hover:translate-x-0.5"
-          onClick={scrollNext}
-        >
-          <ChevronCircleRight className="fill-secondary translate-x-[1px]" />
-        </Button>
       </div>
     </section>
   );
@@ -175,6 +155,46 @@ const DotButton: React.FC<PropType> = (props) => {
   return <Button {...restProps}>{children}</Button>;
 };
 
+export const EmblaCarouselAutoScroll = ({
+  logos,
+  className,
+  ...props
+}: {
+  logos: {
+    clientName: string;
+    clientLogo: string;
+  }[];
+} & React.ComponentProps<"div">) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    AutoScroll({
+      playOnInit: true,
+      stopOnMouseEnter: true,
+      stopOnFocusIn: false,
+      stopOnInteraction: false,
+      startDelay: 0,
+      speed: 1,
+    }),
+  ]);
+
+  return (
+    <div className={cn("w-full", className)} {...props}>
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {logos.map((logo, index) => (
+            <div className="flex-[0_0_50%] md:flex-[0_0_35%]" key={index}>
+              <img
+                src={logo.clientLogo}
+                alt={`${logo.clientName} Logo`}
+                className="h-20 md:h-32"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const testimonials = [
   {
     clientLogo: "/client-logos/uon-seeklogo.png",
@@ -182,18 +202,18 @@ const testimonials = [
     text: "Aimmax helped us build a compliant, IFMIS-ready asset register with accurate tagging and valuation. Their expertise made our transition to accrual accounting smooth and improved audit outcomes significantly. Their support made our shift to accrual accounting smooth and significantly improved audit outcomes.",
   },
   {
-    clientLogo: "/client-logos/uon-seeklogo.png",
-    clientName: "University Of Nairobi",
+    clientLogo: "/client-logos/icea-lion-logo.png",
+    clientName: "ICEA Lion",
     text: "Working with Aimmax streamlined our entire asset management process. Their barcoding system made verification simple and the register they delivered aligned perfectly with IPSAS and Treasury guidelines. Their team was efficient, knowledgeable and committed to delivering results.",
   },
   {
-    clientLogo: "/client-logos/uon-seeklogo.png",
-    clientName: "University Of Nairobi",
+    clientLogo: "/client-logos/kenyatta-university-seeklogo.png",
+    clientName: "Kenyatta University",
     text: "Aimmax delivered a complete and compliant asset register that has greatly improved how we track and manage our assets. Their attention to detail, from tagging to valuation, ensured every asset was accounted for. We now have better transparency, faster audits and a reliable system in place.",
   },
   {
-    clientLogo: "/client-logos/uon-seeklogo.png",
-    clientName: "University Of Nairobi",
+    clientLogo: "/client-logos/moe-logo.png",
+    clientName: "Ministry of Education",
     text: "Aimmax Company Ltd provided us with a reliable and accurate asset register that has transformed our asset tracking and reporting. Their barcoding and valuation services were precise and fully aligned with government policies. We now operate with greater efficiency, accountability and confidence in our asset data.",
   },
 ];
